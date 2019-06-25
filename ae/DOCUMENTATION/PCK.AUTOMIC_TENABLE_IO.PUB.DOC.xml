@@ -9,7 +9,30 @@
 <DOCU_Docu state="1" type="text">
 <DOC><![CDATA[About the Package
 ================================
-Tenable.io 
+Tenable.io transforms security technology for the business needs of tomorrow through comprehensive solutions that provide continuous visibility and critical context, enabling decisive
+actions to protect your organization. Tenable eliminates blind spots, prioritizes threats, and reduces exposure and loss. Its a solution from Nessus that provides a vulnerability Scanner
+Tenable.io, the world?s first Cyber Exposure platform, arms Security with the visibility to see their entire cyber attack surface at all times (from IT to Cloud to IoT to OT)with the insight 
+to focus on the issues which matter most and make better strategic decisions.
+
+
+=Supported versions=
+Rest-API version : v1
+
+=Setup=
+* The Agent should be able to access Tenable.io rest API endpoint URL in order to make HTTP requests.
+* Internet Connection should be available on Agent OS.
+
+=Common Inputs=
+- Tenable.io Base URL*: Provide Base URL of the Tenable.io.E.g. https://cloud.tenable.com
+- Access Key*: Provide a access key. E.g. f4b981XXX
+- Secret Key*: Provide a access key. E.g. b90194XXX
+
+=Actions=
+Following actions are supported
+
+* Action name: PCK.AUTOMIC_TENABLE_IO.PUB.ACTION.CREATE_SCAN
+* Action Description: This action creates a scan in Tenable.io.
+
 
 ]]></DOC>
 </DOCU_Docu>

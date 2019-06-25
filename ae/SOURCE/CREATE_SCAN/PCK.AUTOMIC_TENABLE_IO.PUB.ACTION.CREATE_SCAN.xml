@@ -116,6 +116,16 @@
 <component con="0" enc="0" type="2" value="60" xmlName="responseTimeout"/>
 <component con="0" enc="0" type="2" value="true" xmlName="responseToJobLog"/>
 <component con="0" enc="0" type="2" value="" xmlName="response_part_0_file"/>
+<component con="0" enc="0" type="2" value="$.scan.id" xmlName="response_part_0_script_0_code_0"/>
+<component con="0" enc="0" type="2" value="JSONPath" xmlName="response_part_0_script_0_queryType"/>
+<component con="0" enc="0" type="2" value="UC4RB_TENABLE_IO_SCAN_ID#" xmlName="response_part_0_script_0_resourceName"/>
+<component con="0" enc="0" type="2" value="variable" xmlName="response_part_0_script_0_saveTo"/>
+<component con="0" enc="0" type="2" value="false" xmlName="response_part_0_script_0_useArray"/>
+<component con="0" enc="0" type="2" value="$.scan.uuid" xmlName="response_part_0_script_1_code_0"/>
+<component con="0" enc="0" type="2" value="JSONPath" xmlName="response_part_0_script_1_queryType"/>
+<component con="0" enc="0" type="2" value="UC4RB_TENABLE_IO_SCAN_UUID#" xmlName="response_part_0_script_1_resourceName"/>
+<component con="0" enc="0" type="2" value="variable" xmlName="response_part_0_script_1_saveTo"/>
+<component con="0" enc="0" type="2" value="false" xmlName="response_part_0_script_1_useArray"/>
 <component con="1" enc="0" type="2" value="" xmlName="restConnection"/>
 <component con="0" enc="0" type="2" value="false" xmlName="tracePerformance"/>
 <component con="0" enc="0" type="2" value="" xmlName="uriOverride"/>
@@ -161,7 +171,10 @@
 <dyntree>
 <node content="1" id="VALUE" name="Variables" parent="" type="VALUE">
 <VALUE state="1">
-<Values/>
+<Values>
+<row ERTUsage="0" Name="&amp;UC4RB_TENABLE_IO_SCAN_ID#" Value=""/>
+<row ERTUsage="0" Name="&amp;UC4RB_TENABLE_IO_SCAN_UUID#" Value=""/>
+</Values>
 <Mode>0</Mode>
 </VALUE>
 </node>
@@ -303,7 +316,36 @@
 <OSCRI/>
 </POST_SCRIPT>
 <DOCU_Docu state="1" type="text">
-<DOC/>
+<DOC><![CDATA[= Action name =
+PCK.AUTOMIC_TENABLE_IO.PUB.ACTION.CREATE_SCAN
+
+
+= General Description =
+This action creates a scan in Tenable.io.
+
+= Inputs =
+- Name* : Provide a name for the scan to be created.
+- Description : Provide a short description for the scan to be created.
+- Template UUID* : Provide UUID for the editor template to use. E.g. 09805055-a034-4088-8986-aac5e1c57d5f0d44f09d736969bf
+- Enabled* : Specify whether the schedule for the scan is enabled or not.
+- Targets* : Provide list of Targets separated by comma to scan. E.g. 10.243.12.23(for basic network scan)
+- Policy ID : Provide unique ID of the policy to use. If your user permissions are set to SCAN OPERATOR [24], this parameter must be provided. E.g. 51
+- Folder ID : Provide unique ID of the destination folder for the scan. E.g. 52
+
+
+= Return Value =
+- Scan ID : Id for the created scan
+- Scan UUID : UUID for the created scan
+
+= Example =
+- Name : Web App Scan for Automic Website
+- Description : Scan automic Website.
+- Template UUID : 09805055-a034-4088-8986-aac5e1c57d5f0d44f09d736969bf
+- Enabled : false
+- Targets* : http://www.alm.automic.com
+- Policy ID : 51
+- Folder ID : 52
+]]></DOC>
 </DOCU_Docu>
 </JOBS_CIT>
 </uc-export>

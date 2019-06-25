@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ISO-8859-15" standalone="no"?><uc-export clientvers="11.0.0">
+<JOBI name="PCK.AUTOMIC_TENABLE_IO.PUB.INCLUDE.PREPARE_X-APIKEYS">
+<HEADER state="1">
+<Title>prepare X-API Keys for authoriztion</Title>
+<ArchiveKey1/>
+<ArchiveKey2/>
+<OH_SubType/>
+</HEADER>
+<SCRIPT mode="1" state="1">
+<MSCRI><![CDATA[!Adding Access Key
+:SET &UC4RB_KEYS#=STR_CAT("accessKey=",&UC4RB_TIO_ACCESS_KEYS#)
+
+!Adding semicolon
+:SET &UC4RB_KEYS#=STR_CAT(&UC4RB_KEYS#,";")
+
+!Adding Secret Key
+:SET &UC4RB_KEYS#=STR_CAT(&UC4RB_KEYS#,"secretKey=")
+
+:SET &UC4RB_KEYS#=STR_CAT(&UC4RB_KEYS#,&UC4RB_TIO_SECRET_KEYS#)]]></MSCRI>
+</SCRIPT>
+<DOCU_Docu state="1" type="text">
+<DOC/>
+</DOCU_Docu>
+</JOBI>
+</uc-export>

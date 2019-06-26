@@ -114,7 +114,7 @@ Init Action
     Action Create    ${actionName}
     Set Overwrite Agent
 
-Connect to Create Scan
+Nessus Authentication
     Action Set    &UC4RB_TIO_BASE_URL#    ${URL_Tenable}
     Action Set    &UC4RB_TIO_ACCESS_KEYS#    ${accessKey}
     Action Set    &UC4RB_TIO_SECRET_KEYS#    ${secretKey}

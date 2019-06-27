@@ -1,0 +1,105 @@
+*** Settings ***
+Suite Setup       Startup
+Suite Teardown    Teardown
+Force Tags        create_scan
+Test Template     Create Scan Template
+Library           com.automic.robot.itpa.ItpaLibrary
+Library           String
+Library           DateTime
+Resource          ../../Resources/messages.txt
+Resource          ../../Resources/keywords.txt
+Resource          ../../Resources/variables.txt
+Resource          ../../Resources/actions.txt
+
+*** Test Cases ***    OK_NOK    ScanName          Desc              UUID                Enabled       Target        Policy          Folder
+Create scan while providing inputs in all fields
+                      [Tags]    main_scenarios
+                      OK        ${Name}           ${Description}    ${Template_UUID}    ${Enabled}    ${Targets}    ${Policy_ID}    ${Folder_ID}
+
+Create scan while providing mandatory values in all fields
+                      OK        ${Name}           ${EMPTY}          ${Template_UUID}    ${Enabled}    ${Targets}    ${EMPTY}        ${EMPTY}
+
+Create scan while providing Empty name
+                      NOK       ${EMPTY}          ${Description}    ${Template_UUID}    ${Enabled}    ${Targets}    ${Policy_ID}    ${Folder_ID}
+
+Create scan while providing Empty Description
+                      OK        ${Name}           ${EMPTY}          ${Template_UUID}    ${Enabled}    ${Targets}    ${Policy_ID}    ${Folder_ID}
+
+Create scan while providing Empty Template UUID
+                      NOK       ${Name}           ${Description}    ${EMPTY}            ${Enabled}    ${Targets}    ${Policy_ID}    ${Folder_ID}
+
+Create scan while providing Empty enabled
+                      NOK       ${Name}           ${Description}    ${Template_UUID}    ${EMPTY}      ${Targets}    ${Policy_ID}    ${Folder_ID}
+
+Create scan while providing Empty targets
+                      NOK       ${Name}           ${Description}    ${Template_UUID}    ${Enabled}    ${EMPTY}      ${Policy_ID}    ${Folder_ID}
+
+Create scan while providing Empty policy ID
+                      OK        ${Name}           ${Description}    ${Template_UUID}    ${Enabled}    ${Targets}    ${EMPTY}        ${Folder_ID}
+
+Create scan while providing Empty folder ID
+                      OK        ${Name}           ${Description}    ${Template_UUID}    ${Enabled}    ${Targets}    ${Policy_ID}    ${EMPTY}
+
+Create scan while providing Invalid name
+                      OK        Invalid           ${Description}    ${Template_UUID}    ${Enabled}    ${Targets}    ${Policy_ID}    ${Folder_ID}
+
+Create scan while providing Invalid Description
+                      OK        ${Name}           Invalid           ${Template_UUID}    ${Enabled}    ${Targets}    ${Policy_ID}    ${Folder_ID}
+
+Create scan while providing Invalid Template UUID
+                      NOK       ${Name}           ${Description}    Invalid             ${Enabled}    ${Targets}    ${Policy_ID}    ${Folder_ID}
+
+Create scan while providing Invalid Enabled
+                      NOK       ${Name}           ${Description}    ${Template_UUID}    Invalid       ${Targets}    ${Policy_ID}    ${Folder_ID}
+
+Create scan while providing Invalid targets
+                      OK        ${Name}           ${Description}    ${Template_UUID}    ${Enabled}    Invalid       ${Policy_ID}    ${Folder_ID}
+
+Create scan while providing Invalid policy ID
+                      NOK       ${Name}           ${Description}    ${Template_UUID}    ${Enabled}    ${Targets}    Invalid         ${Folder_ID}
+
+Create scan while providing Invalid folder ID
+                      NOK       ${Name}           ${Description}    ${Template_UUID}    ${Enabled}    ${Targets}    ${Policy_ID}    Invalid
+
+*** Keywords ***
+Startup
+    Log    *******Start Test "CREATE SCAN"*******
+    Log    *******Connect to AE*******
+    Connect AE
+
+Create Scan Template
+    [Arguments]    ${OK_NOK}    ${ScanName}    ${Desc}    ${UUID}    ${Enabled}    ${Target}
+    ...    ${Policy}    ${Folder}
+    [Documentation]    This test creates a new scan in Tenable.
+    ...    -${OK_NOK}: Boolean value indicate if the action is ENDED_OK or ENDED_NOT_OK. Value of this variable should be OK or NOK.
+    ...    -${ScanName}: This fields specifies name for the scan to be created.
+    ...    -${Desc}: This field specifies a short description for the scan to be created.
+    ...    -${UUID}: This field specifies UUID for the editor template to use.
+    ...    -${Enabled}: This field specifies whether the schedule for the scan is enabled or not.
+    ...    -${Target}: This field specifies list of Targets separated by comma to scan.
+    ...    -${Policy}: This field specifies the unique ID of the policy to use.
+    ...    -${Folder}: This field specifies the unique ID of the destination folder for the scan.
+    Generate String
+    Init Action    ${_CREATE_SCAN}
+    Nessus Authentication
+    Run Keyword If    '${ScanName}' == 'Invalid'    Action Set    &UC4RB_TIO_SCAN_NAME#    ${Generated_Name}_${Time}    ELSE    Action Set
+    ...    &UC4RB_TIO_SCAN_NAME#    ${ScanName}
+    Run Keyword If    '${Desc}' == 'Invalid'    Action Set    &UC4RB_TIO_DESC#    ${Generated_Name}_${Time}    ELSE    Action Set
+    ...    &UC4RB_TIO_DESC#    ${Desc}
+    Run Keyword If    '${UUID}' == 'Invalid'    Action Set    &UC4RB_TIO_TEMPLT_UUID#    ${Generated_Name}_${Time}    ELSE    Action Set
+    ...    &UC4RB_TIO_TEMPLT_UUID#    ${UUID}
+    Run Keyword If    '${Enabled}' == 'Invalid'    Action Set    &UC4RB_TIO_ENABLED#    ${Generated_Name}_${Time}    ELSE    Action Set
+    ...    &UC4RB_TIO_ENABLED#    ${Enabled}
+    Run Keyword If    '${Target}' == 'Invalid'    Action Set    &UC4RB_TIO_TARGETS#    ${Generated_Name}_${Time}    ELSE    Action Set
+    ...    &UC4RB_TIO_TARGETS#    ${Target}
+    Run Keyword If    '${Policy}' == 'Invalid'    Action Set    &UC4RB_TIO_POLICY_ID#    ${Generated_Name}_${Time}    ELSE    Action Set
+    ...    &UC4RB_TIO_POLICY_ID#    ${Policy}
+    Run Keyword If    '${Folder}' == 'Invalid'    Action Set    &UC4RB_TIO_FOLDER_ID#    ${Generated_Name}_${Time}    ELSE    Action Set
+    ...    &UC4RB_TIO_FOLDER_ID#    ${Folder}
+    Action Execute
+    Run Keyword If    '${OK_NOK}' == 'OK'    Assert Success    ELSE    Assert Failure
+    Run Keyword If    '${OK_NOK}' == 'OK'    Action Object Variable Should Be Found    &UC4RB_TENABLE_IO_SCAN_ID#    ELSE    Action Object Variable Should Not Be Found    &UC4RB_TENABLE_IO_SCAN_ID#
+    Run Keyword If    '${OK_NOK}' == 'OK'    Action Object Variable Should Be Found    &UC4RB_TENABLE_IO_SCAN_UUID#    ELSE    Action Object Variable Should Not Be Found    &UC4RB_TENABLE_IO_SCAN_UUID#
+
+Teardown
+    Log    *******End Test "CREATE SCAN"*******

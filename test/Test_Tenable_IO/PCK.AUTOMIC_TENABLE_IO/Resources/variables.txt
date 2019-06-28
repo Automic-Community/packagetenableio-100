@@ -7,3 +7,5 @@ ${URL_Tenable}    https://cloud.tenable.com
 ${accessKey}      48e0792493d9454c52b2111c052e2108b7434bb59200386ef151a67cde118770
 ${secretKey}      348341086a2ffe21ffebbf1a3b7e0a10eeacf9bcaf632fdb495d888db689cdc3
 ${Scan_ID}        21
+#---- Get Scan Template --------------------------------------------------------------------------------------
+${Template_Title}    Web App Scan

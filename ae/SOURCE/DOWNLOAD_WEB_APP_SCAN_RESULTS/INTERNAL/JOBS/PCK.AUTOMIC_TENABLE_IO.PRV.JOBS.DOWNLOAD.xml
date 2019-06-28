@@ -95,7 +95,7 @@
 <component con="0" enc="0" type="2" value="type" xmlName="query_0_0"/>
 <component con="0" enc="0" type="2" value="web-app" xmlName="query_0_1"/>
 <component con="0" enc="0" type="2" value="false" xmlName="requestReports"/>
-<component con="0" enc="0" type="2" value="scans/&amp;UC4RB_TN_SCN_ID#/export/&amp;UC4RB_TIO_FILE_UUID#/download" xmlName="resource"/>
+<component con="0" enc="0" type="2" value="scans/&amp;UC4RB_TIO_SCN_ID#/export/&amp;UC4RB_TIO_FILE_UUID#/download" xmlName="resource"/>
 <component con="0" enc="0" type="2" value="false" xmlName="responseReport"/>
 <component con="0" enc="0" type="2" value="60" xmlName="responseTimeout"/>
 <component con="0" enc="0" type="2" value="true" xmlName="responseToJobLog"/>

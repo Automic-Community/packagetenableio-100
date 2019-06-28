@@ -1,0 +1,472 @@
+<?xml version="1.0" encoding="ISO-8859-15" standalone="no"?><uc-export clientvers="11.0.0">
+<JOBS_CIT AttrType="CIT" name="PCK.AUTOMIC_TENABLE_IO.PUB.ACTION.UPDATE_SCAN">
+<XHEADER state="1">
+<Title>update scan</Title>
+<ArchiveKey1/>
+<ArchiveKey2/>
+<Active>1</Active>
+<OH_SubType/>
+<CustomAttributes KeyListID="0" dataRequestID="0"/>
+</XHEADER>
+<OUTPUTREG state="1">
+<FileReg/>
+</OUTPUTREG>
+<SYNCREF state="1">
+<Syncs/>
+</SYNCREF>
+<ATTR_JOBS state="1">
+<Queue>CLIENT_QUEUE</Queue>
+<StartType/>
+<HostDst>|&lt;CIT&gt;|HOST</HostDst>
+<HostATTR_Type>CIT</HostATTR_Type>
+<CodeName/>
+<Login/>
+<IntAccount/>
+<ExtRepDef>1</ExtRepDef>
+<ExtRepAll>0</ExtRepAll>
+<ExtRepNone>0</ExtRepNone>
+<AutoDeactNo>0</AutoDeactNo>
+<AutoDeact1ErrorFree>0</AutoDeact1ErrorFree>
+<AutoDeactErrorFree>1</AutoDeactErrorFree>
+<DeactWhen>ANY_OK</DeactWhen>
+<DeactDelay>0</DeactDelay>
+<AutoDeactAlways>0</AutoDeactAlways>
+<AttDialog>0</AttDialog>
+<ActAtRun>1</ActAtRun>
+<Consumption>0</Consumption>
+<UC4Priority>0</UC4Priority>
+<MaxParallel2>0</MaxParallel2>
+<MpElse1>0</MpElse1>
+<MpElse2>1</MpElse2>
+<TZ/>
+</ATTR_JOBS>
+<ATTR_CIT state="1">
+<OutputDb>1</OutputDb>
+<OutputDbErr>0</OutputDbErr>
+<OutputFile>0</OutputFile>
+<OptReportPLOG>1</OptReportPLOG>
+<RequTaskParams>0</RequTaskParams>
+</ATTR_CIT>
+<CIT state="2">
+<citcont agentname="&lt;CIT&gt;" jobtype="WEBSERVICEREST" text="Web Service Rest">
+<cit cittype="2" icon="" id="" subtype="REST" text="REST Web Service">
+<component con="0" enc="0" type="2" value="" xmlName="conn_auth_aws_accesskey"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_auth_aws_secret_accesskey"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_auth_aws_sign_version"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_auth_basic_host"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_auth_basic_password"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_auth_basic_port"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_auth_basic_preemptive"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_auth_basic_realm"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_auth_basic_username"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_auth_method"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_auth_oauth_clientkey"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_auth_oauth_clientsecret"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_auth_oauth_refresh_token"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_auth_oauth_refresh_uri"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_auth_oauth_signature_type"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_auth_oauth_token"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_auth_oauth_token_secret"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_auth_oauth_verifier"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_auth_oauth_version_method"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_connection_timeout"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_endpoint_url"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_follow_redirects"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_from_prompts"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_proxy_auth_method"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_proxy_host"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_proxy_password"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_proxy_port"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_proxy_realm"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_proxy_type"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_proxy_username"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_read_timeout"/>
+<component con="0" enc="0" type="2" value="30" xmlName="connectTimeout"/>
+<component con="0" enc="0" type="2" value="" xmlName="curl"/>
+<component con="0" enc="0" type="2" value="" xmlName="file"/>
+<component con="0" enc="0" type="2" value="X-ApiKeys" xmlName="header_0_0"/>
+<component con="0" enc="0" type="2" value="&amp;UC4RB_KEYS#" xmlName="header_0_1"/>
+<component con="0" enc="0" type="2" value="false" xmlName="isCurl"/>
+<component con="0" enc="0" type="2" value="false" xmlName="jobHeaders"/>
+<component con="0" enc="0" type="2" value="false" xmlName="jobQuery"/>
+<component con="0" enc="0" type="2" value="application/json" xmlName="mediaType"/>
+<component con="0" enc="0" type="2" value="PUT" xmlName="method"/>
+<component con="0" enc="0" type="2" value="false" xmlName="multiPart"/>
+<component con="0" enc="0" type="2" value="false" xmlName="multiPartResp"/>
+<component con="0" enc="0" type="2" value="Part 1" xmlName="partName"/>
+<component con="0" enc="0" type="2" value="text" xmlName="requestDataSource"/>
+<component con="0" enc="0" type="2" value="false" xmlName="requestReports"/>
+<component con="0" enc="0" type="2" value="application/json" xmlName="request_part_0_mediaType"/>
+<component con="0" enc="0" type="2" value="Part 1" xmlName="request_part_0_partName"/>
+<component con="0" enc="0" type="2" value="text" xmlName="request_part_0_requestDataSource"/>
+<component con="0" enc="0" type="2" value="A{" xmlName="request_part_0_requestTab_data_1"/>
+<component con="0" enc="0" type="2" value="A&amp;UC4RB_TIO_TM_ZON#" xmlName="request_part_0_requestTab_data_10"/>
+<component con="0" enc="0" type="2" value="A&amp;UC4RB_TIO_AGT_GRPS#" xmlName="request_part_0_requestTab_data_11"/>
+<component con="0" enc="0" type="2" value="A&amp;UC4RB_TIO_TRGTS#" xmlName="request_part_0_requestTab_data_12"/>
+<component con="0" enc="0" type="2" value="A&amp;UC4RB_TIO_FILE_TGTS#" xmlName="request_part_0_requestTab_data_13"/>
+<component con="0" enc="0" type="2" value="A&amp;UC4RB_TIO_EMLS#" xmlName="request_part_0_requestTab_data_14"/>
+<component con="0" enc="0" type="2" value="A&amp;UC4RB_TIO_ACL#" xmlName="request_part_0_requestTab_data_15"/>
+<component con="0" enc="0" type="2" value="A&amp;UC4RB_TIO_TRG_GRPS#" xmlName="request_part_0_requestTab_data_16"/>
+<component con="0" enc="0" type="2" value="A&amp;UC4RB_ENABLED#" xmlName="request_part_0_requestTab_data_17"/>
+<component con="0" enc="0" type="2" value="A}" xmlName="request_part_0_requestTab_data_18"/>
+<component con="0" enc="0" type="2" value="A}" xmlName="request_part_0_requestTab_data_19"/>
+<component con="0" enc="0" type="2" value="A&quot;settings&quot;:{" xmlName="request_part_0_requestTab_data_2"/>
+<component con="0" enc="0" type="2" value="A&amp;UC4RB_TIO_SCN_NAME#" xmlName="request_part_0_requestTab_data_3"/>
+<component con="0" enc="0" type="2" value="A&amp;UC4RB_TIO_DES#" xmlName="request_part_0_requestTab_data_4"/>
+<component con="0" enc="0" type="2" value="A&amp;UC4RB_TIO_FOLDR_ID#" xmlName="request_part_0_requestTab_data_5"/>
+<component con="0" enc="0" type="2" value="A&amp;UC4RB_TIO_SCR_ID#" xmlName="request_part_0_requestTab_data_6"/>
+<component con="0" enc="0" type="2" value="A&amp;UC4RB_TIO_LNCH#" xmlName="request_part_0_requestTab_data_7"/>
+<component con="0" enc="0" type="2" value="A&amp;UC4RB_TIO_STRT_TM#" xmlName="request_part_0_requestTab_data_8"/>
+<component con="0" enc="0" type="2" value="A&amp;UC4RB_TIO_RULS#" xmlName="request_part_0_requestTab_data_9"/>
+<component con="0" enc="0" type="2" value="scans/&amp;UC4RB_TIO_SCAN_ID#" xmlName="resource"/>
+<component con="0" enc="0" type="2" value="false" xmlName="responseReport"/>
+<component con="0" enc="0" type="2" value="60" xmlName="responseTimeout"/>
+<component con="0" enc="0" type="2" value="true" xmlName="responseToJobLog"/>
+<component con="0" enc="0" type="2" value="" xmlName="response_part_0_file"/>
+<component con="1" enc="0" type="2" value="" xmlName="restConnection"/>
+<component con="0" enc="0" type="2" value="false" xmlName="tracePerformance"/>
+<component con="0" enc="0" type="2" value="" xmlName="uriOverride"/>
+</cit>
+<cit cittype="3" icon="" id="" subtype="GENERALJOBPANELDEF" text="General Job Panel"/>
+</citcont>
+</CIT>
+<RUNTIME state="1">
+<MaxRetCode>0</MaxRetCode>
+<MrcExecute/>
+<MrcElseE>0</MrcElseE>
+<FcstStatus>0| |</FcstStatus>
+
+<ErtMethodDef>1</ErtMethodDef>
+<ErtMethodFix>0</ErtMethodFix>
+<ErtFix>0</ErtFix>
+<ErtDynMethod>2|Average</ErtDynMethod>
+<ErtMethodDyn>0</ErtMethodDyn>
+<ErtCnt>0</ErtCnt>
+<ErtCorr>0</ErtCorr>
+<ErtIgn>0</ErtIgn>
+<ErtIgnFlg>0</ErtIgnFlg>
+<ErtMinCnt>0</ErtMinCnt>
+<MrtMethodNone>1</MrtMethodNone>
+<MrtMethodFix>0</MrtMethodFix>
+<MrtFix>0</MrtFix>
+<MrtMethodErt>0</MrtMethodErt>
+<MrtErt>0</MrtErt>
+<MrtMethodDate>0</MrtMethodDate>
+<MrtDays>0</MrtDays>
+<MrtTime>00:00</MrtTime>
+<MrtTZ/>
+<SrtMethodNone>1</SrtMethodNone>
+<SrtMethodFix>0</SrtMethodFix>
+<SrtFix>0</SrtFix>
+<SrtMethodErt>0</SrtMethodErt>
+<SrtErt>0</SrtErt>
+<MrtCancel>0</MrtCancel>
+<MrtExecute>0</MrtExecute>
+<MrtExecuteObj/>
+</RUNTIME>
+<DYNVALUES state="1">
+<dyntree>
+<node content="1" id="VALUE" name="Variables" parent="" type="VALUE">
+<VALUE state="1">
+<Values/>
+<Mode>0</Mode>
+</VALUE>
+</node>
+<node content="1" id="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.CONNECTION_PARAMETERS" name="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.CONNECTION_PARAMETERS" parent="PRPTS" type="PROMPTSET">
+<PROMPTSET name="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.CONNECTION_PARAMETERS" ontop="1">
+<PRPTBOX promptset="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.CONNECTION_PARAMETERS" prptmode="1">
+<UC4RB_TIO_BASE_URLs.00 altview="0" haslist="0"/>
+<UC4RB_TIO_ACCESS_KEYSs.00 altview="0" haslist="0"/>
+<UC4RB_TIO_SECRET_KEYSs.00 altview="0" haslist="0"/>
+</PRPTBOX>
+</PROMPTSET>
+</node>
+<node content="1" id="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.UPDATE_SCAN" name="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.UPDATE_SCAN" parent="PRPTS" type="PROMPTSET">
+<PROMPTSET name="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.UPDATE_SCAN" ontop="1">
+<PRPTBOX promptset="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.UPDATE_SCAN" prptmode="1">
+<UC4RB_TIO_SCAN_IDs.00 altview="0" haslist="0"/>
+<UC4RB_TIO_SCAN_NAMEs.00 altview="0" haslist="0"/>
+<UC4RB_TIO_DESCs.00 altview="0" haslist="0"/>
+<UC4RB_TIO_FOLDER_IDs.00 altview="0" haslist="0"/>
+<UC4RB_TIO_SCNR_IDs.00 altview="0" haslist="0"/>
+<UC4RB_TIO_ENABLEDs.00 altview="0" haslist="0">No</UC4RB_TIO_ENABLEDs.00>
+<UC4RB_TIO_LAUNCHs.00 altview="0" haslist="0"/>
+<UC4RB_TIO_STRT_TIMEs.00 altview="0" haslist="0"/>
+<UC4RB_TIO_RULESs.00 altview="0" haslist="0"/>
+<UC4RB_TIO_TIM_ZONs.00 altview="0" haslist="0"/>
+<UC4RB_TIO_TRGT_GRPSs.00 altview="0" haslist="0"/>
+<UC4RB_TIO_AGNT_GRPSs.00 altview="0" haslist="0"/>
+<UC4RB_TIO_TARGETSs.00 altview="0" haslist="0"/>
+<UC4RB_TIO_FILE_TRGTSs.00 altview="0" haslist="0"/>
+<UC4RB_TIO_EMAILSs.00 altview="0" haslist="0"/>
+<UC4RB_TIO_ACLSs.00 altview="0" haslist="0"/>
+</PRPTBOX>
+</PROMPTSET>
+</node>
+<node content="1" id="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_PROXY" name="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_PROXY" parent="PRPTS" type="PROMPTSET">
+<PROMPTSET name="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_PROXY" ontop="1">
+<PRPTBOX promptset="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_PROXY" prptmode="1">
+<CONN_PROXY_TYPEs.00 altview="0" haslist="0">None</CONN_PROXY_TYPEs.00>
+<CONN_PROXY_HOSTs.00 altview="0" haslist="0"/>
+<CONN_PROXY_PORTs.00 altview="0" haslist="0">0</CONN_PROXY_PORTs.00>
+<CONN_PROXY_USERNAMEs.00 altview="0" haslist="0"/>
+<CONN_PROXY_PASSWORDs.00 altview="0" haslist="0">--10</CONN_PROXY_PASSWORDs.00>
+<CONN_PROXY_REALMs.00 altview="0" haslist="0"/>
+<CONN_PROXY_AUTH_METHODs.00 altview="0" haslist="0">None</CONN_PROXY_AUTH_METHODs.00>
+</PRPTBOX>
+</PROMPTSET>
+</node>
+<node content="1" id="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_ADVANCED" name="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_ADVANCED" parent="PRPTS" type="PROMPTSET">
+<PROMPTSET name="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_ADVANCED" ontop="1">
+<PRPTBOX promptset="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_ADVANCED" prptmode="1">
+<CONN_CONNECTION_TIMEOUTs.00 altview="0" haslist="0">30</CONN_CONNECTION_TIMEOUTs.00>
+<CONN_READ_TIMEOUTs.00 altview="0" haslist="0">60</CONN_READ_TIMEOUTs.00>
+<CONN_FOLLOW_REDIRECTSs.00 altview="0" haslist="0">NO</CONN_FOLLOW_REDIRECTSs.00>
+</PRPTBOX>
+</PROMPTSET>
+</node>
+<node content="1" id="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.OVERWRITE_RA_AGENT" name="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.OVERWRITE_RA_AGENT" parent="PRPTS" type="PROMPTSET">
+<PROMPTSET name="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.OVERWRITE_RA_AGENT" ontop="1">
+<PRPTBOX promptset="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.OVERWRITE_RA_AGENT" prptmode="1">
+<OVERWRITE_RA_AGENT_PROMPTs.00 altview="0" haslist="0"/>
+</PRPTBOX>
+</PROMPTSET>
+</node>
+</dyntree>
+</DYNVALUES>
+<ROLLBACK state="1">
+<RollbackFlag>0</RollbackFlag>
+<CBackupObj/>
+<CRollbackObj/>
+<FBackupPath/>
+<FDeleteBefore>0</FDeleteBefore>
+<FInclSubDirs>0</FInclSubDirs>
+</ROLLBACK>
+<PRE_SCRIPT mode="1" replacementmode="1" state="1">
+<PSCRI><![CDATA[:SET &CONN_ENDPOINT_URL#=&UC4RB_TIO_BASE_URL#
+:INC PCK.AUTOMIC_RA_REST.PUB.INCLUDE.PREPARE_RA_JOB
+:INC PCK.AUTOMIC_RA_REST.PUB.INCLUDE.SET_CONNECTION_AUTH_NONE
+
+!preparing X-APIKeys for authentication
+:SET &UC4RB_KEYS#=""
+:INC PCK.AUTOMIC_TENABLE_IO.PUB.INCLUDE.PREPARE_X-APIKEYS
+
+!Escaping Inputs and making request json
+
+!adding name to json
+:SET &UC4RB_TIO_SCN_NAME#=""
+:IF &UC4RB_TIO_SCAN_NAME# <> ""
+:   SET &UC4RB_ESCAPED_STRING#=&UC4RB_TIO_SCAN_NAME#
+:   INC PCK.AUTOMIC_TENABLE_IO.PUB.INCLUDE.ESCAPE_ARG_VALUE
+:   SET &UC4RB_TIO_SCN_NAME#=&UC4RB_ESCAPED_STRING#
+:   SET &UC4RB_TIO_SCN_NAME#=STR_CAT('"name":"',&UC4RB_TIO_SCN_NAME#)
+:   SET &UC4RB_TIO_SCN_NAME#=STR_CAT(&UC4RB_TIO_SCN_NAME#,'",')
+:ENDIF
+
+
+!adding description to json
+:SET &UC4RB_TIO_DES#=""
+:IF &UC4RB_TIO_DESC# <> ""
+:   SET &UC4RB_ESCAPED_STRING#=&UC4RB_TIO_DESC#
+:   INC PCK.AUTOMIC_TENABLE_IO.PUB.INCLUDE.ESCAPE_ARG_VALUE
+:   SET &UC4RB_TIO_DES#=&UC4RB_ESCAPED_STRING#
+:   SET &UC4RB_TIO_DES#=STR_CAT('"description":"',&UC4RB_TIO_DES#)
+:   SET &UC4RB_TIO_DES#=STR_CAT(&UC4RB_TIO_DES#,'",')
+:ENDIF
+
+!adding folder_id to json
+:SET &UC4RB_TIO_FOLDR_ID#=""
+:IF &UC4RB_TIO_FOLDER_ID# <> ""
+:   SET &UC4RB_ESCAPED_STRING#=&UC4RB_TIO_FOLDER_ID#
+:   INC PCK.AUTOMIC_TENABLE_IO.PUB.INCLUDE.ESCAPE_ARG_VALUE
+:   SET &UC4RB_TIO_FOLDR_ID#=&UC4RB_ESCAPED_STRING#
+:   SET &UC4RB_TIO_FOLDR_ID#=STR_CAT('"folder_id":',&UC4RB_TIO_FOLDR_ID#)
+:   SET &UC4RB_TIO_FOLDR_ID#=STR_CAT(&UC4RB_TIO_FOLDR_ID#,',')
+:ENDIF
+
+!adding scanner_id to json
+:SET &UC4RB_TIO_SCR_ID#=""
+:IF &UC4RB_TIO_SCNR_ID# <> ""
+:   SET &UC4RB_ESCAPED_STRING#=&UC4RB_TIO_SCNR_ID#
+:   INC PCK.AUTOMIC_TENABLE_IO.PUB.INCLUDE.ESCAPE_ARG_VALUE
+:   SET &UC4RB_TIO_SCR_ID#=&UC4RB_ESCAPED_STRING#
+:   SET &UC4RB_TIO_SCR_ID#=STR_CAT('"scanner_id":',&UC4RB_TIO_SCR_ID#)
+:   SET &UC4RB_TIO_SCR_ID#=STR_CAT(&UC4RB_TIO_SCR_ID#,',')
+:ENDIF
+
+!Setting true/false for Enabled input
+:SET &UC4RB_ENABLED# = '"enabled":false'
+:IF &UC4RB_TIO_ENABLED# <> "No"
+:  SET &UC4RB_ENABLED# = '"enabled":true'
+:ENDIF
+
+!adding launch to json
+:SET &UC4RB_TIO_LNCH#=""
+:IF &UC4RB_TIO_LAUNCH# <> ""
+:   SET &UC4RB_ESCAPED_STRING#=&UC4RB_TIO_LAUNCH#
+:   INC PCK.AUTOMIC_TENABLE_IO.PUB.INCLUDE.ESCAPE_ARG_VALUE
+:   SET &UC4RB_TIO_LNCH#=&UC4RB_ESCAPED_STRING#
+:   SET &UC4RB_TIO_LNCH#=STR_CAT('"launch":"',&UC4RB_TIO_LNCH#)
+:   SET &UC4RB_TIO_LNCH#=STR_CAT(&UC4RB_TIO_LNCH#,'",')
+:ENDIF
+
+!adding starttime to json
+:SET &UC4RB_TIO_STRT_TM#=""
+:IF &UC4RB_TIO_STRT_TIME# <> ""
+:   SET &UC4RB_ESCAPED_STRING#=&UC4RB_TIO_STRT_TIME#
+:   INC PCK.AUTOMIC_TENABLE_IO.PUB.INCLUDE.ESCAPE_ARG_VALUE
+:   SET &UC4RB_TIO_STRT_TM#=&UC4RB_ESCAPED_STRING#
+:   SET &UC4RB_TIO_STRT_TM#=STR_CAT('"starttime":"',&UC4RB_TIO_STRT_TM#)
+:   SET &UC4RB_TIO_STRT_TM#=STR_CAT(&UC4RB_TIO_STRT_TM#,'",')
+:ENDIF
+
+!adding rules to json
+:SET &UC4RB_TIO_RULS#=""
+:IF &UC4RB_TIO_RULES# <> ""
+:   SET &UC4RB_ESCAPED_STRING#=&UC4RB_TIO_RULES#
+:   INC PCK.AUTOMIC_TENABLE_IO.PUB.INCLUDE.ESCAPE_ARG_VALUE
+:   SET &UC4RB_TIO_RULS#=&UC4RB_ESCAPED_STRING#
+:   SET &UC4RB_TIO_RULS#=STR_CAT('"rrules":"',&UC4RB_TIO_RULS#)
+:   SET &UC4RB_TIO_RULS#=STR_CAT(&UC4RB_TIO_RULS#,'",')
+:ENDIF
+
+!adding timezone to json
+:SET &UC4RB_TIO_TM_ZON#=""
+:IF &UC4RB_TIO_TIM_ZON# <> ""
+:   SET &UC4RB_ESCAPED_STRING#=&UC4RB_TIO_TIM_ZON#
+:   INC PCK.AUTOMIC_TENABLE_IO.PUB.INCLUDE.ESCAPE_ARG_VALUE
+:   SET &UC4RB_TIO_TM_ZON#=&UC4RB_ESCAPED_STRING#
+:   SET &UC4RB_TIO_TM_ZON#=STR_CAT('"timezone":"',&UC4RB_TIO_TM_ZON#)
+:   SET &UC4RB_TIO_TM_ZON#=STR_CAT(&UC4RB_TIO_TM_ZON#,'",')
+:ENDIF
+
+
+!adding target_groups to json
+:SET &UC4RB_TIO_TRG_GRPS#=""
+:IF &UC4RB_TIO_TRGT_GRPS# <> ""
+:  SET &UC4RB_ESCAPED_STRING#=&UC4RB_TIO_TRGT_GRPS#
+:  INC PCK.AUTOMIC_TENABLE_IO.PUB.INCLUDE.ESCAPE_ARG_VALUE
+:  SET &UC4RB_TIO_TRG_GRPS#=&UC4RB_ESCAPED_STRING#
+:  SET &UC4RB_TIO_TRG_GRPS#=STR_CAT('"target_groups":[',&UC4RB_TIO_TRG_GRPS#)
+:  SET &UC4RB_TIO_TRG_GRPS#=STR_CAT(&UC4RB_TIO_TRG_GRPS#,'],')
+:ENDIF
+
+!adding agent_group_id to json
+:SET &UC4RB_TIO_AGT_GRPS#=""
+:IF &UC4RB_TIO_AGNT_GRPS# <> ""
+:   SET &UC4RB_ESCAPED_STRING#=&UC4RB_TIO_AGNT_GRPS#
+:   INC PCK.AUTOMIC_TENABLE_IO.PUB.INCLUDE.ESCAPE_ARG_VALUE
+:   SET &UC4RB_TIO_AGT_GRPS#=&UC4RB_ESCAPED_STRING#
+:   SET &UC4RB_TIO_AGT_GRPS#=STR_CAT('"agent_group_id":[',&UC4RB_TIO_AGT_GRPS#)
+:   SET &UC4RB_TIO_AGT_GRPS#=STR_CAT(&UC4RB_TIO_AGT_GRPS#,'],')
+:ENDIF
+
+!adding text_targets to json
+:SET &UC4RB_TIO_TRGTS#=""
+:IF &UC4RB_TIO_TARGETS# <> ""
+:   SET &UC4RB_ESCAPED_STRING#=&UC4RB_TIO_TARGETS#
+:   INC PCK.AUTOMIC_TENABLE_IO.PUB.INCLUDE.ESCAPE_ARG_VALUE
+:   SET &UC4RB_TIO_TRGTS#=&UC4RB_ESCAPED_STRING#
+:   SET &UC4RB_TIO_TRGTS#=STR_CAT('"text_targets":"',&UC4RB_TIO_TRGTS#)
+:   SET &UC4RB_TIO_TRGTS#=STR_CAT(&UC4RB_TIO_TRGTS#,'",')
+:ENDIF
+
+!adding file_targets to json
+:SET &UC4RB_TIO_FILE_TGTS#=""
+:IF &UC4RB_TIO_FILE_TRGTS# <> ""
+:   SET &UC4RB_ESCAPED_STRING#=&UC4RB_TIO_FILE_TRGTS#
+:   INC PCK.AUTOMIC_TENABLE_IO.PUB.INCLUDE.ESCAPE_ARG_VALUE
+:   SET &UC4RB_TIO_FILE_TGTS#=&UC4RB_ESCAPED_STRING#
+:   SET &UC4RB_TIO_FILE_TGTS#=STR_CAT('"file_targets":"',&UC4RB_TIO_FILE_TGTS#)
+:   SET &UC4RB_TIO_FILE_TGTS#=STR_CAT(&UC4RB_TIO_FILE_TGTS#,'",')
+:ENDIF
+
+!adding emails to json
+:SET &UC4RB_TIO_EMLS#=""
+:IF &UC4RB_TIO_EMAILS# <> ""
+:   SET &UC4RB_ESCAPED_STRING#=&UC4RB_TIO_EMAILS#
+:   INC PCK.AUTOMIC_TENABLE_IO.PUB.INCLUDE.ESCAPE_ARG_VALUE
+:   SET &UC4RB_TIO_EMLS#=&UC4RB_ESCAPED_STRING#
+:   SET &UC4RB_TIO_EMLS#=STR_CAT('"emails":"',&UC4RB_TIO_EMLS#)
+:   SET &UC4RB_TIO_EMLS#=STR_CAT(&UC4RB_TIO_EMLS#,'",')
+:ENDIF
+
+!adding acls to json
+:SET &UC4RB_TIO_ACL#=""
+:IF &UC4RB_TIO_ACLS# <> ""
+:   SET &UC4RB_ESCAPED_STRING#=&UC4RB_TIO_ACLS#
+:   INC PCK.AUTOMIC_TENABLE_IO.PUB.INCLUDE.ESCAPE_ARG_VALUE
+:   SET &UC4RB_TIO_ACL#=&UC4RB_ESCAPED_STRING#
+:   SET &UC4RB_TIO_ACL#=STR_CAT('"acls":[',&UC4RB_TIO_ACL#)
+:   SET &UC4RB_TIO_ACL#=STR_CAT(&UC4RB_TIO_ACL#,'],')
+:ENDIF
+
+
+
+
+
+]]></PSCRI>
+</PRE_SCRIPT>
+<SCRIPT mode="1" state="1">
+<MSCRI><![CDATA[
+
+]]></MSCRI>
+</SCRIPT>
+<OUTPUTSCAN state="1">
+<Inherit>N</Inherit>
+<filterobjects/>
+<HostFsc/>
+<LoginFsc/>
+</OUTPUTSCAN>
+<POST_SCRIPT mode="1" replacementmode="1" state="1">
+<OSCRI/>
+</POST_SCRIPT>
+<DOCU_Docu state="1" type="text">
+<DOC><![CDATA[= Action name =
+PCK.AUTOMIC_TENABLE_IO.PUB.ACTION.UPDATE_SCAN
+
+
+= General Description =
+This action updates a scan in Tenable.io.
+
+= Inputs =
+- Scan ID* : Provide ID or UUID of a Scan to be updated.
+- Name : Provide a name to the scan.
+- Description : Provide a short description for the scan to be created.
+- Folder ID : Provide unique ID of the destination folder for the scan. E.g. 52
+- Scanner ID : Provide the unique ID of the scanner to use. E.g. 110973 
+- Enabled* : Specify whether the schedule for the scan is enabled or not.
+- Launch : Specify when to launch the scan. (i.e. DAILY, WEEKLY, MONTHLY, YEARLY)
+- Start Time : Specify the starting time and date for the scan (i.e. YYYYMMDDTHHMMSS).
+- Rules : Expects a semi-colon delimited string comprised of three values. The frequency (FREQ=ONETIME or DAILY or WEEKLY or MONTHLY or YEARLY), the interval (INTERVAL=1 or 2 or 3 ... x), and the days of the week (BYDAY=SU,MO,TU,WE,TH,FR,SA). To create a scan that runs every three weeks on Monday Wednesday and Friday the string would be 'FREQ=WEEKLY;INTERVAL=3;BYDAY=MO,WE,FR'
+- Time Zone : Specify the timezone for the scan schedule.
+- Target Groups : Provide list of Target Groups separated by comma to scan. E.g. "143","145"
+- Agent Groups : Provide list of Agent Groups separated by comma to scan. E.g. "e610d266-1d58-4a99-b859-0d67b9423079"
+- Targets : Provide list of Targets separated by comma to scan. E.g. 10.243.12.23(for basic network scan)
+- File Targets : The name of a file containing the list of targets to scan. This file must be uploaded at tenable.io. E.g. uploadedTargets.txt
+- Emails : Provide comma-separated list of accounts that receive the email summary report.
+- ACLs : Provide a list of json of permissions to apply to the scan. E.g. {"permissions": 128}, {"permissions": 64} 
+
+= Behaviour =
+
+= Example =
+- Scan ID* : 53
+- Name : Updated Scan
+- Description : We are Updating this scan
+- Folder ID : 52
+- Scanner ID : 110973 
+- Enabled* : true
+- Launch : DAILY
+- Start Time : YYYYMMDDTHHMMSS
+- Rules : FREQ=WEEKLY;INTERVAL=3;BYDAY=MO,WE,FR
+- Time Zone : IST
+- Target Groups : "143","145"
+- Agent Groups : "e610d266-1d58-4a99-b859-0d67b9423079"
+- Targets : 10.243.12.23
+- File Targets : uploadedTargets.txt
+- Emails : ABC@broadcom.com
+- ACLs : {"permissions": 128}, {"permissions": 64} 
+]]></DOC>
+</DOCU_Docu>
+</JOBS_CIT>
+</uc-export>

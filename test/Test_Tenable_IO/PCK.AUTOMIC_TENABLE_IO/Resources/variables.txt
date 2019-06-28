@@ -1,3 +1,4 @@
+
 *** Settings ***
 Resource          ../../../Env/default.txt
 
@@ -14,3 +15,9 @@ ${Enabled}        Yes
 ${Targets}        http://www.alm.automic.com
 ${Policy_ID}      51
 ${Folder_ID}      52
+
+${Scan_ID}        21
+
+#---- Get Scan Template --------------------------------------------------------------------------------------
+
+${Template_Title}    Web App Scan

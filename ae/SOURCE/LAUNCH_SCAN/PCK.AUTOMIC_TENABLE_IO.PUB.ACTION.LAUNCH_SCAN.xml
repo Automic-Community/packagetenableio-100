@@ -103,7 +103,7 @@
 <component con="0" enc="0" type="2" value="" xmlName="response_part_0_file"/>
 <component con="0" enc="0" type="2" value="$.scan_uuid" xmlName="response_part_0_script_0_code_0"/>
 <component con="0" enc="0" type="2" value="JSONPath" xmlName="response_part_0_script_0_queryType"/>
-<component con="0" enc="0" type="2" value="UC4RB_TI_SCAN_UUID#" xmlName="response_part_0_script_0_resourceName"/>
+<component con="0" enc="0" type="2" value="UC4RB_TIO_SCAN_UUID#" xmlName="response_part_0_script_0_resourceName"/>
 <component con="0" enc="0" type="2" value="variable" xmlName="response_part_0_script_0_saveTo"/>
 <component con="0" enc="0" type="2" value="false" xmlName="response_part_0_script_0_useArray"/>
 <component con="0" enc="0" type="2" value="false" xmlName="responseReport"/>
@@ -155,7 +155,7 @@
 <node content="1" id="VALUE" name="Variables" parent="" type="VALUE">
 <VALUE state="1">
 <Values>
-<row ERTUsage="0" Name="&amp;UC4RB_TI_SCAN_UUID#" Value=""/>
+<row ERTUsage="0" Name="&amp;UC4RB_TIO_SCAN_UUID#" Value=""/>
 </Values>
 <Mode>0</Mode>
 </VALUE>
@@ -247,21 +247,68 @@
 </POST_SCRIPT>
 <DOCU_Docu state="1" type="text">
 <DOC><![CDATA[= Action name =
+
 PCK.AUTOMIC_TENABLE_IO.PUB.ACTION.LAUNCH_SCAN
+
+
 
 = General Description =
 This action launch a scan in Tenable.io.
 
 
+
+= Failure Conditions =
+(none)
+
+
+
+
+
 = Inputs =
-- Scan ID* : Provide either Scan ID or Schedule UUID of the Scan to launch.
+- Scan ID* : Provide either Scan ID or Schedule UUID of the Scan to launch.E.g. 42
+
+
+
 
 
 = Return Value =
-- Scan UUID : UUID for the created scan
+- Scan UUID : UUID for the launch scan
+
+
+
+
+
+= Rollback =
+(none)
+
+
+
+
+
+= Logging =
+AE logs will be displayed in the AE report.
+
+
+
 
 = Example =
-- Scan ID : 21
+- Scan ID : 42
+
+- Schedule UUID: template-548fa841-22b3-8f6f-7ae4-0d7aca4661e5149b368163af9631
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ]]></DOC>

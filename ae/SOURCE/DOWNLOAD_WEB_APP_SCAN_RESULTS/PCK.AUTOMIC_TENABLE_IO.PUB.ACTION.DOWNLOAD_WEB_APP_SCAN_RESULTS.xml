@@ -728,11 +728,11 @@ PCK.AUTOMIC_TENABLE_IO.PUB.ACTION.DOWNLOAD_WEB_APP_SCAN_RESULT
 
 
 = General Description =
-This action fetches data of web-app scan so that the user can analyze.
+This action fetches result of web-app scan which can further be analyzed.
 
 
 = Failure Conditions =
-* If Retry Count number reaches to the provided count.
+* If Retry Count number reaches to the provided count and result is not fetched.
 
 
 = Inputs =
@@ -746,13 +746,18 @@ This action fetches data of web-app scan so that the user can analyze.
 
 
 = Behavior =
-* Action will fail if user give incorrect Path in Save As field.
-* If user do not provide any path in Save As field , A file will be created in WEBSERVICEREST working directory.
+* Action will fail if user give incorrect path is provided for File field.
+* If user do not provide any path in File field , A file will be created in WEBSERVICEREST working directory with name log-[Action run id].
 * If user only provide the file name then file will created under the WEBSERVICEREST working directory.
+* If file is already existing with same name, action will overwrite it.
+
+= Implementation Guide =
+* Action uses 3 jobs for downloading result. First job will prepare a file, second job will check if file is ready to be downloaded and third for which downloads the file.
+Timeout parameters are used to checking if file is ready to be downloaded or not i.e. Second job in action.
 
 
 = Return Value =
-- Log_File_Path: File path where file is stored.
+- Log File Path: File path where file is saved.
 
 
 = Logging =

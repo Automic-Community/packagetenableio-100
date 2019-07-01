@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="ISO-8859-15" standalone="no"?><uc-export clientvers="11.0.0">
+<JOBI name="PCK.AUTOMIC_TENABLE_IO.PRV.INCLUDE.GET_SCAN_STATUS">
+<HEADER state="1">
+<Title>Get Scan Status</Title>
+<ArchiveKey1/>
+<ArchiveKey2/>
+<OH_SubType/>
+</HEADER>
+<SCRIPT mode="1" state="1">
+<MSCRI><![CDATA[: SET &TIO_SCAN_STATUS# = ""
+: SET &SUCCESS# = 0
+
+
+! Invoke the job for retrieving job Status
+:SET &ACTOBJ# = ACTIVATE_UC_OBJECT("PCK.AUTOMIC_TENABLE_IO.PRV.GET_SCAN_STATUS",WAIT,,,,PASS_VALUES)
+
+:  IF &ACTOBJ# = "0"
+:     SET &ERRNR# = SYS_LAST_ERR_NR()
+:     SET &ERRINS#  = SYS_LAST_ERR_INS()
+:     SET &MESSAGE# = GET_MSG_TXT(&ERRNR#,&ERRINS#)
+:     PRINT "ERROR: Invoking GET_SCAN_STATUS STATUS Job :&MESSAGE#"
+:     SET &SUCCESS# = 1
+:  ELSE
+:     SET &STATUS# = GET_UC_OBJECT_STATUS(,&ACTOBJ#,"RETCODE")
+:     IF &STATUS# <> "0"
+:        PRINT "ERROR: GET_SCAN_STATUS Job failed. Error Status [&STATUS#]. Please check the job report for RUNID: [&ACTOBJ#]."
+:        SET &SUCCESS# = 1
+:     ELSE
+:       SET &TIO_SCAN_STATUS# = GET_PUBLISHED_VALUE(&ACTOBJ#, UC4RB_TIO_SCAN_STATUS#)
+:       PUBLISH &TIO_SCAN_STATUS#,,"WORKFLOW"
+:       SET &SUCCESS# = 0
+:     ENDIF
+:  ENDIF
+
+:IF &SUCCESS# <> 0
+:   STOP MSG, 50, "ERROR: Unable to retrieve the scan status."
+:ENDIF
+
+
+]]></MSCRI>
+</SCRIPT>
+<DOCU_Docu state="1" type="text">
+<DOC/>
+</DOCU_Docu>
+</JOBI>
+</uc-export>

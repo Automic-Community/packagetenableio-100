@@ -94,10 +94,10 @@
 <component con="0" enc="0" type="2" value="false" xmlName="multiPartResp"/>
 <component con="0" enc="0" type="2" value="false" xmlName="requestReports"/>
 <component con="0" enc="0" type="2" value="editor/scan/templates" xmlName="resource"/>
-<component con="0" enc="0" type="2" value="" xmlName="response_part_0_file"/>
 <component con="0" enc="0" type="2" value="false" xmlName="responseReport"/>
 <component con="0" enc="0" type="2" value="60" xmlName="responseTimeout"/>
 <component con="0" enc="0" type="2" value="true" xmlName="responseToJobLog"/>
+<component con="0" enc="0" type="2" value="" xmlName="response_part_0_file"/>
 <component con="1" enc="0" type="2" value="" xmlName="restConnection"/>
 <component con="0" enc="0" type="2" value="false" xmlName="tracePerformance"/>
 <component con="0" enc="0" type="2" value="" xmlName="uriOverride"/>
@@ -149,19 +149,19 @@
 <Mode>0</Mode>
 </VALUE>
 </node>
-<node content="1" id="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.GET_SCAN_TEMPLATE" name="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.GET_SCAN_TEMPLATE" parent="PRPTS" type="PROMPTSET">
-<PROMPTSET name="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.GET_SCAN_TEMPLATE" ontop="1">
-<PRPTBOX promptset="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.GET_SCAN_TEMPLATE" prptmode="1">
-<UC4RB_TIO_TEMPLATE_TITLEs.00 altview="0" haslist="0"/>
-</PRPTBOX>
-</PROMPTSET>
-</node>
 <node content="1" id="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.CONNECTION_PARAMETERS" name="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.CONNECTION_PARAMETERS" parent="PRPTS" type="PROMPTSET">
 <PROMPTSET name="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.CONNECTION_PARAMETERS" ontop="1">
 <PRPTBOX promptset="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.CONNECTION_PARAMETERS" prptmode="1">
 <UC4RB_TIO_BASE_URLs.00 altview="0" haslist="0"/>
 <UC4RB_TIO_ACCESS_KEYSs.00 altview="0" haslist="0"/>
 <UC4RB_TIO_SECRET_KEYSs.00 altview="0" haslist="0"/>
+</PRPTBOX>
+</PROMPTSET>
+</node>
+<node content="1" id="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.GET_SCAN_TEMPLATE" name="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.GET_SCAN_TEMPLATE" parent="PRPTS" type="PROMPTSET">
+<PROMPTSET name="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.GET_SCAN_TEMPLATE" ontop="1">
+<PRPTBOX promptset="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.GET_SCAN_TEMPLATE" prptmode="1">
+<UC4RB_TIO_TEMPLATE_TITLEs.00 altview="0" haslist="0"/>
 </PRPTBOX>
 </PROMPTSET>
 </node>
@@ -232,14 +232,15 @@
 <OSCRI><![CDATA[:SET &FLAG# = 0
 :SET &SEARCH_TITLE_STR# = "&UC4RB_TIO_TEMPLATE_TITLE#"
 :SET &UC4RB_TIO_TEMPLTE_TITLE# = STR_TRIM(&SEARCH_TITLE_STR#)
-:SET &UC4RB_TIO_TEMPLATE_UUID# = "uuid"
+:SET &UC4RB_TIO_TEMPLTE_TITLE# = '"&UC4RB_TIO_TEMPLTE_TITLE#"'
+:SET &UC4RB_TIO_TEMPLATE_UUID# = ""
 :    SET &HND# = PREP_PROCESS_REPORT("JOBS",, "REP")
 :    PROCESS &HND#
 :         SET &VALUE# = GET_PROCESS_LINE(&HND#)
 :         IF &FLAG# EQ 0
 :           SET &FLAG# = STR_FIND(&VALUE#, &UC4RB_TIO_TEMPLTE_TITLE#)
 :          ELSE
-:             SET &READ_END_FLAG# = STR_FIND(&VALUE#, &UC4RB_TIO_TEMPLATE_UUID#)
+:             SET &READ_END_FLAG# = STR_FIND(&VALUE#, "uuid")
 :             IF &READ_END_FLAG# NE 0
 :               DEFINE &STRINGS#, string, 2
 :               DEFINE &NESTEDSTRINGS#, string, 3
@@ -251,26 +252,51 @@
 :         ENDIF
 :   ENDPROCESS
 :   CLOSE_PROCESS &HND#
-:   PUBLISH &UC4RB_TIO_TEMPLATE_UUID#,,"WORKFLOW"
-:         IF &UC4RB_TIO_TEMPLATE_UUID# EQ "uuid"
+:         IF &UC4RB_TIO_TEMPLATE_UUID# EQ ""
 :        MODIFY_STATE RETCODE = 1
-:        SET &UC4RB_TIO_TEMPLATE_UUID# = ""
-:      ENDIF
+:        P "ERROR : Non Existing Title"
+:        ENDIF
+:PUBLISH &UC4RB_TIO_TEMPLATE_UUID# ,,"WORKFLOW"
+
+
 ]]></OSCRI>
 </POST_SCRIPT>
 <DOCU_Docu state="1" type="text">
-<DOC><![CDATA[= Action name =
+<DOC><![CDATA[
+= Action name =
 PCK.AUTOMIC_TENABLE_IO.PUB.ACTION.GET_SCAN_TEMPLATE
 
+
 = General Description =
-This action fetches details of provided scan template and publishes it's UUID As per the Title.
+This action Lists available scan templates on Tenable io and publishes UUID for title provided by user.
+
+
+= Failure Conditions =
+(none)
+
 
 = Inputs =
 - Title* : Provide a title of the scan template to get its details.
 
-= Return Value =
-- Template ID : UUID for the Get scan Template
 
+= Behavior =
+(none)
+
+= Return Value =
+- Template ID : UUID for the provided scan template
+
+
+= Outputs =
+* Return code is 0 in case of success.
+* Return code is non-zero in case of failure.
+
+
+= Rollback =
+(none)
+
+= Logging =
+AE logs will be
+displayed in the AE report.
 
 = Example =
 - Title: PCI Quarterly External Scan

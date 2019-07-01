@@ -344,19 +344,15 @@
 !adding target_groups to json
 :SET &UC4RB_TIO_TRG_GRPS#=""
 :IF &UC4RB_TIO_TRGT_GRPS# <> ""
-:  SET &UC4RB_ESCAPED_STRING#=&UC4RB_TIO_TRGT_GRPS#
-:  INC PCK.AUTOMIC_TENABLE_IO.PUB.INCLUDE.ESCAPE_ARG_VALUE
-:  SET &UC4RB_TIO_TRG_GRPS#=&UC4RB_ESCAPED_STRING#
-:  SET &UC4RB_TIO_TRG_GRPS#=STR_CAT('"target_groups":[',&UC4RB_TIO_TRG_GRPS#)
+:  SET &UC4RB_TIO_TRG_GRPS#=STR_TRIM(&UC4RB_TIO_TRGT_GRPS#)
+:  SET &UC4RB_TIO_TRG_GRPS#=STR_CAT('"asset_lists":[',&UC4RB_TIO_TRG_GRPS#)
 :  SET &UC4RB_TIO_TRG_GRPS#=STR_CAT(&UC4RB_TIO_TRG_GRPS#,'],')
 :ENDIF
 
 !adding agent_group_id to json
 :SET &UC4RB_TIO_AGT_GRPS#=""
 :IF &UC4RB_TIO_AGNT_GRPS# <> ""
-:   SET &UC4RB_ESCAPED_STRING#=&UC4RB_TIO_AGNT_GRPS#
-:   INC PCK.AUTOMIC_TENABLE_IO.PUB.INCLUDE.ESCAPE_ARG_VALUE
-:   SET &UC4RB_TIO_AGT_GRPS#=&UC4RB_ESCAPED_STRING#
+:   SET &UC4RB_TIO_AGT_GRPS#=STR_TRIM(&UC4RB_TIO_AGNT_GRPS#)
 :   SET &UC4RB_TIO_AGT_GRPS#=STR_CAT('"agent_group_id":[',&UC4RB_TIO_AGT_GRPS#)
 :   SET &UC4RB_TIO_AGT_GRPS#=STR_CAT(&UC4RB_TIO_AGT_GRPS#,'],')
 :ENDIF
@@ -394,9 +390,7 @@
 !adding acls to json
 :SET &UC4RB_TIO_ACL#=""
 :IF &UC4RB_TIO_ACLS# <> ""
-:   SET &UC4RB_ESCAPED_STRING#=&UC4RB_TIO_ACLS#
-:   INC PCK.AUTOMIC_TENABLE_IO.PUB.INCLUDE.ESCAPE_ARG_VALUE
-:   SET &UC4RB_TIO_ACL#=&UC4RB_ESCAPED_STRING#
+:   SET &UC4RB_TIO_ACL#=STR_TRIM(&UC4RB_TIO_ACLS#)
 :   SET &UC4RB_TIO_ACL#=STR_CAT('"acls":[',&UC4RB_TIO_ACL#)
 :   SET &UC4RB_TIO_ACL#=STR_CAT(&UC4RB_TIO_ACL#,'],')
 :ENDIF
@@ -441,13 +435,14 @@ This action updates a scan in Tenable.io.
 - Rules : Expects a semi-colon delimited string comprised of three values. The frequency (FREQ=ONETIME or DAILY or WEEKLY or MONTHLY or YEARLY), the interval (INTERVAL=1 or 2 or 3 ... x), and the days of the week (BYDAY=SU,MO,TU,WE,TH,FR,SA). To create a scan that runs every three weeks on Monday Wednesday and Friday the string would be 'FREQ=WEEKLY;INTERVAL=3;BYDAY=MO,WE,FR'
 - Time Zone : Specify the timezone for the scan schedule.
 - Target Groups : Provide list of Target Groups separated by comma to scan. E.g. "143","145"
-- Agent Groups : Provide list of Agent Groups separated by comma to scan. E.g. "e610d266-1d58-4a99-b859-0d67b9423079"
+- Agent Groups : Provide list of Agent Groups separated by comma to scan. E.g. "e610d266-1d58-4a99-b859-0d67b9423079","e610d266-1d58-4a99-b859-0d67b9423079"
 - Targets : Provide list of Targets separated by comma to scan. E.g. 10.243.12.23(for basic network scan)
 - File Targets : The name of a file containing the list of targets to scan. This file must be uploaded at tenable.io. E.g. uploadedTargets.txt
 - Emails : Provide comma-separated list of accounts that receive the email summary report.
-- ACLs : Provide a list of json of permissions to apply to the scan. E.g. {"permissions": 128}, {"permissions": 64} 
+- ACLs : Provide a list of json of permissions to apply to the scan. E.g. {"permissions": 128, "type": "default"}, {"permissions": 64, "type": "user"} 
 
 = Behaviour =
+- If Scan is a non agent type than Targets is a mandatory field if Target Groups is not provided. Else Target Groups is mandatory for other scan types.
 
 = Example =
 - Scan ID* : 53
@@ -457,15 +452,15 @@ This action updates a scan in Tenable.io.
 - Scanner ID : 110973 
 - Enabled* : true
 - Launch : DAILY
-- Start Time : YYYYMMDDTHHMMSS
+- Start Time : 2019071010:30:35
 - Rules : FREQ=WEEKLY;INTERVAL=3;BYDAY=MO,WE,FR
-- Time Zone : IST
+- Time Zone : Africa/Accra
 - Target Groups : "143","145"
 - Agent Groups : "e610d266-1d58-4a99-b859-0d67b9423079"
 - Targets : 10.243.12.23
 - File Targets : uploadedTargets.txt
 - Emails : ABC@broadcom.com
-- ACLs : {"permissions": 128}, {"permissions": 64} 
+- ACLs : {"permissions": 128, "type": "default"}, {"permissions": 64, "type": "user"}
 ]]></DOC>
 </DOCU_Docu>
 </JOBS_CIT>

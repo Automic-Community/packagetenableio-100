@@ -25,7 +25,7 @@ Rest-API version : v1
 =Common Inputs=
 - Tenable.io Base URL*: Provide Base URL of the Tenable.io.E.g. https://cloud.tenable.com
 - Access Key*: Provide a access key. E.g. f4b981XXX
-- Secret Key*: Provide a access key. E.g. b90194XXX
+- Secret Key*: Provide a secret key. E.g. b90194XXX
 
 =Actions=
 Following actions are supported

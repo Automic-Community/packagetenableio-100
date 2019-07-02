@@ -99,25 +99,7 @@
 <component con="0" enc="0" type="2" value="application/json" xmlName="request_part_0_mediaType"/>
 <component con="0" enc="0" type="2" value="Part 1" xmlName="request_part_0_partName"/>
 <component con="0" enc="0" type="2" value="text" xmlName="request_part_0_requestDataSource"/>
-<component con="0" enc="0" type="2" value="A{" xmlName="request_part_0_requestTab_data_1"/>
-<component con="0" enc="0" type="2" value="A&amp;UC4RB_TIO_TM_ZON#" xmlName="request_part_0_requestTab_data_10"/>
-<component con="0" enc="0" type="2" value="A&amp;UC4RB_TIO_AGT_GRPS#" xmlName="request_part_0_requestTab_data_11"/>
-<component con="0" enc="0" type="2" value="A&amp;UC4RB_TIO_TRGTS#" xmlName="request_part_0_requestTab_data_12"/>
-<component con="0" enc="0" type="2" value="A&amp;UC4RB_TIO_FILE_TGTS#" xmlName="request_part_0_requestTab_data_13"/>
-<component con="0" enc="0" type="2" value="A&amp;UC4RB_TIO_EMLS#" xmlName="request_part_0_requestTab_data_14"/>
-<component con="0" enc="0" type="2" value="A&amp;UC4RB_TIO_ACL#" xmlName="request_part_0_requestTab_data_15"/>
-<component con="0" enc="0" type="2" value="A&amp;UC4RB_TIO_TRG_GRPS#" xmlName="request_part_0_requestTab_data_16"/>
-<component con="0" enc="0" type="2" value="A&amp;UC4RB_ENABLED#" xmlName="request_part_0_requestTab_data_17"/>
-<component con="0" enc="0" type="2" value="A}" xmlName="request_part_0_requestTab_data_18"/>
-<component con="0" enc="0" type="2" value="A}" xmlName="request_part_0_requestTab_data_19"/>
-<component con="0" enc="0" type="2" value="A&quot;settings&quot;:{" xmlName="request_part_0_requestTab_data_2"/>
-<component con="0" enc="0" type="2" value="A&amp;UC4RB_TIO_SCN_NAME#" xmlName="request_part_0_requestTab_data_3"/>
-<component con="0" enc="0" type="2" value="A&amp;UC4RB_TIO_DES#" xmlName="request_part_0_requestTab_data_4"/>
-<component con="0" enc="0" type="2" value="A&amp;UC4RB_TIO_FOLDR_ID#" xmlName="request_part_0_requestTab_data_5"/>
-<component con="0" enc="0" type="2" value="A&amp;UC4RB_TIO_SCR_ID#" xmlName="request_part_0_requestTab_data_6"/>
-<component con="0" enc="0" type="2" value="A&amp;UC4RB_TIO_LNCH#" xmlName="request_part_0_requestTab_data_7"/>
-<component con="0" enc="0" type="2" value="A&amp;UC4RB_TIO_STRT_TM#" xmlName="request_part_0_requestTab_data_8"/>
-<component con="0" enc="0" type="2" value="A&amp;UC4RB_TIO_RULS#" xmlName="request_part_0_requestTab_data_9"/>
+<component con="0" enc="0" type="2" value="A&amp;UC4RB_TIO_REQ_JSON#" xmlName="request_part_0_requestTab_data_1"/>
 <component con="0" enc="0" type="2" value="scans/&amp;UC4RB_TIO_SCAN_ID#" xmlName="resource"/>
 <component con="0" enc="0" type="2" value="false" xmlName="responseReport"/>
 <component con="0" enc="0" type="2" value="60" xmlName="responseTimeout"/>
@@ -353,8 +335,8 @@
 :SET &UC4RB_TIO_AGT_GRPS#=""
 :IF &UC4RB_TIO_AGNT_GRPS# <> ""
 :   SET &UC4RB_TIO_AGT_GRPS#=STR_TRIM(&UC4RB_TIO_AGNT_GRPS#)
-:   SET &UC4RB_TIO_AGT_GRPS#=STR_CAT('"agent_group_id":[',&UC4RB_TIO_AGT_GRPS#)
-:   SET &UC4RB_TIO_AGT_GRPS#=STR_CAT(&UC4RB_TIO_AGT_GRPS#,'],')
+:   SET &UC4RB_TIO_AGT_GRPS#=STR_CAT(',"agent_group_id":[',&UC4RB_TIO_AGT_GRPS#)
+:   SET &UC4RB_TIO_AGT_GRPS#=STR_CAT(&UC4RB_TIO_AGT_GRPS#,']')
 :ENDIF
 
 !adding text_targets to json
@@ -395,7 +377,7 @@
 :   SET &UC4RB_TIO_ACL#=STR_CAT(&UC4RB_TIO_ACL#,'],')
 :ENDIF
 
-
+:SET &UC4RB_TIO_REQ_JSON#='{ "settings" : {&UC4RB_TIO_SCN_NAME# &UC4RB_TIO_DES# &UC4RB_TIO_FOLDR_ID# &UC4RB_TIO_SCR_ID# &UC4RB_TIO_LNCH# &UC4RB_TIO_STRT_TM# &UC4RB_TIO_RULS# &UC4RB_TIO_TM_ZON# &UC4RB_TIO_TRGTS# &UC4RB_TIO_FILE_TGTS# &UC4RB_TIO_EMLS# &UC4RB_TIO_ACL# &UC4RB_TIO_TRG_GRPS# &UC4RB_ENABLED# }&UC4RB_TIO_AGT_GRPS#}'
 
 
 

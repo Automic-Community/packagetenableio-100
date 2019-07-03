@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ISO-8859-15" standalone="no"?><uc-export clientvers="11.0.0">
+<JOBI name="PCK.AUTOMIC_TENABLE_IO.PUB.INCLUDE.PREPARE_OUTPUT">
+<HEADER state="1">
+<Title>Prepare Output</Title>
+<ArchiveKey1/>
+<ArchiveKey2/>
+<OH_SubType/>
+</HEADER>
+<SCRIPT mode="1" state="1">
+<MSCRI><![CDATA[: SET &PREP_OUTPUT# = STR_TRIM(&PREP_OUTPUT#)
+: SET &CHECK_END_WITH# = STR_ENDS_WITH(&PREP_OUTPUT#,',')
+:     if &CHECK_END_WITH# = 'Y'
+:       SET &LEN# = STR_LENGTH(&PREP_OUTPUT#)
+:       SET &LEN# = &LEN# -1
+:       SET &PREP_OUTPUT# = STR_CUT(&PREP_OUTPUT#,1,&LEN#)
+: SET &CHECK_END_WITH# = STR_ENDS_WITH(&PREP_OUTPUT#,'"')
+:     if &CHECK_END_WITH# = 'Y'
+:       SET &LEN# = STR_LENGTH(&PREP_OUTPUT#)
+:       SET &LEN# = &LEN# -1
+:       SET &PREP_OUTPUT# = STR_CUT(&PREP_OUTPUT#,1,&LEN#)
+:     endif
+: SET &CHECK_START_WITH# = STR_STARTS_WITH(&PREP_OUTPUT#,'"')
+:     if &CHECK_START_WITH# = 'Y'
+:       SET &LEN# = STR_LENGTH(&PREP_OUTPUT#)
+:       SET &PREP_OUTPUT# = STR_CUT(&PREP_OUTPUT#,2,&LEN#)
+:     endif
+: endif]]></MSCRI>
+</SCRIPT>
+<DOCU_Docu state="1" type="text">
+<DOC/>
+</DOCU_Docu>
+</JOBI>
+</uc-export>

@@ -36,6 +36,9 @@ Following actions are supported
 * Action name : PCK.AUTOMIC_TENABLE_IO.PUB.ACTION.UPDATE_SCAN
 * Action Description : This action updates a scan in Tenable.io.
 
+* Action name: PCK.AUTOMIC_TENABLE_IO.PUB.ACTION.GET_AGENT_GROUP
+* Action Description: This action retrives given agent name from Tenable.io.
+
 ]]></DOC>
 </DOCU_Docu>
 </DOCU>

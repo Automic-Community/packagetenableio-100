@@ -6,6 +6,7 @@ Resource          ../../../Env/default.txt
 ${URL_Tenable}    https://cloud.tenable.com
 ${accessKey}      ACCESSKEY
 ${secretKey}      SECRETKEY
+${Scan_ID}        42
 #---- Create Scan --------------------------------------------------------------------------------------------
 ${Name}           Scan0016
 ${Description}    This scan is created by automation script.
@@ -14,7 +15,6 @@ ${Enabled}        Yes
 ${Targets}        http://www.alm.automic.com
 ${Policy_ID}      51
 ${Folder_ID}      52
-${Scan_ID}        188
 ${InvalidState_Scan_ID}    224
 #---- Get Scan Template --------------------------------------------------------------------------------------
 ${Template_Title}    Web App Scan

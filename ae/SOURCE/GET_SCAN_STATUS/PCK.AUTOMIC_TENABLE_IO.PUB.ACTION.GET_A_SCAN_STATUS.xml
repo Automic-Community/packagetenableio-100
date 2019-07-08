@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-15" standalone="no"?><uc-export clientvers="11.0.0">
-<JOBS_CIT AttrType="CIT" name="PCK.AUTOMIC_TENABLE_IO.PUB.ACTION.RESUME_SCAN">
+<JOBS_CIT AttrType="CIT" name="PCK.AUTOMIC_TENABLE_IO.PUB.ACTION.GET_A_SCAN_STATUS">
 <XHEADER state="1">
-<Title>Resume Scan</Title>
+<Title>Get Scan Status</Title>
 <ArchiveKey1/>
 <ArchiveKey2/>
 <Active>1</Active>
@@ -89,21 +89,20 @@
 <component con="0" enc="0" type="2" value="false" xmlName="isCurl"/>
 <component con="0" enc="0" type="2" value="false" xmlName="jobHeaders"/>
 <component con="0" enc="0" type="2" value="false" xmlName="jobQuery"/>
-<component con="0" enc="0" type="2" value="application/json" xmlName="mediaType"/>
-<component con="0" enc="0" type="2" value="POST" xmlName="method"/>
+<component con="0" enc="0" type="2" value="GET" xmlName="method"/>
 <component con="0" enc="0" type="2" value="false" xmlName="multiPart"/>
 <component con="0" enc="0" type="2" value="false" xmlName="multiPartResp"/>
-<component con="0" enc="0" type="2" value="Part 1" xmlName="partName"/>
-<component con="0" enc="0" type="2" value="text" xmlName="requestDataSource"/>
 <component con="0" enc="0" type="2" value="false" xmlName="requestReports"/>
-<component con="0" enc="0" type="2" value="application/json" xmlName="request_part_0_mediaType"/>
-<component con="0" enc="0" type="2" value="Part 1" xmlName="request_part_0_partName"/>
-<component con="0" enc="0" type="2" value="text" xmlName="request_part_0_requestDataSource"/>
-<component con="0" enc="0" type="2" value="scans/&amp;UC4RB_TIO_SCAN_ID#/resume" xmlName="resource"/>
+<component con="0" enc="0" type="2" value="scans/&amp;UC4RB_TIO_SCAN_ID#/latest-status" xmlName="resource"/>
 <component con="0" enc="0" type="2" value="false" xmlName="responseReport"/>
 <component con="0" enc="0" type="2" value="60" xmlName="responseTimeout"/>
 <component con="0" enc="0" type="2" value="true" xmlName="responseToJobLog"/>
 <component con="0" enc="0" type="2" value="" xmlName="response_part_0_file"/>
+<component con="0" enc="0" type="2" value="$.status" xmlName="response_part_0_script_0_code_0"/>
+<component con="0" enc="0" type="2" value="JSONPath" xmlName="response_part_0_script_0_queryType"/>
+<component con="0" enc="0" type="2" value="UC4RB_TIO_SN_STATUS#" xmlName="response_part_0_script_0_resourceName"/>
+<component con="0" enc="0" type="2" value="variable" xmlName="response_part_0_script_0_saveTo"/>
+<component con="0" enc="0" type="2" value="false" xmlName="response_part_0_script_0_useArray"/>
 <component con="1" enc="0" type="2" value="" xmlName="restConnection"/>
 <component con="0" enc="0" type="2" value="false" xmlName="tracePerformance"/>
 <component con="0" enc="0" type="2" value="" xmlName="uriOverride"/>
@@ -149,7 +148,9 @@
 <dyntree>
 <node content="1" id="VALUE" name="Variables" parent="" type="VALUE">
 <VALUE state="1">
-<Values/>
+<Values>
+<row ERTUsage="0" Name="&amp;UC4RB_TIO_SN_STATUS#" Value=""/>
+</Values>
 <Mode>0</Mode>
 </VALUE>
 </node>
@@ -157,14 +158,14 @@
 <PROMPTSET name="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.CONNECTION_PARAMETERS" ontop="1">
 <PRPTBOX promptset="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.CONNECTION_PARAMETERS" prptmode="1">
 <UC4RB_TIO_BASE_URLs.00 altview="0" haslist="0"/>
-<UC4RB_TIO_ACCESS_KEYSs.00 altview="0" haslist="0">--10</UC4RB_TIO_ACCESS_KEYSs.00>
+<UC4RB_TIO_ACCESS_KEYSs.00 altview="0" haslist="0">--10FBA41CCE80A626FF9F1A8BC87ECEB23E141388E66BC9D730</UC4RB_TIO_ACCESS_KEYSs.00>
 <UC4RB_TIO_SECRET_KEYSs.00 altview="0" haslist="0">--10</UC4RB_TIO_SECRET_KEYSs.00>
 </PRPTBOX>
 </PROMPTSET>
 </node>
-<node content="1" id="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.RESUME_SCAN" name="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.RESUME_SCAN" parent="PRPTS" type="PROMPTSET">
-<PROMPTSET name="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.RESUME_SCAN" ontop="1">
-<PRPTBOX promptset="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.RESUME_SCAN" prptmode="1">
+<node content="1" id="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.GET_SCAN_STATUS" name="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.GET_SCAN_STATUS" parent="PRPTS" type="PROMPTSET">
+<PROMPTSET name="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.GET_SCAN_STATUS" ontop="1">
+<PRPTBOX promptset="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.GET_SCAN_STATUS" prptmode="1">
 <UC4RB_TIO_SCAN_IDs.00 altview="0" haslist="0"/>
 </PRPTBOX>
 </PROMPTSET>
@@ -231,14 +232,17 @@
 </POST_SCRIPT>
 <DOCU_Docu state="1" type="text">
 <DOC><![CDATA[= Action name =
-PCK.AUTOMIC_TENABLE_IO.PUB.ACTION.RESUME_SCAN
+PCK.AUTOMIC_TENABLE_IO.PUB.ACTION.GET_SCAN_STATUS
 
 
 = General Description =
-This action will resume a scan in Tenable.io.
+This action will give the status of a scan from Tenable.io.
 
 = Inputs =
-- Scan ID* : Provide either Scan ID or Schedule UUID of the Scan to resume.
+- Scan ID/UUID* : Provide either Scan ID or UUID to get its status.
+
+= Return Value =
+- Scan status : status for the given scan ID.
 
 = Example =
 - Scan ID/UUID* : 42]]></DOC>

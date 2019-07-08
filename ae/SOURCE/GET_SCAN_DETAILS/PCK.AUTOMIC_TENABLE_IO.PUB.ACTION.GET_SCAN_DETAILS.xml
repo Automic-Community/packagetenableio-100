@@ -113,11 +113,6 @@
 <component con="0" enc="0" type="2" value="UC4RB_TIO_SN_DETAILS#" xmlName="response_part_0_script_2_resourceName"/>
 <component con="0" enc="0" type="2" value="variable" xmlName="response_part_0_script_2_saveTo"/>
 <component con="0" enc="0" type="2" value="false" xmlName="response_part_0_script_2_useArray"/>
-<component con="0" enc="0" type="2" value="$.info.status" xmlName="response_part_0_script_3_code_0"/>
-<component con="0" enc="0" type="2" value="JSONPath" xmlName="response_part_0_script_3_queryType"/>
-<component con="0" enc="0" type="2" value="UC4RB_TIO_SN_STATUS#" xmlName="response_part_0_script_3_resourceName"/>
-<component con="0" enc="0" type="2" value="variable" xmlName="response_part_0_script_3_saveTo"/>
-<component con="0" enc="0" type="2" value="false" xmlName="response_part_0_script_3_useArray"/>
 <component con="1" enc="0" type="2" value="" xmlName="restConnection"/>
 <component con="0" enc="0" type="2" value="false" xmlName="tracePerformance"/>
 <component con="0" enc="0" type="2" value="" xmlName="uriOverride"/>
@@ -163,7 +158,11 @@
 <dyntree>
 <node content="1" id="VALUE" name="Variables" parent="" type="VALUE">
 <VALUE state="1">
-<Values/>
+<Values>
+<row ERTUsage="0" Name="&amp;UC4RB_TIO_SN_DETAILS#" Value=""/>
+<row ERTUsage="0" Name="&amp;UC4RB_TIO_SN_SCHDL_ID#" Value=""/>
+<row ERTUsage="0" Name="&amp;UC4RB_TIO_SN_UUID#" Value=""/>
+</Values>
 <Mode>0</Mode>
 </VALUE>
 </node>
@@ -245,7 +244,23 @@
 <OSCRI/>
 </POST_SCRIPT>
 <DOCU_Docu state="1" type="text">
-<DOC/>
+<DOC><![CDATA[= Action name =
+PCK.AUTOMIC_TENABLE_IO.PUB.ACTION.GET_SCAN_DETAILS
+
+
+= General Description =
+This action fetches a scan details from Tenable.io.
+
+= Inputs =
+- Scan ID/UUID* : Provide either Scan ID or Scan UUID of the Scan to get details.
+
+= Return Value =
+- Scheduled UUID : scheduled uuid of given scan ID.
+- Scan UUID : UUID of given scan ID.
+- Scan Detail : Entire Details of a scan.
+
+= Example =
+- Scan ID/UUID* : 42]]></DOC>
 </DOCU_Docu>
 </JOBS_CIT>
 </uc-export>

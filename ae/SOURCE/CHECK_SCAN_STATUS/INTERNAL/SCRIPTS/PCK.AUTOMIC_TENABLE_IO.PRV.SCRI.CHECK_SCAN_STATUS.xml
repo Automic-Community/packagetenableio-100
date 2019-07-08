@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="ISO-8859-15" standalone="no"?><uc-export clientvers="11.0.0">
+<SCRI name="PCK.AUTOMIC_TENABLE_IO.PRV.SCRI.CHECK_SCAN_STATUS">
+<XHEADER state="1">
+<Title>check scan status</Title>
+<ArchiveKey1/>
+<ArchiveKey2/>
+<Active>1</Active>
+<OH_SubType/>
+<CustomAttributes KeyListID="0" dataRequestID="0"/>
+</XHEADER>
+<SYNCREF state="1">
+<Syncs/>
+</SYNCREF>
+<ATTR_SCRI state="1">
+<Queue>CLIENT_QUEUE</Queue>
+<StartType/>
+<ExtRepDef>1</ExtRepDef>
+<ExtRepAll>0</ExtRepAll>
+<ExtRepNone>0</ExtRepNone>
+<IntAccount/>
+<ActAtRun>0</ActAtRun>
+<UC4Priority>0</UC4Priority>
+<MaxParallel2>0</MaxParallel2>
+<MpElse1>1</MpElse1>
+<MpElse2>0</MpElse2>
+<TZ/>
+<AutoDeactNo>0</AutoDeactNo>
+<AutoDeact1ErrorFree>0</AutoDeact1ErrorFree>
+<AutoDeactErrorFree>0</AutoDeactErrorFree>
+<DeactWhen/>
+<AutoDeactAlways>1</AutoDeactAlways>
+<DeactDelay>0</DeactDelay>
+</ATTR_SCRI>
+<RUNTIME state="1">
+<MaxRetCode>0</MaxRetCode>
+<MrcExecute/>
+<MrcElseE>0</MrcElseE>
+<FcstStatus>0| |</FcstStatus>
+
+<ErtMethodDef>1</ErtMethodDef>
+<ErtMethodFix>0</ErtMethodFix>
+<ErtFix>0</ErtFix>
+<ErtDynMethod>2|Average</ErtDynMethod>
+<ErtMethodDyn>0</ErtMethodDyn>
+<ErtCnt>0</ErtCnt>
+<ErtCorr>0</ErtCorr>
+<ErtIgn>0</ErtIgn>
+<ErtIgnFlg>0</ErtIgnFlg>
+<ErtMinCnt>0</ErtMinCnt>
+<MrtMethodNone>1</MrtMethodNone>
+<MrtMethodFix>0</MrtMethodFix>
+<MrtFix>0</MrtFix>
+<MrtMethodErt>0</MrtMethodErt>
+<MrtErt>0</MrtErt>
+<MrtMethodDate>0</MrtMethodDate>
+<MrtDays>0</MrtDays>
+<MrtTime>00:00</MrtTime>
+<MrtTZ/>
+<SrtMethodNone>1</SrtMethodNone>
+<SrtMethodFix>0</SrtMethodFix>
+<SrtFix>0</SrtFix>
+<SrtMethodErt>0</SrtMethodErt>
+<SrtErt>0</SrtErt>
+<MrtCancel>0</MrtCancel>
+<MrtExecute>0</MrtExecute>
+<MrtExecuteObj/>
+</RUNTIME>
+<DYNVALUES state="1">
+<dyntree>
+<node content="1" id="VALUE" name="Variables" parent="" type="VALUE">
+<VALUE state="1">
+<Values/>
+<Mode>0</Mode>
+</VALUE>
+</node>
+</dyntree>
+</DYNVALUES>
+<ROLLBACK state="1">
+<RollbackFlag>0</RollbackFlag>
+<CBackupObj/>
+<CRollbackObj/>
+<FBackupPath/>
+<FDeleteBefore>0</FDeleteBefore>
+<FInclSubDirs>0</FInclSubDirs>
+</ROLLBACK>
+<SCRIPT mode="1" state="1">
+<MSCRI><![CDATA[:SET &SUCCESS_STATUS# = ""
+:SET &FAILURE_STATUS# = ""
+
+: IF &UC4RB_TIO_SUCCESS_STATUS# = ""	
+:   SET &SUCCESS_STATUS# = "completed"
+: ELSE
+:   SET &SUCCESS_STATUS# = &UC4RB_TIO_SUCCESS_STATUS#
+: ENDIF
+
+: IF &UC4RB_TIO_FAIL_STATUS# = ""	
+:   SET &FAILURE_STATUS# = "aborted,canceled"
+: ELSE
+:   SET &FAILURE_STATUS# = &UC4RB_TIO_FAIL_STATUS#
+: ENDIF
+
+
+
+:DEFINE &SPLITED_SUCCESS_ARRAY#,string,30
+:FILL &SPLITED_SUCCESS_ARRAY#[] = STR_SPLIT(&SUCCESS_STATUS#,",")
+:SET &STATUS_COUNT# = LENGTH(&SPLITED_SUCCESS_ARRAY#[],SIZE)
+
+:SET &COUNT#=1
+:WHILE &COUNT# <= &STATUS_COUNT#
+:  IF "0" NE STR_FIND(&FAILURE_STATUS#,&SPLITED_SUCCESS_ARRAY#[&COUNT#])
+:     P "ERROR: Job could not be completed successfully as the sucess status and failure status have some common values."
+:     STOP MSG, 50, "ERROR: sucess status and failure status should not be same."
+:  ENDIF
+:  SET &COUNT#=&COUNT#+1
+:ENDWHILE
+
+
+:IF &UC4RB_TIO_WAIT_FOR_COMPLETE#="YES"
+!   initial wait
+:   SET &SUCCESS_STATUS# =  &UC4RB_TIO_SUCCESS_STATUS#
+:   SET &FAILURE_STATUS# = &UC4RB_TIO_FAIL_STATUS#
+:   IF &UC4RB_TIO_INIT_WAIT_TIME# GT 0
+:     SET &INIT_WAIT_TIME# = &UC4RB_TIO_INIT_WAIT_TIME#
+:     P "Initially waiting for [&UC4RB_TIO_INIT_WAIT_TIME#] seconds."
+:     WAIT &INIT_WAIT_TIME#
+:   ENDIF
+
+:   SET &LOOP_COUNT# = 0
+:   SET &SUCCESS# = 0
+:   SET &FLAG# = 1
+:  WHILE &LOOP_COUNT# <> &UC4RB_TIO_RETRY_CNT#
+:    INC PCK.AUTOMIC_TENABLE_IO.PRV.INCLUDE.CHECK_SCAN_STATUS_WITH_RETRY
+:    If &SUCCESS#=1
+:      SET  &LOOP_COUNT# = &UC4RB_TIO_RETRY_CNT#
+:    ELSE
+:      P "Retry Count : &LOOP_COUNT#"
+:      P "Waiting for &UC4RB_TIO_RETRY_INTRVL# sec"
+:      WAIT &UC4RB_TIO_RETRY_INTRVL#
+:      SET &LOOP_COUNT#=&LOOP_COUNT#+1
+:    ENDIF
+:  ENDWHILE
+
+:  IF &SUCCESS#=0
+:     P "ERROR: Job could not be completed successfully within specified time limit."
+:     STOP MSG, 50, "ERROR: Timeout Occurred."
+:  ENDIF
+:  IF &FLAG#=0
+:     P "ERROR: Job could not be completed successfully as the &SCAN_STATUS# status matches with the given failure status"
+:     STOP MSG, 50, "ERROR: Execution failed as the &SCAN_STATUS# status matches with the given failure status"
+:  ENDIF
+
+: ENDIF]]></MSCRI>
+</SCRIPT>
+<DOCU_Docu state="1" type="text">
+<DOC/>
+</DOCU_Docu>
+</SCRI>
+</uc-export>

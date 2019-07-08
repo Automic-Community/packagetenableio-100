@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-15" standalone="no"?><uc-export clientvers="11.0.0">
+<JOBI name="PCK.AUTOMIC_TENABLE_IO.PRV.INCLUDE.CHECK_SCAN_STATUS_WITH_RETRY">
+<HEADER state="1">
+<Title>To check the status of scan with retry count</Title>
+<ArchiveKey1/>
+<ArchiveKey2/>
+<OH_SubType/>
+</HEADER>
+<SCRIPT mode="1" state="1">
+<MSCRI><![CDATA[: INC PCK.AUTOMIC_TENABLE_IO.PRV.INCLUDE.ACTIVATE_GET_SCAN_STATUS_OBJ
+: IF "0" NE STR_FIND(&SUCCESS_STATUS#,&SCAN_STATUS#)
+:   P "MESSAGE: Job completed successfully."
+:   SET &SUCCESS#=1
+:   SET &FLAG#=1
+: ELSE
+:   IF "0" NE STR_FIND(&FAILURE_STATUS#,&SCAN_STATUS#)
+:     P "ERROR: Job could not be completed successfully."
+:   SET &SUCCESS#=1
+:   SET &FLAG#=0
+:   ENDIF
+: ENDIF]]></MSCRI>
+</SCRIPT>
+<DOCU_Docu state="1" type="text">
+<DOC/>
+</DOCU_Docu>
+</JOBI>
+</uc-export>

@@ -44,10 +44,9 @@ Following actions are supported
 
 * Action name : PCK.AUTOMIC_TENABLE_IO.PUB.ACTION.GET_SCAN_DETAILS
 * General Description : This action fetches a scan details from Tenable.io.
-	
-* Action name : PCK.AUTOMIC_TENABLE_IO.PUB.ACTION.GET_SCAN_STATUS
-* General Description : This action will give the status of a scan from Tenable.io.
 
+*Action name : PCK.AUTOMIC_TENABLE_IO.PUB.ACTION.CHECK_SCAN_STATUS
+*General Description : This action will check for a given status for a scan in a specific time interval.
 ]]></DOC>
 </DOCU_Docu>
 </DOCU>

@@ -8,11 +8,13 @@
 </HEADER>
 <SCRIPT mode="1" state="1">
 <MSCRI><![CDATA[: INC PCK.AUTOMIC_TENABLE_IO.PRV.INCLUDE.ACTIVATE_GET_SCAN_STATUS_OBJ
+: P 'comparing given success state &SUCCESS_STATUS# with &SCAN_STATUS#'
 : IF "0" NE STR_FIND(&SUCCESS_STATUS#,&SCAN_STATUS#)
 :   P "MESSAGE: Job completed successfully."
 :   SET &SUCCESS#=1
 :   SET &FLAG#=1
 : ELSE
+:   P 'comparing given failure state &FAILURE_STATUS# with &SCAN_STATUS#'
 :   IF "0" NE STR_FIND(&FAILURE_STATUS#,&SCAN_STATUS#)
 :     P "ERROR: Job could not be completed successfully."
 :   SET &SUCCESS#=1

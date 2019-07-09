@@ -7,7 +7,7 @@
 <OH_SubType/>
 </HEADER>
 <SCRIPT mode="1" state="1">
-<MSCRI><![CDATA[: SET &SCAN_STATUS# = ""
+<MSCRI><![CDATA[: PSET &SCAN_STATUS# = ""
 : SET &SUCCESS# = 0
 
 !Providing promptset variables
@@ -51,6 +51,7 @@
 :     ELSE
 :       SET &SCAN_STATUS# = GET_PUBLISHED_VALUE(&ACTOBJ#, UC4RB_TIO_SN_STATUS#)
 :       PUBLISH &SCAN_STATUS#,,"WORKFLOW"
+:       P 'Currently fetched status of scan is : &SCAN_STATUS#'
 :       SET &SUCCESS# = 0
 :     ENDIF
 :  ENDIF

@@ -145,7 +145,7 @@
 <node content="1" id="PVALUE" name="Parent Variables" parent="" type="TASKVALUE">
 <VALUE state="2">
 <Values/>
-<Mode>0</Mode>
+<Mode>1</Mode>
 </VALUE>
 </node>
 <node content="1" id="PRPTS" name="PromptSets" parent="" pref="1" type="PROMPTSET"/>
@@ -342,7 +342,7 @@
 <node content="1" id="VALUE" name="Variables" parent="" type="VALUE">
 <VALUE state="1">
 <Values/>
-<Mode>0</Mode>
+<Mode>1</Mode>
 </VALUE>
 </node>
 <node content="1" id="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.CONNECTION_PARAMETERS" name="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.CONNECTION_PARAMETERS" parent="PRPTS" type="PROMPTSET">
@@ -433,6 +433,8 @@ This action will check for a given status for a scan in a specific time interval
 
 = Inputs =
 - Scan ID/UUID* : Provide either Scan ID or Scan UUID of the Scan to check its status.
+- Success Status : Provide comma separated values for success status. E.g. completed, scheduled, running etc.
+- Failure Status : Provide comma separated values for failure status. E.g. canceled, stopped, aborted.
 - Wait For Completion : Specify whether if action should wait for full stop of the scan.
 - Initial Waiting Time (in min) : Provide initial waiting time. E.g. 5
 - Retry Count : Provide the number of retry attempts to get the status.E.g. 10
@@ -440,9 +442,12 @@ This action will check for a given status for a scan in a specific time interval
 
 = Behaviour =
 Action fails if specified scan does not give the specified status in specified time.
+If we provide same status for both Success and Failure then action will fail.
 
 = Example =
 - Scan ID/UUID* : 42
+- Success Status : completed, scheduled, running etc.
+- Failure Status : canceled, stopped, aborted.
 - Wait For Completion : true
 - Initial Waiting Time (in sec) : 30
 - Retry Count : 10

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-15" standalone="no"?><uc-export clientvers="11.0.0">
 <SCRI name="PCK.AUTOMIC_TENABLE_IO.PRV.SCRI.CHECK_SCAN_STATUS">
 <XHEADER state="1">
-<Title>check scan status</Title>
+<Title>To check scan status</Title>
 <ArchiveKey1/>
 <ArchiveKey2/>
 <Active>1</Active>
@@ -84,72 +84,83 @@
 <FInclSubDirs>0</FInclSubDirs>
 </ROLLBACK>
 <SCRIPT mode="1" state="1">
-<MSCRI><![CDATA[:SET &SUCCESS_STATUS# = ""
-:SET &FAILURE_STATUS# = ""
+<MSCRI><![CDATA[!Adding  default status if nothing is provided
+:PSET &SUCCESS_STATUS# = ""
+:PSET &FAILURE_STATUS# = ""
 
-: IF &UC4RB_TIO_SUCCESS_STATUS# = ""	
-:   SET &SUCCESS_STATUS# = "completed"
-: ELSE
-:   SET &SUCCESS_STATUS# = &UC4RB_TIO_SUCCESS_STATUS#
-: ENDIF
+:IF &UC4RB_TIO_SUCCESS_STATUS# = ""	
+:  SET &SUCCESS_STATUS# = "completed"
+:ELSE
+:  SET &SUCCESS_STATUS# = &UC4RB_TIO_SUCCESS_STATUS#
+:ENDIF
 
-: IF &UC4RB_TIO_FAIL_STATUS# = ""	
-:   SET &FAILURE_STATUS# = "aborted,canceled"
-: ELSE
-:   SET &FAILURE_STATUS# = &UC4RB_TIO_FAIL_STATUS#
-: ENDIF
+:IF &UC4RB_TIO_FAIL_STATUS# = ""	
+:  SET &FAILURE_STATUS# = "aborted, canceled"
+:ELSE
+:  SET &FAILURE_STATUS# = &UC4RB_TIO_FAIL_STATUS#
+:ENDIF
 
 
-
+!To check if provided Success status and Failure status are same
 :DEFINE &SPLITED_SUCCESS_ARRAY#,string,30
 :FILL &SPLITED_SUCCESS_ARRAY#[] = STR_SPLIT(&SUCCESS_STATUS#,",")
 :SET &STATUS_COUNT# = LENGTH(&SPLITED_SUCCESS_ARRAY#[],SIZE)
-
 :SET &COUNT#=1
 :WHILE &COUNT# <= &STATUS_COUNT#
 :  IF "0" NE STR_FIND(&FAILURE_STATUS#,&SPLITED_SUCCESS_ARRAY#[&COUNT#])
-:     P "ERROR: Job could not be completed successfully as the sucess status and failure status have some common values."
+:     P "ERROR: Job could not be completed successfully as the success status and failure status have some common values."
 :     STOP MSG, 50, "ERROR: sucess status and failure status should not be same."
 :  ENDIF
 :  SET &COUNT#=&COUNT#+1
 :ENDWHILE
 
 
+
+!setting default retry count as 1
+:IF &UC4RB_TIO_RETRY_CNT# = 0
+:  SET &UC4RB_TIO_RETRY_CNT#=1
+:ENDIF
+
+!initial wait
 :IF &UC4RB_TIO_WAIT_FOR_COMPLETE#="YES"
-!   initial wait
-:   SET &SUCCESS_STATUS# =  &UC4RB_TIO_SUCCESS_STATUS#
-:   SET &FAILURE_STATUS# = &UC4RB_TIO_FAIL_STATUS#
 :   IF &UC4RB_TIO_INIT_WAIT_TIME# GT 0
-:     SET &INIT_WAIT_TIME# = &UC4RB_TIO_INIT_WAIT_TIME#
-:     P "Initially waiting for [&UC4RB_TIO_INIT_WAIT_TIME#] seconds."
+:     SET &INIT_WAIT_TIME# = MULT(&UC4RB_TIO_INIT_WAIT_TIME#, 60)
+:     P "Initially waiting for [&UC4RB_TIO_INIT_WAIT_TIME#] minutes."
 :     WAIT &INIT_WAIT_TIME#
 :   ENDIF
+:ENDIF
 
-:   SET &LOOP_COUNT# = 0
-:   SET &SUCCESS# = 0
-:   SET &FLAG# = 1
-:  WHILE &LOOP_COUNT# <> &UC4RB_TIO_RETRY_CNT#
-:    INC PCK.AUTOMIC_TENABLE_IO.PRV.INCLUDE.CHECK_SCAN_STATUS_WITH_RETRY
-:    If &SUCCESS#=1
-:      SET  &LOOP_COUNT# = &UC4RB_TIO_RETRY_CNT#
-:    ELSE
-:      P "Retry Count : &LOOP_COUNT#"
-:      P "Waiting for &UC4RB_TIO_RETRY_INTRVL# sec"
-:      WAIT &UC4RB_TIO_RETRY_INTRVL#
-:      SET &LOOP_COUNT#=&LOOP_COUNT#+1
+
+!Retry with Count
+:SET &LOOP_COUNT# = 0
+:SET &SUCCESS# = 0
+:SET &FLAG# = 1
+:SET &UC4RB_RETRY_CNT#=&UC4RB_TIO_RETRY_CNT#+1
+:WHILE &LOOP_COUNT# <> &UC4RB_RETRY_CNT#
+:  INC PCK.AUTOMIC_TENABLE_IO.PRV.INCLUDE.CHECK_SCAN_STATUS_WITH_RETRY
+:  If &SUCCESS#=1
+:    SET  &LOOP_COUNT# = &UC4RB_RETRY_CNT#
+:  ELSE
+:    IF &UC4RB_TIO_WAIT_FOR_COMPLETE#="YES"
+:    P "Retry Count : &LOOP_COUNT#"
+:    P "Waiting for &UC4RB_TIO_RETRY_INTRVL# sec"
+:    WAIT &UC4RB_TIO_RETRY_INTRVL#
+:    SET &LOOP_COUNT#=&LOOP_COUNT#+1
 :    ENDIF
-:  ENDWHILE
-
-:  IF &SUCCESS#=0
-:     P "ERROR: Job could not be completed successfully within specified time limit."
-:     STOP MSG, 50, "ERROR: Timeout Occurred."
 :  ENDIF
-:  IF &FLAG#=0
-:     P "ERROR: Job could not be completed successfully as the &SCAN_STATUS# status matches with the given failure status"
-:     STOP MSG, 50, "ERROR: Execution failed as the &SCAN_STATUS# status matches with the given failure status"
+:  IF &UC4RB_TIO_WAIT_FOR_COMPLETE#="NO"
+:    SET  &LOOP_COUNT# = &UC4RB_RETRY_CNT#
 :  ENDIF
+:ENDWHILE
 
-: ENDIF]]></MSCRI>
+:IF &SUCCESS#=0
+:   P "ERROR: Job could not be completed successfully within specified time limit."
+:   STOP MSG, 50, "ERROR: Timeout Occurred."
+:ENDIF
+:IF &FLAG#=0
+:   P "ERROR: Job could not be completed successfully as the &SCAN_STATUS# status matches with the given failure status"
+:   STOP MSG, 50, "ERROR: Execution failed as the &SCAN_STATUS# status matches with the given failure status"
+:ENDIF]]></MSCRI>
 </SCRIPT>
 <DOCU_Docu state="1" type="text">
 <DOC/>

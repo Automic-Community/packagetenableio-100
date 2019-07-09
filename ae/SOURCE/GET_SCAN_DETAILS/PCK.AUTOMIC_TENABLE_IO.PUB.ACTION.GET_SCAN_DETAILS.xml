@@ -255,9 +255,9 @@ This action fetches a scan details from Tenable.io.
 - Scan ID/UUID* : Provide either Scan ID or Scan UUID of the Scan to get details.
 
 = Return Value =
-- Scheduled UUID : scheduled uuid of given scan ID.
-- Scan UUID : UUID of given scan ID.
-- Scan Detail : Entire Details of a scan.
+- UC4RB_TIO_SN_SCHDL_ID# : scheduled uuid of given scan ID.
+- UC4RB_TIO_SN_UUID# : UUID of given scan ID.
+- UC4RB_TIO_SN_DETAILS# : Entire Details of a scan.
 
 = Example =
 - Scan ID/UUID* : 42]]></DOC>

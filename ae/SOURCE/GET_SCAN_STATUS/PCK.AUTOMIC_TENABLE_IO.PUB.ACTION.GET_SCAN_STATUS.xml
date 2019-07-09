@@ -242,7 +242,7 @@ This action will give the status of a scan from Tenable.io.
 - Scan ID/UUID* : Provide either Scan ID or UUID to get its status.
 
 = Return Value =
-- Scan status : status for the given scan ID.
+- UC4RB_TIO_SN_STATUS# : status for the given scan ID.
 
 = Example =
 - Scan ID/UUID* : 42]]></DOC>

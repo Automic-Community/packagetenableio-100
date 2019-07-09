@@ -4,9 +4,10 @@ Resource          ../../../Env/default.txt
 *** Variables ***
 #---- Promptset Fields --------------------------------------------------------------------------------------
 ${URL_Tenable}    https://cloud.tenable.com
-${accessKey}      ACCESSKEY
-${secretKey}      SECRETKEY
+${accessKey}      48e0792493d9454c52b2111c052e2108b7434bb59200386ef151a67cde118770
+${secretKey}      348341086a2ffe21ffebbf1a3b7e0a10eeacf9bcaf632fdb495d888db689cdc3
 ${Scan_ID}        42
+${Scan_UUID}      template-e4f8bd23-369a-66fb-f86e-64aa905504584428dbdd015d1a02
 #---- Create Scan --------------------------------------------------------------------------------------------
 ${Name}           Scan0016
 ${Description}    This scan is created by automation script.

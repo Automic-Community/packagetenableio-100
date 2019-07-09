@@ -16,6 +16,9 @@ Get Scan Details with valid Scan ID
                       [Tags]    main_scenarios
                       OK        ${Scan_ID}
 
+Get Scan Details with valid Scan UUID
+                      OK        ${Scan_UUID}
+
 Get Scan Details with invalid Scan ID
                       NOK       Invalid
 
@@ -32,7 +35,7 @@ Get Scan Details Template
     [Arguments]    ${OK_NOK}    ${ScanID}
     [Documentation]    This test will fetch scan details from Tenable.
     ...    -${OK_NOK}: Boolean value indicate if the action is ENDED_OK or ENDED_NOT_OK. Value of this variable should be OK or NOK.
-    ...    -${ScanID}: This field Specifies scan id to fetch its details.
+    ...    -${ScanID}: This field Specifies scan id or scan uuid to fetch scan details.
     Generate String
     Init Action    ${_GET_SCAN_DETAILS_ACTION}
     Nessus Authentication

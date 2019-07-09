@@ -14,7 +14,7 @@ Resource          ../../Resources/actions.txt
 *** Test Cases ***    OK_NOK    ScanID                     WaitForCompletion    InitialWaitingTime    RetryCount    RetryInterval
 Pause Scan with valid Scan ID under timeout conditions
                       [Tags]    main_scenarios
-                      OK        ${Scan_ID}                 Yes                  0                     5             10
+                      OK        ${Scan_ID}                 Yes                  2                     5             10
 
 Pause Scan with valid Scan ID with WaitForCompletion as No
                       OK        ${Scan_ID}                 No                   0                     5             10

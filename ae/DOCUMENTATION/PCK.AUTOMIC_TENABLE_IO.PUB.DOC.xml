@@ -47,6 +47,9 @@ Following actions are supported
 
 *Action name : PCK.AUTOMIC_TENABLE_IO.PUB.ACTION.CHECK_SCAN_STATUS
 *General Description : This action will check for a given status for a scan in a specific time interval.
+
+*Action name : PCK.AUTOMIC_TENABLE_IO.PUB.ACTION.PAUSE_SCAN
+*General Description : This action will pause a scan in Tenable.io.
 ]]></DOC>
 </DOCU_Docu>
 </DOCU>

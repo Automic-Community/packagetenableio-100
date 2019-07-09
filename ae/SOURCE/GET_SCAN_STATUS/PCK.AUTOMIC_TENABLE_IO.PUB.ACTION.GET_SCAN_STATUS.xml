@@ -239,13 +239,13 @@ PCK.AUTOMIC_TENABLE_IO.PUB.ACTION.GET_SCAN_STATUS
 This action will give the status of a scan from Tenable.io.
 
 = Inputs =
-- Scan ID/UUID* : Provide either Scan ID or UUID to get its status.
+- Scan ID* : Provide either Scan ID or Schedule UUID to get its status.
 
 = Return Value =
 - UC4RB_TIO_SN_STATUS# : status for the given scan ID.
 
 = Example =
-- Scan ID/UUID* : 42]]></DOC>
+- Scan ID* : 42]]></DOC>
 </DOCU_Docu>
 </JOBS_CIT>
 </uc-export>

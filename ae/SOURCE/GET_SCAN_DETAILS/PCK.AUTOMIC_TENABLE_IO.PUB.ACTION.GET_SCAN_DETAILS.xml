@@ -252,7 +252,7 @@ PCK.AUTOMIC_TENABLE_IO.PUB.ACTION.GET_SCAN_DETAILS
 This action fetches a scan details from Tenable.io.
 
 = Inputs =
-- Scan ID/UUID* : Provide either Scan ID or Scan UUID of the Scan to get details.
+- Scan ID* : Provide either Scan ID or Schedule UUID of the Scan to get details.
 
 = Return Value =
 - UC4RB_TIO_SN_SCHDL_ID# : scheduled uuid of given scan ID.
@@ -260,7 +260,7 @@ This action fetches a scan details from Tenable.io.
 - UC4RB_TIO_SN_DETAILS# : Entire Details of a scan.
 
 = Example =
-- Scan ID/UUID* : 42]]></DOC>
+- Scan ID* : 42]]></DOC>
 </DOCU_Docu>
 </JOBS_CIT>
 </uc-export>

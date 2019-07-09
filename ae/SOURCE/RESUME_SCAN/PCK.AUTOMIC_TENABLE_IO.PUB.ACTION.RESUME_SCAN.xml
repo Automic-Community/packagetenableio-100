@@ -237,11 +237,14 @@ PCK.AUTOMIC_TENABLE_IO.PUB.ACTION.RESUME_SCAN
 = General Description =
 This action will resume a scan in Tenable.io.
 
+= Behaviour =
+- If scan is not in paused state then action fails.
+
 = Inputs =
 - Scan ID* : Provide either Scan ID or Schedule UUID of the Scan to resume.
 
 = Example =
-- Scan ID/UUID* : 42]]></DOC>
+- Scan ID* : 42]]></DOC>
 </DOCU_Docu>
 </JOBS_CIT>
 </uc-export>

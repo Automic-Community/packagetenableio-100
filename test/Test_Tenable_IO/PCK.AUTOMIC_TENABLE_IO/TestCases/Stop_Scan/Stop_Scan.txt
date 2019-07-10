@@ -14,19 +14,19 @@ Resource          ../../Resources/actions.txt
 *** Test Cases ***    OK_NOK    ScanID                     WaitForCompletion    InitialWaitingTime    RetryCount    RetryInterval
 Stop Scan with valid Scan ID under timeout conditions
                       [Tags]    main_scenarios
-                      OK        ${Scan_ID}                 Yes                  0                     5             10
+                      OK        ${Scan_ID}                 YES                  2                     5             10
 
 Stop Scan with valid Scan ID with WaitForCompletion as No
-                      OK        ${Scan_ID}                 No                   0                     5             10
+                      OK        ${Scan_ID}                 NO                   1                     5             10
 
 Stop Scan with valid Scan ID without timeout conditions
-                      OK        ${Scan_ID}                 ${EMPTY}             ${EMPTY}              ${EMPTY}      ${EMPTY}
+                      OK        ${Scan_ID}                 NO                   0                     0             0
 
 Stop Scan with invalid state Scan ID
-                      NOK       ${InvalidState_Scan_ID}    No                   ${EMPTY}              ${EMPTY}      ${EMPTY}
+                      NOK       ${InvalidState_Scan_ID}    NO                   1                     5             10
 
 Stop Scan with invalid Scan ID
-                      NOK       Invalid                    Yes                  0                     5             10
+                      NOK       Invalid                    YES                  5                     5             10
 
 *** Keywords ***
 Startup
@@ -48,6 +48,10 @@ Stop Scan Template
     Nessus Authentication
     Run Keyword If    '${ScanID}' == 'Invalid'    Action Set    &UC4RB_TIO_SCAN_ID#    ${Generated_Name}_${Time}    ELSE    Action Set
     ...    &UC4RB_TIO_SCAN_ID#    ${ScanID}
+    Action Set    &UC4RB_TIO_WAIT_FOR_COMPLETE#    ${WaitForCompletion}
+    Action Set    &UC4RB_TIO_INIT_WAIT_TIME#    ${InitialWaitingTime}
+    Action Set    &UC4RB_TIO_RETRY_CNT#    ${RetryCount}
+    Action Set    &UC4RB_TIO_RETRY_INTRVL#    ${RetryInterval}
     Action Execute
     Run Keyword If    '${OK_NOK}' == 'OK'    Assert Success    ELSE    Assert Failure
 

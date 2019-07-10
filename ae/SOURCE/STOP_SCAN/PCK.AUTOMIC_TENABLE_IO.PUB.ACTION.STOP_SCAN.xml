@@ -22,10 +22,10 @@
 <AutoDeactNo>0</AutoDeactNo>
 <AutoDeact1ErrorFree>0</AutoDeact1ErrorFree>
 <AutoDeactErrorFree>1</AutoDeactErrorFree>
-<DeactWhen/>
+<DeactWhen>ANY_OK</DeactWhen>
 <AutoDeactAlways>0</AutoDeactAlways>
 <DeactDelay>0</DeactDelay>
-<ActAtRun>0</ActAtRun>
+<ActAtRun>1</ActAtRun>
 <UC4Priority>0</UC4Priority>
 <PassPriority>0</PassPriority>
 <MaxParallel2>0</MaxParallel2>
@@ -72,9 +72,9 @@
 <node content="1" id="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS" name="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS" parent="PPRPTS" type="PPROMPTSET">
 <PROMPTSET name="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS">
 <PRPTBOX promptset="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS">
-<UC4RB_TIO_INIT_WAIT_TIMEs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_INIT_WAIT_TIME#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS">30</UC4RB_TIO_INIT_WAIT_TIMEs.00>
+<UC4RB_TIO_INIT_WAIT_TIMEs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_INIT_WAIT_TIME#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS">1</UC4RB_TIO_INIT_WAIT_TIMEs.00>
 <UC4RB_TIO_RETRY_CNTs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_RETRY_CNT#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS">10</UC4RB_TIO_RETRY_CNTs.00>
-<UC4RB_TIO_RETRY_INTRVLs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_RETRY_INTRVL#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS">30</UC4RB_TIO_RETRY_INTRVLs.00>
+<UC4RB_TIO_RETRY_INTRVLs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_RETRY_INTRVL#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS">10</UC4RB_TIO_RETRY_INTRVLs.00>
 <UC4RB_TIO_WAIT_FOR_COMPLETEs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_WAIT_FOR_COMPLETE#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS">YES</UC4RB_TIO_WAIT_FOR_COMPLETEs.00>
 </PRPTBOX>
 </PROMPTSET>
@@ -217,9 +217,9 @@
 <node content="1" id="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS" name="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS" parent="PPRPTS" type="PPROMPTSET">
 <PROMPTSET name="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS">
 <PRPTBOX promptset="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS">
-<UC4RB_TIO_INIT_WAIT_TIMEs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_INIT_WAIT_TIME#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS">30</UC4RB_TIO_INIT_WAIT_TIMEs.00>
+<UC4RB_TIO_INIT_WAIT_TIMEs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_INIT_WAIT_TIME#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS">1</UC4RB_TIO_INIT_WAIT_TIMEs.00>
 <UC4RB_TIO_RETRY_CNTs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_RETRY_CNT#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS">10</UC4RB_TIO_RETRY_CNTs.00>
-<UC4RB_TIO_RETRY_INTRVLs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_RETRY_INTRVL#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS">30</UC4RB_TIO_RETRY_INTRVLs.00>
+<UC4RB_TIO_RETRY_INTRVLs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_RETRY_INTRVL#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS">10</UC4RB_TIO_RETRY_INTRVLs.00>
 <UC4RB_TIO_WAIT_FOR_COMPLETEs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_WAIT_FOR_COMPLETE#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS">YES</UC4RB_TIO_WAIT_FOR_COMPLETEs.00>
 </PRPTBOX>
 </PROMPTSET>
@@ -327,7 +327,7 @@
 </PostCon>
 </postconditions>
 </task>
-<task Alias="STOP_SCAN" BranchType="0" Col="3" Lnr="3" OType="JOBS" Object="PCK.AUTOMIC_TENABLE_IO.PRV.ACTION.STOP_SCAN" ParentAlias="" ParentObject="" Row="1" Text2="">
+<task Alias="STOP_SCAN" BranchType="0" Col="3" Lnr="3" OType="JOBS" Object="PCK.AUTOMIC_TENABLE_IO.PRV.JOBS.STOP_SCAN" ParentAlias="" ParentObject="" Row="1" Text2="">
 <checkpoint RollbackFlag="1" RunPerPatch="0" RunPerTarget="0" TcpADays="0" TcpATime="00:00" TcpATimeTZ="" TcpExecute="" TcpOn="0" promptatgen="0" showprompt="0"/>
 <after ActFlg="1" AtimOn="0" ErlstStDays="0" ErlstStTime="00:00" ErlstStTimeTZ="" HoldFlg="0"/>
 <when ChkWhenExec="0" LtstEnd="0" LtstEndDays="0" LtstEndTime="00:00" LtstSt="0" LtstStDays="0" LtstStTime="00:00" LtstTimeTZ="" WCTypeAND="1" WCTypeOR="0" WElseA="0" WElseH="1" WElseS="0" WElseX="0" WhenExecute="" WtimOn="0"/>
@@ -399,9 +399,9 @@
 <node content="1" id="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS" name="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS" parent="PPRPTS" type="PPROMPTSET">
 <PROMPTSET name="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS">
 <PRPTBOX promptset="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS">
-<UC4RB_TIO_INIT_WAIT_TIMEs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_INIT_WAIT_TIME#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS">30</UC4RB_TIO_INIT_WAIT_TIMEs.00>
+<UC4RB_TIO_INIT_WAIT_TIMEs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_INIT_WAIT_TIME#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS">1</UC4RB_TIO_INIT_WAIT_TIMEs.00>
 <UC4RB_TIO_RETRY_CNTs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_RETRY_CNT#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS">10</UC4RB_TIO_RETRY_CNTs.00>
-<UC4RB_TIO_RETRY_INTRVLs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_RETRY_INTRVL#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS">30</UC4RB_TIO_RETRY_INTRVLs.00>
+<UC4RB_TIO_RETRY_INTRVLs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_RETRY_INTRVL#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS">10</UC4RB_TIO_RETRY_INTRVLs.00>
 <UC4RB_TIO_WAIT_FOR_COMPLETEs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_WAIT_FOR_COMPLETE#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS">YES</UC4RB_TIO_WAIT_FOR_COMPLETEs.00>
 </PRPTBOX>
 </PROMPTSET>
@@ -584,9 +584,9 @@
 <node content="1" id="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS" name="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS" parent="PPRPTS" type="PPROMPTSET">
 <PROMPTSET name="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS">
 <PRPTBOX promptset="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS">
-<UC4RB_TIO_INIT_WAIT_TIMEs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_INIT_WAIT_TIME#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS">30</UC4RB_TIO_INIT_WAIT_TIMEs.00>
+<UC4RB_TIO_INIT_WAIT_TIMEs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_INIT_WAIT_TIME#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS">1</UC4RB_TIO_INIT_WAIT_TIMEs.00>
 <UC4RB_TIO_RETRY_CNTs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_RETRY_CNT#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS">10</UC4RB_TIO_RETRY_CNTs.00>
-<UC4RB_TIO_RETRY_INTRVLs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_RETRY_INTRVL#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS">30</UC4RB_TIO_RETRY_INTRVLs.00>
+<UC4RB_TIO_RETRY_INTRVLs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_RETRY_INTRVL#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS">10</UC4RB_TIO_RETRY_INTRVLs.00>
 <UC4RB_TIO_WAIT_FOR_COMPLETEs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_WAIT_FOR_COMPLETE#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS">YES</UC4RB_TIO_WAIT_FOR_COMPLETEs.00>
 </PRPTBOX>
 </PROMPTSET>
@@ -633,7 +633,7 @@
 <task Alias="" BranchType="0" Col="5" Lnr="5" OType="&lt;END&gt;" Object="END" ParentAlias="" ParentObject="" Row="1" Text2="">
 <checkpoint RollbackFlag="0" RunPerPatch="0" RunPerTarget="0" TcpADays="0" TcpATime="00:00" TcpATimeTZ="" TcpExecute="" TcpOn="0" promptatgen="0" showprompt="0"/>
 <after ActFlg="1" AtimOn="0" ErlstStDays="0" ErlstStTime="00:00" ErlstStTimeTZ="" HoldFlg="0"/>
-<when ChkWhenExec="0" LtstEnd="0" LtstEndDays="0" LtstEndTime="00:00" LtstSt="0" LtstStDays="0" LtstStTime="00:00" LtstTimeTZ="" WCTypeAND="1" WCTypeOR="0" WElseA="0" WElseH="0" WElseS="1" WElseX="0" WhenExecute="" WtimOn="0"/>
+<when ChkWhenExec="0" LtstEnd="0" LtstEndDays="0" LtstEndTime="00:00" LtstSt="0" LtstStDays="0" LtstStTime="00:00" LtstTimeTZ="" WCTypeAND="1" WCTypeOR="0" WElseA="1" WElseH="0" WElseS="0" WElseX="0" WhenExecute="" WtimOn="0"/>
 <preconditions>
 <PreCon>
 <conditions id="CONDITIONS"/>
@@ -665,9 +665,9 @@
 <node content="1" id="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS" name="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS" parent="PPRPTS" type="PPROMPTSET">
 <PROMPTSET name="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS">
 <PRPTBOX promptset="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS">
-<UC4RB_TIO_INIT_WAIT_TIMEs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_INIT_WAIT_TIME#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS">30</UC4RB_TIO_INIT_WAIT_TIMEs.00>
+<UC4RB_TIO_INIT_WAIT_TIMEs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_INIT_WAIT_TIME#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS">1</UC4RB_TIO_INIT_WAIT_TIMEs.00>
 <UC4RB_TIO_RETRY_CNTs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_RETRY_CNT#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS">10</UC4RB_TIO_RETRY_CNTs.00>
-<UC4RB_TIO_RETRY_INTRVLs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_RETRY_INTRVL#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS">30</UC4RB_TIO_RETRY_INTRVLs.00>
+<UC4RB_TIO_RETRY_INTRVLs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_RETRY_INTRVL#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS">10</UC4RB_TIO_RETRY_INTRVLs.00>
 <UC4RB_TIO_WAIT_FOR_COMPLETEs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_WAIT_FOR_COMPLETE#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS">YES</UC4RB_TIO_WAIT_FOR_COMPLETEs.00>
 </PRPTBOX>
 </PROMPTSET>
@@ -779,9 +779,9 @@
 <PROMPTSET name="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS" ontop="1">
 <PRPTBOX promptset="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS" prptmode="1">
 <UC4RB_TIO_WAIT_FOR_COMPLETEs.00 altview="0" haslist="0">YES</UC4RB_TIO_WAIT_FOR_COMPLETEs.00>
-<UC4RB_TIO_INIT_WAIT_TIMEs.00 altview="0" haslist="0">30</UC4RB_TIO_INIT_WAIT_TIMEs.00>
+<UC4RB_TIO_INIT_WAIT_TIMEs.00 altview="0" haslist="0">1</UC4RB_TIO_INIT_WAIT_TIMEs.00>
 <UC4RB_TIO_RETRY_CNTs.00 altview="0" haslist="0">10</UC4RB_TIO_RETRY_CNTs.00>
-<UC4RB_TIO_RETRY_INTRVLs.00 altview="0" haslist="0">30</UC4RB_TIO_RETRY_INTRVLs.00>
+<UC4RB_TIO_RETRY_INTRVLs.00 altview="0" haslist="0">10</UC4RB_TIO_RETRY_INTRVLs.00>
 </PRPTBOX>
 </PROMPTSET>
 </node>
@@ -849,6 +849,9 @@ This action will stop a scan in Tenable.io.
 - Initial Waiting Time (in min) : Provide initial waiting time. E.g. 5
 - Retry Count : Provide the number of retry attempts to get the status.E.g. 10
 - Retry Interval (in sec): Provide the interval in seconds between retry attempt.E.g. 120
+
+= Behaviour =
+If scan is already stopped then this action will pass
 
 = Example =
 - Scan ID* : 42

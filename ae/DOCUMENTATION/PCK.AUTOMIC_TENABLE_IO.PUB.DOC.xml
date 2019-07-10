@@ -39,7 +39,7 @@ Following actions are supported
 * Action name: PCK.AUTOMIC_TENABLE_IO.PUB.ACTION.GET_AGENT_GROUP
 * Action Description: This action retrives given agent name from Tenable.io.
 
-* Action name:PCK.AUTOMIC_TENABLE_IO.PUB.ACTION.DOWNLOAD_SCAN_RESULTS
+* Action name: PCK.AUTOMIC_TENABLE_IO.PUB.ACTION.DOWNLOAD_SCAN_RESULTS
 * Action Description: This action exports the scan result for provided scan id.]]></DOC>
 </DOCU_Docu>
 </DOCU>

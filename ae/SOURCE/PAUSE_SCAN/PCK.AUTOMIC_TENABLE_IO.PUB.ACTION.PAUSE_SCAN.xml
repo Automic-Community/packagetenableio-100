@@ -148,7 +148,7 @@
 <row ERTUsage="0" Mod="0" Name="&amp;UC4RB_TIO_FAIL_STATUS#" Value=""/>
 <row ERTUsage="0" Mod="0" Name="&amp;UC4RB_TIO_SUCCESS_STATUS#" Value="paused"/>
 </Values>
-<Mode>0</Mode>
+<Mode>1</Mode>
 </VALUE>
 </node>
 <node content="1" id="PRPTS" name="PromptSets" parent="" pref="1" type="PROMPTSET"/>
@@ -327,7 +327,7 @@
 </PostCon>
 </postconditions>
 </task>
-<task Alias="PAUSE_SCAN" BranchType="0" Col="3" Lnr="3" OType="JOBS" Object="PCK.AUTOMIC_TENABLE_IO.PUB.ACTION.PAUSE_A_SCAN" ParentAlias="" ParentObject="" Row="1" Text2="">
+<task Alias="PAUSE_SCAN" BranchType="0" Col="3" Lnr="3" OType="JOBS" Object="PCK.AUTOMIC_TENABLE_IO.PRV.ACTION.PAUSE_SCAN" ParentAlias="" ParentObject="" Row="1" Text2="">
 <checkpoint RollbackFlag="1" RunPerPatch="0" RunPerTarget="0" TcpADays="0" TcpATime="00:00" TcpATimeTZ="" TcpExecute="" TcpOn="0" promptatgen="0" showprompt="0"/>
 <after ActFlg="1" AtimOn="0" ErlstStDays="0" ErlstStTime="00:00" ErlstStTimeTZ="" HoldFlg="0"/>
 <when ChkWhenExec="0" LtstEnd="0" LtstEndDays="0" LtstEndTime="00:00" LtstSt="0" LtstStDays="0" LtstStTime="00:00" LtstTimeTZ="" WCTypeAND="1" WCTypeOR="0" WElseA="1" WElseH="0" WElseS="0" WElseX="0" WhenExecute="" WtimOn="0"/>
@@ -375,7 +375,7 @@
 <row ERTUsage="0" Mod="0" Name="&amp;UC4RB_TIO_FAIL_STATUS#" Value=""/>
 <row ERTUsage="0" Mod="0" Name="&amp;UC4RB_TIO_SUCCESS_STATUS#" Value="paused"/>
 </Values>
-<Mode>0</Mode>
+<Mode>1</Mode>
 </VALUE>
 </node>
 <node content="1" id="PRPTS" name="PromptSets" parent="" pref="1" type="PROMPTSET"/>
@@ -560,7 +560,7 @@
 <row ERTUsage="0" Mod="0" Name="&amp;UC4RB_TIO_FAIL_STATUS#" Value=""/>
 <row ERTUsage="0" Mod="0" Name="&amp;UC4RB_TIO_SUCCESS_STATUS#" Value="paused"/>
 </Values>
-<Mode>0</Mode>
+<Mode>1</Mode>
 </VALUE>
 </node>
 <node content="1" id="PRPTS" name="PromptSets" parent="" pref="1" type="PROMPTSET"/>
@@ -756,7 +756,7 @@
 <row ERTUsage="0" Name="&amp;UC4RB_TIO_FAIL_STATUS#" Value=""/>
 <row ERTUsage="0" Name="&amp;UC4RB_TIO_SUCCESS_STATUS#" Value="paused"/>
 </Values>
-<Mode>0</Mode>
+<Mode>1</Mode>
 </VALUE>
 </node>
 <node content="1" id="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.CONNECTION_PARAMETERS" name="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.CONNECTION_PARAMETERS" parent="PRPTS" type="PROMPTSET">
@@ -844,7 +844,7 @@ PCK.AUTOMIC_TENABLE_IO.PUB.ACTION.PAUSE_SCAN
 This action will pause a scan in Tenable.io.
 
 = Inputs =
-- Scan ID/UUID* : Provide either Scan ID or Scan UUID of the Scan to get details.
+- Scan ID/UUID* : Provide either Scan ID or Scan UUID of the Scan to pause scan.
 - Wait For Completion : Specify whether if action should wait for full stop of the scan.
 - Initial Waiting Time (in min) : Provide initial waiting time. E.g. 5
 - Retry Count : Provide the number of retry attempts to get the status.E.g. 10

@@ -50,6 +50,9 @@ Following actions are supported
 
 *Action name : PCK.AUTOMIC_TENABLE_IO.PUB.ACTION.PAUSE_SCAN
 *General Description : This action will pause a scan in Tenable.io.
+
+*Action name : PCK.AUTOMIC_TENABLE_IO.PUB.ACTION.STOP_SCAN
+*General Description : This action will stop a scan in Tenable.io.
 ]]></DOC>
 </DOCU_Docu>
 </DOCU>

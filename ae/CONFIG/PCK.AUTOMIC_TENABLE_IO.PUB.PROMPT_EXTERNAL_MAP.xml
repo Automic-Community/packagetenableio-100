@@ -35,6 +35,7 @@
 <row Name="PCK.AUTOMIC_TENABLE_IO.PUB.ACTION.LAUNCH_SCAN/AGENT#" Value="&amp;OVERWRITE_RA_AGENT_PROMPT#" Value1="" Value2="" Value3="" Value4=""/>
 <row Name="PCK.AUTOMIC_TENABLE_IO.PUB.ACTION.PAUSE_SCAN/AGENT#" Value="&amp;OVERWRITE_RA_AGENT_PROMPT#" Value1="" Value2="" Value3="" Value4=""/>
 <row Name="PCK.AUTOMIC_TENABLE_IO.PUB.ACTION.RESUME_SCAN/AGENT#" Value="&amp;OVERWRITE_RA_AGENT_PROMPT#" Value1="" Value2="" Value3="" Value4=""/>
+<row Name="PCK.AUTOMIC_TENABLE_IO.PUB.ACTION.STOP_SCAN/AGENT#" Value="&amp;OVERWRITE_RA_AGENT_PROMPT#" Value1="" Value2="" Value3="" Value4=""/>
 <row Name="PCK.AUTOMIC_TENABLE_IO.PUB.ACTION.UPDATE_SCAN/AGENT#" Value="&amp;OVERWRITE_RA_AGENT_PROMPT#" Value1="" Value2="" Value3="" Value4=""/>
 </Variables>
 </VARA>

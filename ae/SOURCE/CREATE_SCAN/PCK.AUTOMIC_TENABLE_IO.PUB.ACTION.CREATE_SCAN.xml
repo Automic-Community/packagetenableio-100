@@ -50,16 +50,29 @@
 <CIT state="2">
 <citcont agentname="&lt;CIT&gt;" jobtype="WEBSERVICEREST" text="Web Service Rest">
 <cit cittype="2" icon="" id="" subtype="REST" text="REST Web Service">
+<component con="1" enc="0" type="2" value="" xmlName="restConnection"/>
+<component con="0" enc="0" type="2" value="true" xmlName="responseToJobLog"/>
+<component con="0" enc="0" type="2" value="false" xmlName="requestReports"/>
+<component con="0" enc="0" type="2" value="false" xmlName="responseReport"/>
+<component con="0" enc="0" type="2" value="" xmlName="uriOverride"/>
+<component con="0" enc="0" type="2" value="30" xmlName="connectTimeout"/>
+<component con="0" enc="0" type="2" value="60" xmlName="responseTimeout"/>
+<component con="0" enc="0" type="2" value="false" xmlName="tracePerformance"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_from_prompts"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_auth_method"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_endpoint_url"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_follow_redirects"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_connection_timeout"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_read_timeout"/>
 <component con="0" enc="0" type="2" value="" xmlName="conn_auth_aws_accesskey"/>
 <component con="0" enc="0" type="2" value="" xmlName="conn_auth_aws_secret_accesskey"/>
 <component con="0" enc="0" type="2" value="" xmlName="conn_auth_aws_sign_version"/>
-<component con="0" enc="0" type="2" value="" xmlName="conn_auth_basic_host"/>
 <component con="0" enc="0" type="2" value="" xmlName="conn_auth_basic_password"/>
 <component con="0" enc="0" type="2" value="" xmlName="conn_auth_basic_port"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_auth_basic_host"/>
 <component con="0" enc="0" type="2" value="" xmlName="conn_auth_basic_preemptive"/>
 <component con="0" enc="0" type="2" value="" xmlName="conn_auth_basic_realm"/>
 <component con="0" enc="0" type="2" value="" xmlName="conn_auth_basic_username"/>
-<component con="0" enc="0" type="2" value="" xmlName="conn_auth_method"/>
 <component con="0" enc="0" type="2" value="" xmlName="conn_auth_oauth_clientkey"/>
 <component con="0" enc="0" type="2" value="" xmlName="conn_auth_oauth_clientsecret"/>
 <component con="0" enc="0" type="2" value="" xmlName="conn_auth_oauth_refresh_token"/>
@@ -69,10 +82,6 @@
 <component con="0" enc="0" type="2" value="" xmlName="conn_auth_oauth_token_secret"/>
 <component con="0" enc="0" type="2" value="" xmlName="conn_auth_oauth_verifier"/>
 <component con="0" enc="0" type="2" value="" xmlName="conn_auth_oauth_version_method"/>
-<component con="0" enc="0" type="2" value="" xmlName="conn_connection_timeout"/>
-<component con="0" enc="0" type="2" value="" xmlName="conn_endpoint_url"/>
-<component con="0" enc="0" type="2" value="" xmlName="conn_follow_redirects"/>
-<component con="0" enc="0" type="2" value="" xmlName="conn_from_prompts"/>
 <component con="0" enc="0" type="2" value="" xmlName="conn_proxy_auth_method"/>
 <component con="0" enc="0" type="2" value="" xmlName="conn_proxy_host"/>
 <component con="0" enc="0" type="2" value="" xmlName="conn_proxy_password"/>
@@ -80,41 +89,34 @@
 <component con="0" enc="0" type="2" value="" xmlName="conn_proxy_realm"/>
 <component con="0" enc="0" type="2" value="" xmlName="conn_proxy_type"/>
 <component con="0" enc="0" type="2" value="" xmlName="conn_proxy_username"/>
-<component con="0" enc="0" type="2" value="" xmlName="conn_read_timeout"/>
-<component con="0" enc="0" type="2" value="30" xmlName="connectTimeout"/>
-<component con="0" enc="0" type="2" value="" xmlName="curl"/>
-<component con="0" enc="0" type="2" value="" xmlName="file"/>
-<component con="0" enc="0" type="2" value="X-ApiKeys" xmlName="header_0_0"/>
-<component con="0" enc="0" type="2" value="&amp;UC4RB_KEYS#" xmlName="header_0_1"/>
 <component con="0" enc="0" type="2" value="false" xmlName="isCurl"/>
-<component con="0" enc="0" type="2" value="false" xmlName="jobHeaders"/>
-<component con="0" enc="0" type="2" value="false" xmlName="jobQuery"/>
+<component con="0" enc="0" type="2" value="" xmlName="curl"/>
 <component con="0" enc="0" type="2" value="application/json" xmlName="mediaType"/>
+<component con="0" enc="0" type="2" value="text" xmlName="requestDataSource"/>
+<component con="0" enc="0" type="2" value="Part 1" xmlName="partName"/>
+<component con="0" enc="0" type="2" value="scans" xmlName="resource"/>
 <component con="0" enc="0" type="2" value="POST" xmlName="method"/>
 <component con="0" enc="0" type="2" value="false" xmlName="multiPart"/>
-<component con="0" enc="0" type="2" value="false" xmlName="multiPartResp"/>
-<component con="0" enc="0" type="2" value="Part 1" xmlName="partName"/>
-<component con="0" enc="0" type="2" value="text" xmlName="requestDataSource"/>
-<component con="0" enc="0" type="2" value="false" xmlName="requestReports"/>
 <component con="0" enc="0" type="2" value="application/json" xmlName="request_part_0_mediaType"/>
-<component con="0" enc="0" type="2" value="Part 1" xmlName="request_part_0_partName"/>
 <component con="0" enc="0" type="2" value="text" xmlName="request_part_0_requestDataSource"/>
-<component con="0" enc="0" type="2" value="A{" xmlName="request_part_0_requestTab_data_1"/>
-<component con="0" enc="0" type="2" value="A        &quot;text_targets&quot;:&quot;&amp;UC4RB_TIO_TRGTS#&quot;" xmlName="request_part_0_requestTab_data_10"/>
-<component con="0" enc="0" type="2" value="A        }" xmlName="request_part_0_requestTab_data_11"/>
-<component con="0" enc="0" type="2" value="A}" xmlName="request_part_0_requestTab_data_12"/>
-<component con="0" enc="0" type="2" value="A  &quot;uuid&quot;:&quot;&amp;UC4RB_TIO_TEMPT_UUID#&quot;," xmlName="request_part_0_requestTab_data_2"/>
-<component con="0" enc="0" type="2" value="A    &quot;settings&quot;:" xmlName="request_part_0_requestTab_data_3"/>
-<component con="0" enc="0" type="2" value="A        {" xmlName="request_part_0_requestTab_data_4"/>
-<component con="0" enc="0" type="2" value="A        &quot;name&quot;:&quot;&amp;UC4RB_TIO_SCN_NAME#&quot;," xmlName="request_part_0_requestTab_data_5"/>
-<component con="0" enc="0" type="2" value="A        &amp;UC4RB_TIO_DES#" xmlName="request_part_0_requestTab_data_6"/>
-<component con="0" enc="0" type="2" value="A        &amp;UC4RB_TIO_POLC_ID#" xmlName="request_part_0_requestTab_data_7"/>
+<component con="0" enc="0" type="2" value="Part 1" xmlName="request_part_0_partName"/>
+<component con="0" enc="0" type="2" value="A        &quot;text_targets&quot;:&quot;&amp;UC4RB_TIO_TRGTS#&quot;" xmlName="request_part_0_requestTab_data_11"/>
+<component con="0" enc="0" type="2" value="A        &quot;enabled&quot;:&amp;UC4RB_ENABLED#," xmlName="request_part_0_requestTab_data_10"/>
 <component con="0" enc="0" type="2" value="A        &amp;UC4RB_TIO_FOLDR_ID#" xmlName="request_part_0_requestTab_data_8"/>
-<component con="0" enc="0" type="2" value="A        &quot;enabled&quot;:&amp;UC4RB_ENABLED#," xmlName="request_part_0_requestTab_data_9"/>
-<component con="0" enc="0" type="2" value="scans" xmlName="resource"/>
-<component con="0" enc="0" type="2" value="false" xmlName="responseReport"/>
-<component con="0" enc="0" type="2" value="60" xmlName="responseTimeout"/>
-<component con="0" enc="0" type="2" value="true" xmlName="responseToJobLog"/>
+<component con="0" enc="0" type="2" value="A        &amp;UC4RB_TIO_POLC_ID#" xmlName="request_part_0_requestTab_data_7"/>
+<component con="0" enc="0" type="2" value="A        &amp;UC4RB_TIO_AGENT_GROUP_UUIDS#" xmlName="request_part_0_requestTab_data_9"/>
+<component con="0" enc="0" type="2" value="A        {" xmlName="request_part_0_requestTab_data_4"/>
+<component con="0" enc="0" type="2" value="A    &quot;settings&quot;:" xmlName="request_part_0_requestTab_data_3"/>
+<component con="0" enc="0" type="2" value="A        &amp;UC4RB_TIO_DES#" xmlName="request_part_0_requestTab_data_6"/>
+<component con="0" enc="0" type="2" value="A        &quot;name&quot;:&quot;&amp;UC4RB_TIO_SCN_NAME#&quot;," xmlName="request_part_0_requestTab_data_5"/>
+<component con="0" enc="0" type="2" value="A  &quot;uuid&quot;:&quot;&amp;UC4RB_TIO_TEMPT_UUID#&quot;," xmlName="request_part_0_requestTab_data_2"/>
+<component con="0" enc="0" type="2" value="A}" xmlName="request_part_0_requestTab_data_13"/>
+<component con="0" enc="0" type="2" value="A{" xmlName="request_part_0_requestTab_data_1"/>
+<component con="0" enc="0" type="2" value="A        }" xmlName="request_part_0_requestTab_data_12"/>
+<component con="0" enc="0" type="2" value="X-ApiKeys" xmlName="header_0_0"/>
+<component con="0" enc="0" type="2" value="&amp;UC4RB_KEYS#" xmlName="header_0_1"/>
+<component con="0" enc="0" type="2" value="false" xmlName="jobQuery"/>
+<component con="0" enc="0" type="2" value="false" xmlName="jobHeaders"/>
 <component con="0" enc="0" type="2" value="" xmlName="response_part_0_file"/>
 <component con="0" enc="0" type="2" value="$.scan.id" xmlName="response_part_0_script_0_code_0"/>
 <component con="0" enc="0" type="2" value="JSONPath" xmlName="response_part_0_script_0_queryType"/>
@@ -126,9 +128,8 @@
 <component con="0" enc="0" type="2" value="UC4RB_TENABLE_IO_SCAN_UUID#" xmlName="response_part_0_script_1_resourceName"/>
 <component con="0" enc="0" type="2" value="variable" xmlName="response_part_0_script_1_saveTo"/>
 <component con="0" enc="0" type="2" value="false" xmlName="response_part_0_script_1_useArray"/>
-<component con="1" enc="0" type="2" value="" xmlName="restConnection"/>
-<component con="0" enc="0" type="2" value="false" xmlName="tracePerformance"/>
-<component con="0" enc="0" type="2" value="" xmlName="uriOverride"/>
+<component con="0" enc="0" type="2" value="false" xmlName="multiPartResp"/>
+<component con="0" enc="0" type="2" value="" xmlName="file"/>
 </cit>
 <cit cittype="3" icon="" id="" subtype="GENERALJOBPANELDEF" text="General Job Panel"/>
 </citcont>
@@ -289,7 +290,17 @@
 :   SET &UC4RB_TIO_FOLDR_ID#=STR_CAT(&UC4RB_TIO_FOLDR_ID#,',')
 :ENDIF
 
-]]></PSCRI>
+
+: IF &UC4RB_TIO_AGENT_GROUPS# <> ""
+:   SET &UC4RB_ESCAPED_STRING#=&UC4RB_TIO_AGENT_GROUPS#
+:   INC PCK.AUTOMIC_TENABLE_IO.PUB.INCLUDE.ESCAPE_ARG_VALUE
+:   SET &UC4RB_TIO_AGENT_GROUP_UUIDS# = STR_SUB (&UC4RB_ESCAPED_STRING# , ' ', '')
+:   SET &UC4RB_TIO_AGENT_GROUP_UUIDS# = STR_SUB (&UC4RB_TIO_AGENT_GROUP_UUIDS# , ',', '","')
+:   SET &UC4RB_TIO_AGENT_GROUP_UUIDS# = STR_CAT ('["', &UC4RB_TIO_AGENT_GROUP_UUIDS#)
+:   SET &UC4RB_TIO_AGENT_GROUP_UUIDS# = STR_CAT (&UC4RB_TIO_AGENT_GROUP_UUIDS#, '"]')
+:   SET &UC4RB_TIO_AGENT_GROUP_UUIDS#=STR_CAT('"agent_group_id":',&UC4RB_TIO_AGENT_GROUP_UUIDS#)
+:   SET &UC4RB_TIO_AGENT_GROUP_UUIDS#=STR_CAT(&UC4RB_TIO_AGENT_GROUP_UUIDS#,',')
+: ENDIF]]></PSCRI>
 </PRE_SCRIPT>
 <SCRIPT mode="1" state="1">
 <MSCRI><![CDATA[!preparing X-APIKeys for authentication
@@ -324,18 +335,18 @@ PCK.AUTOMIC_TENABLE_IO.PUB.ACTION.CREATE_SCAN
 This action creates a scan in Tenable.io.
 
 = Inputs =
-- Name* : Provide a name for the scan to be created.
-- Description : Provide a short description for the scan to be created.
-- Template UUID* : Provide UUID for the editor template to use. E.g. 09805055-a034-4088-8986-aac5e1c57d5f0d44f09d736969bf
-- Enabled* : Specify whether the schedule for the scan is enabled or not.
-- Targets* : Provide list of Targets separated by comma to scan. E.g. 10.243.12.23(for basic network scan)
-- Policy ID : Provide unique ID of the policy to use. If your user permissions are set to SCAN OPERATOR [24], this parameter must be provided. E.g. 51
-- Folder ID : Provide unique ID of the destination folder for the scan. E.g. 52
-
+- Name *: Provide a name for the scan to be created.
+- Description: Provide a short description for the scan to be created.
+- Template UUID *: Provide UUID for the editor template to use. E.g. 09805055-a034-4088-8986-aac5e1c57d5f0d44f09d736969bf
+- Enabled *: Specify whether the schedule for the scan is enabled or not.
+- Targets *: Provide a list of Targets separated by a comma to scan. E.g. 10.243.12.23(for basic network scan)
+- Policy ID: Provide a unique ID of the policy to use. If your user permissions are set to SCAN OPERATOR [24], this parameter must be provided. E.g. 51
+- Folder ID: Provide a unique ID of the destination folder for the scan. E.g. 52
+- Agent Groups: Provide a list of Agent Group UUIDs separated by a comma to scan. E.g. 8b05bd55-9105-48ec-9da1-2e10a2c9a4e0, 6b05bd55-7568-36kd-9da1-2h10a2c5f4e1
 
 = Return Value =
-- Scan ID : Id for the created scan
-- Scan UUID : UUID for the created scan
+- UC4RB_TENABLE_IO_SCAN_ID#: Id for the created scan
+- UC4RB_TENABLE_IO_SCAN_UUID# : UUID for the created scan
 
 = Example =
 - Name : Web App Scan for Automic Website
@@ -345,7 +356,7 @@ This action creates a scan in Tenable.io.
 - Targets* : http://www.alm.automic.com
 - Policy ID : 51
 - Folder ID : 52
-]]></DOC>
+- Agent Groups : 8b05bd55-9105-48ec-9da1-2e10a2c9a4e0, 6b05bd55-7568-36kd-9da1-2h10a2c5f4e1]]></DOC>
 </DOCU_Docu>
 </JOBS_CIT>
 </uc-export>

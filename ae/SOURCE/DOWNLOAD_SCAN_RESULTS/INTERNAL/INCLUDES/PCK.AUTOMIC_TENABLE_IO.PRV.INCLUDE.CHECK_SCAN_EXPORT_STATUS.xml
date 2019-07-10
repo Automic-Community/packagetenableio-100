@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-15" standalone="no"?><uc-export clientvers="11.0.0">
+<JOBI name="PCK.AUTOMIC_TENABLE_IO.PRV.INCLUDE.CHECK_SCAN_EXPORT_STATUS">
+<HEADER state="1">
+<Title>Check Scan Export Status</Title>
+<ArchiveKey1/>
+<ArchiveKey2/>
+<OH_SubType/>
+</HEADER>
+<SCRIPT mode="1" state="1">
+<MSCRI><![CDATA[: INC PCK.AUTOMIC_TENABLE_IO.PRV.INCLUDE.GET_SCAN_EXPORT_STATUS
+: IF "0" NE STR_FIND("ready",&TIO_SCAN_STATUS#)
+:   P "MESSAGE: Job completed successfully."
+:   SET &SUCCESS#=1
+:   SET &FLAG#=1
+: ELSE
+: ENDIF]]></MSCRI>
+</SCRIPT>
+<DOCU_Docu state="1" type="text">
+<DOC/>
+</DOCU_Docu>
+</JOBI>
+</uc-export>

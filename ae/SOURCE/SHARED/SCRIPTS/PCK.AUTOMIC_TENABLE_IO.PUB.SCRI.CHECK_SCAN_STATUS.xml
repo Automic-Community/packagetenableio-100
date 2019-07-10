@@ -109,19 +109,14 @@
 :SET &STATUS_COUNT# = LENGTH(&SPLITED_SUCCESS_ARRAY#[],SIZE)
 :SET &COUNT#=1
 :WHILE &COUNT# <= &STATUS_COUNT#
-:  IF "0" NE STR_FIND(&FAILURE_STATUS#,&SPLITED_SUCCESS_ARRAY#[&COUNT#])
+:  SET &UC4RB_TRIMED_ARRAY_ELMNT#= STR_TRIM(&SPLITED_SUCCESS_ARRAY#[&COUNT#])
+:  IF "0" NE STR_FIND(&FAILURE_STATUS#,&UC4RB_TRIMED_ARRAY_ELMNT#)
 :     P "ERROR: Job could not be completed successfully as the success status and failure status have some common values."
 :     STOP MSG, 50, "ERROR: sucess status and failure status should not be same."
 :  ENDIF
 :  SET &COUNT#=&COUNT#+1
 :ENDWHILE
 
-
-
-!setting default retry count as 1
-:IF &UC4RB_TIO_RETRY_CNT# = 0
-:  SET &UC4RB_TIO_RETRY_CNT#=1
-:ENDIF
 
 !initial wait
 :IF &UC4RB_TIO_WAIT_FOR_COMPLETE#="YES"

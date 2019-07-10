@@ -337,8 +337,8 @@
 <condition active="1" id="USER DEFINED" once="0" type="C" uiinfo="">
 <params>
 <param altview="0" name="XC_P03" type="V" value="canceled"/>
-<param altview="0" name="XC_P01" type="V" value="&amp;UC4RB_TIO_SN_STATUS#"/>
 <param altview="0" name="XC_P02" type="V" value="="/>
+<param altview="0" name="XC_P01" type="V" value="&amp;UC4RB_TIO_SN_STATUS#"/>
 </params>
 <when active="1" id="USER DEFINED" once="0" type="W" uiinfo="">
 <action active="1" id="SKIP TASK" once="1" type="A" uiinfo="">
@@ -519,9 +519,9 @@
 <conditions id="CONDITIONS">
 <condition active="1" id="USER DEFINED" once="0" type="C" uiinfo="">
 <params>
-<param altview="0" name="XC_P01" type="V" value="&amp;UC4RB_TIO_SN_STATUS#"/>
-<param altview="0" name="XC_P02" type="V" value="="/>
 <param altview="0" name="XC_P03" type="V" value="canceled"/>
+<param altview="0" name="XC_P02" type="V" value="="/>
+<param altview="0" name="XC_P01" type="V" value="&amp;UC4RB_TIO_SN_STATUS#"/>
 </params>
 <when active="1" id="USER DEFINED" once="0" type="W" uiinfo="">
 <action active="1" id="SKIP TASK" once="1" type="A" uiinfo="">
@@ -844,15 +844,15 @@ PCK.AUTOMIC_TENABLE_IO.PUB.ACTION.STOP_SCAN
 This action will stop a scan in Tenable.io.
 
 = Inputs =
-- Scan ID/UUID* : Provide either Scan ID or Scan UUID of the Scan to stop scan.
-- Wait For Completion : Specify whether if action should wait for full stop of the scan.
+- Scan ID* : Provide either Scan ID to stop scan.
+- Wait For Completion : Select Yes, to run action synchronously and No to run asynchronously.
 - Initial Waiting Time (in min) : Provide initial waiting time. E.g. 5
 - Retry Count : Provide the number of retry attempts to get the status.E.g. 10
 - Retry Interval (in sec): Provide the interval in seconds between retry attempt.E.g. 120
 
 = Example =
-- Scan ID/UUID* : 42
-- Wait For Completion : true
+- Scan ID* : 42
+- Wait For Completion : Yes
 - Initial Waiting Time (in min) : 5
 - Retry Count : 10
 - Retry Interval (in sec) : 120]]></DOC>

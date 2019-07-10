@@ -153,8 +153,8 @@
 <PROMPTSET name="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.CONNECTION_PARAMETERS" ontop="1">
 <PRPTBOX promptset="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.CONNECTION_PARAMETERS" prptmode="1">
 <UC4RB_TIO_BASE_URLs.00 altview="0" haslist="0"/>
-<UC4RB_TIO_ACCESS_KEYSs.00 altview="0" haslist="0"/>
-<UC4RB_TIO_SECRET_KEYSs.00 altview="0" haslist="0"/>
+<UC4RB_TIO_ACCESS_KEYSs.00 altview="0" haslist="0">--10</UC4RB_TIO_ACCESS_KEYSs.00>
+<UC4RB_TIO_SECRET_KEYSs.00 altview="0" haslist="0">--10</UC4RB_TIO_SECRET_KEYSs.00>
 </PRPTBOX>
 </PROMPTSET>
 </node>
@@ -298,11 +298,7 @@
 PCK.AUTOMIC_TENABLE_IO.PUB.ACTION.GET_AGENT_GROUP
 
 = General description =
-This action fetch details of provided agent group and publishes it's UUID.
-
-= Failure Conditions =
-* If given scanner ID does not exist.
-* If given title does not exist.
+This action fetch details of all agent group and publishes UUID of provided Agent Group Name.
 
 = Inputs =
 * Scanner ID *  :   Provide the scanner id for which fetch agent group 
@@ -310,13 +306,12 @@ This action fetch details of provided agent group and publishes it's UUID.
 
 
 = Behavior =
-* if Name doesn't exist action will be fail.
-* if Scanner ID does not exist action will fail.
+* if Name doesn't exist, action will be fail.
 
 
 =Return Value=
-&UC4RB_SAVED_ID#    : group id
-&UC4RB_SAVED_UUID#  : group uuid
+&UC4RB_SAVED_ID#    : Agent Group ID
+&UC4RB_SAVED_UUID#  : Agent Group UUID
 
 = Outputs =
 * Return code is 0 in case of success.

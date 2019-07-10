@@ -65,12 +65,12 @@
 <node content="1" id="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.CHECK_SCAN_STATUS" name="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.CHECK_SCAN_STATUS" parent="PPRPTS" type="PPROMPTSET">
 <PROMPTSET name="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.CHECK_SCAN_STATUS">
 <PRPTBOX promptset="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.CHECK_SCAN_STATUS">
-<UC4RB_TIO_FAIL_STATUSs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_FAIL_STATUS#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.CHECK_SCAN_STATUS"/>
+<UC4RB_TIO_FAIL_STATUSs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_FAIL_STATUS#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.CHECK_SCAN_STATUS">canceled, aborted</UC4RB_TIO_FAIL_STATUSs.00>
 <UC4RB_TIO_INIT_WAIT_TIMEs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_INIT_WAIT_TIME#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.CHECK_SCAN_STATUS">5</UC4RB_TIO_INIT_WAIT_TIMEs.00>
 <UC4RB_TIO_RETRY_CNTs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_RETRY_CNT#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.CHECK_SCAN_STATUS">10</UC4RB_TIO_RETRY_CNTs.00>
 <UC4RB_TIO_RETRY_INTRVLs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_RETRY_INTRVL#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.CHECK_SCAN_STATUS">120</UC4RB_TIO_RETRY_INTRVLs.00>
 <UC4RB_TIO_SCAN_IDs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_SCAN_ID#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.CHECK_SCAN_STATUS"/>
-<UC4RB_TIO_SUCCESS_STATUSs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_SUCCESS_STATUS#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.CHECK_SCAN_STATUS"/>
+<UC4RB_TIO_SUCCESS_STATUSs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_SUCCESS_STATUS#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.CHECK_SCAN_STATUS">completed</UC4RB_TIO_SUCCESS_STATUSs.00>
 </PRPTBOX>
 </PROMPTSET>
 </node>
@@ -131,14 +131,16 @@
 <dyntree>
 <node content="1" id="VALUE" name="Variables" parent="" type="TASKVALUE">
 <VALUE state="2">
-<Values/>
+<Values>
+<row ERTUsage="0" Mod="0" Name="&amp;UC4RB_TIO_SN_STATUS#" Value=""/>
+</Values>
 <Mode>0</Mode>
 </VALUE>
 </node>
 <node content="1" id="PVALUE" name="Parent Variables" parent="" type="TASKVALUE">
 <VALUE state="2">
 <Values>
-<row ERTUsage="0" Mod="0" Name="&amp;UC4RB_TIO_WAIT_FOR_COMPLETE#" Value="TRUE"/>
+<row ERTUsage="0" Mod="0" Name="&amp;UC4RB_TIO_WAIT_FOR_COMPLETE#" Value="YES"/>
 </Values>
 <Mode>1</Mode>
 </VALUE>
@@ -157,12 +159,12 @@
 <node content="1" id="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.CHECK_SCAN_STATUS" name="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.CHECK_SCAN_STATUS" parent="PPRPTS" type="PPROMPTSET">
 <PROMPTSET name="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.CHECK_SCAN_STATUS">
 <PRPTBOX promptset="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.CHECK_SCAN_STATUS">
-<UC4RB_TIO_FAIL_STATUSs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_FAIL_STATUS#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.CHECK_SCAN_STATUS"/>
+<UC4RB_TIO_FAIL_STATUSs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_FAIL_STATUS#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.CHECK_SCAN_STATUS">canceled, aborted</UC4RB_TIO_FAIL_STATUSs.00>
 <UC4RB_TIO_INIT_WAIT_TIMEs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_INIT_WAIT_TIME#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.CHECK_SCAN_STATUS">5</UC4RB_TIO_INIT_WAIT_TIMEs.00>
 <UC4RB_TIO_RETRY_CNTs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_RETRY_CNT#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.CHECK_SCAN_STATUS">10</UC4RB_TIO_RETRY_CNTs.00>
 <UC4RB_TIO_RETRY_INTRVLs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_RETRY_INTRVL#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.CHECK_SCAN_STATUS">120</UC4RB_TIO_RETRY_INTRVLs.00>
 <UC4RB_TIO_SCAN_IDs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_SCAN_ID#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.CHECK_SCAN_STATUS"/>
-<UC4RB_TIO_SUCCESS_STATUSs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_SUCCESS_STATUS#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.CHECK_SCAN_STATUS"/>
+<UC4RB_TIO_SUCCESS_STATUSs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_SUCCESS_STATUS#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.CHECK_SCAN_STATUS">completed</UC4RB_TIO_SUCCESS_STATUSs.00>
 </PRPTBOX>
 </PROMPTSET>
 </node>
@@ -233,12 +235,12 @@
 <node content="1" id="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.CHECK_SCAN_STATUS" name="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.CHECK_SCAN_STATUS" parent="PPRPTS" type="PPROMPTSET">
 <PROMPTSET name="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.CHECK_SCAN_STATUS">
 <PRPTBOX promptset="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.CHECK_SCAN_STATUS">
-<UC4RB_TIO_FAIL_STATUSs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_FAIL_STATUS#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.CHECK_SCAN_STATUS"/>
+<UC4RB_TIO_FAIL_STATUSs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_FAIL_STATUS#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.CHECK_SCAN_STATUS">canceled, aborted</UC4RB_TIO_FAIL_STATUSs.00>
 <UC4RB_TIO_INIT_WAIT_TIMEs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_INIT_WAIT_TIME#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.CHECK_SCAN_STATUS">5</UC4RB_TIO_INIT_WAIT_TIMEs.00>
 <UC4RB_TIO_RETRY_CNTs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_RETRY_CNT#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.CHECK_SCAN_STATUS">10</UC4RB_TIO_RETRY_CNTs.00>
 <UC4RB_TIO_RETRY_INTRVLs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_RETRY_INTRVL#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.CHECK_SCAN_STATUS">120</UC4RB_TIO_RETRY_INTRVLs.00>
 <UC4RB_TIO_SCAN_IDs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_SCAN_ID#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.CHECK_SCAN_STATUS"/>
-<UC4RB_TIO_SUCCESS_STATUSs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_SUCCESS_STATUS#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.CHECK_SCAN_STATUS"/>
+<UC4RB_TIO_SUCCESS_STATUSs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_SUCCESS_STATUS#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.CHECK_SCAN_STATUS">completed</UC4RB_TIO_SUCCESS_STATUSs.00>
 </PRPTBOX>
 </PROMPTSET>
 </node>
@@ -323,7 +325,7 @@
 <node content="1" id="VALUE" name="Variables" parent="" type="VALUE">
 <VALUE state="1">
 <Values>
-<row ERTUsage="0" Name="&amp;UC4RB_TIO_WAIT_FOR_COMPLETE#" Value="TRUE"/>
+<row ERTUsage="0" Name="&amp;UC4RB_TIO_WAIT_FOR_COMPLETE#" Value="YES"/>
 </Values>
 <Mode>1</Mode>
 </VALUE>
@@ -341,8 +343,8 @@
 <PROMPTSET name="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.CHECK_SCAN_STATUS" ontop="1">
 <PRPTBOX promptset="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.CHECK_SCAN_STATUS" prptmode="1">
 <UC4RB_TIO_SCAN_IDs.00 altview="0" haslist="0"/>
-<UC4RB_TIO_SUCCESS_STATUSs.00 altview="0" haslist="0"/>
-<UC4RB_TIO_FAIL_STATUSs.00 altview="0" haslist="0"/>
+<UC4RB_TIO_SUCCESS_STATUSs.00 altview="0" haslist="0">completed</UC4RB_TIO_SUCCESS_STATUSs.00>
+<UC4RB_TIO_FAIL_STATUSs.00 altview="0" haslist="0">canceled, aborted</UC4RB_TIO_FAIL_STATUSs.00>
 <UC4RB_TIO_INIT_WAIT_TIMEs.00 altview="0" haslist="0">5</UC4RB_TIO_INIT_WAIT_TIMEs.00>
 <UC4RB_TIO_RETRY_CNTs.00 altview="0" haslist="0">10</UC4RB_TIO_RETRY_CNTs.00>
 <UC4RB_TIO_RETRY_INTRVLs.00 altview="0" haslist="0">120</UC4RB_TIO_RETRY_INTRVLs.00>
@@ -408,10 +410,9 @@ PCK.AUTOMIC_TENABLE_IO.PUB.ACTION.CHECK_SCAN_STATUS
 This action will check for a given status for a scan in a specific time interval.
 
 = Inputs =
-- Scan ID/UUID* : Provide either Scan ID or Scan UUID of the Scan to check its status.
-- Success Status : Provide comma separated values for success status. E.g. completed, scheduled, running etc.
-- Failure Status : Provide comma separated values for failure status. E.g. canceled, stopped, aborted.
-- Wait For Completion : Specify whether if action should wait for full stop of the scan.
+- Scan ID* : Provide Scan ID to check its status.
+- Success Status : Provide comma separated values for success status. E.g. completed.
+- Failure Status : Provide comma separated values for failure status. E.g. canceled,aborted.
 - Initial Waiting Time (in min) : Provide initial waiting time. E.g. 5
 - Retry Count : Provide the number of retry attempts to get the status.E.g. 10
 - Retry Interval (in sec): Provide the interval in seconds between retry attempt.E.g. 120
@@ -420,12 +421,12 @@ This action will check for a given status for a scan in a specific time interval
 Action fails if specified scan does not give the specified status in specified time.
 If we provide same status for both Success and Failure then action will fail.
 
+
 = Example =
-- Scan ID/UUID* : 42
-- Success Status : completed, scheduled, running
-- Failure Status : canceled, stopped, aborted.
-- Wait For Completion : true
-- Initial Waiting Time (in sec) : 30
+- Scan ID* : 42
+- Success Status : completed
+- Failure Status : canceled.
+- Initial Waiting Time (in sec) : 5
 - Retry Count : 10
 - Retry Interval (in sec) : 30
 ]]></DOC>

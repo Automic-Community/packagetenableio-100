@@ -333,7 +333,27 @@
 <when ChkWhenExec="0" LtstEnd="0" LtstEndDays="0" LtstEndTime="00:00" LtstSt="0" LtstStDays="0" LtstStTime="00:00" LtstTimeTZ="" WCTypeAND="1" WCTypeOR="0" WElseA="0" WElseH="1" WElseS="0" WElseX="0" WhenExecute="" WtimOn="0"/>
 <preconditions>
 <PreCon>
-<conditions id="CONDITIONS"/>
+<conditions id="CONDITIONS">
+<condition active="1" id="USER DEFINED" once="0" type="C" uiinfo="">
+<params>
+<param altview="0" name="XC_P03" type="V" value="paused"/>
+<param altview="0" name="XC_P01" type="V" value="&amp;UC4RB_TIO_SN_STATUS#"/>
+<param altview="0" name="XC_P02" type="V" value="="/>
+</params>
+<when active="1" id="USER DEFINED" once="0" type="W" uiinfo="">
+<action active="1" id="SKIP TASK" once="1" type="A" uiinfo="">
+<params>
+<param altview="0" name="XC_P01" type="V" value="Skipped due to paused state of scan"/>
+</params>
+</action>
+</when>
+<else active="1" id="USER DEFINED" once="0" type="E" uiinfo="">
+<action active="1" id="RUN TASK" once="1" type="A" uiinfo="">
+<params/>
+</action>
+</else>
+</condition>
+</conditions>
 </PreCon>
 </preconditions>
 <predecessors>
@@ -499,9 +519,9 @@
 <conditions id="CONDITIONS">
 <condition active="1" id="USER DEFINED" once="0" type="C" uiinfo="">
 <params>
-<param altview="0" name="XC_P03" type="V" value="paused"/>
-<param altview="0" name="XC_P02" type="V" value="="/>
 <param altview="0" name="XC_P01" type="V" value="&amp;UC4RB_TIO_SN_STATUS#"/>
+<param altview="0" name="XC_P02" type="V" value="="/>
+<param altview="0" name="XC_P03" type="V" value="paused"/>
 </params>
 <when active="1" id="USER DEFINED" once="0" type="W" uiinfo="">
 <action active="1" id="SKIP TASK" once="1" type="A" uiinfo="">

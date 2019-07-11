@@ -91,7 +91,7 @@
 <component con="0" enc="0" type="2" value="" xmlName="conn_proxy_username"/>
 <component con="0" enc="0" type="2" value="false" xmlName="isCurl"/>
 <component con="0" enc="0" type="2" value="" xmlName="curl"/>
-<component con="0" enc="0" type="2" value="scans/&amp;UC4RB_TIO_SCN_ID#/export/&amp;UC4RB_TIO_FILE_UUID#/status" xmlName="resource"/>
+<component con="0" enc="0" type="2" value="scans/&amp;UC4RB_TIO_SCAN_ID#/export/&amp;UC4RB_TIO_FILE_UUID#/status" xmlName="resource"/>
 <component con="0" enc="0" type="2" value="GET" xmlName="method"/>
 <component con="0" enc="0" type="2" value="false" xmlName="multiPart"/>
 <component con="0" enc="0" type="2" value="X-ApiKeys" xmlName="header_0_0"/>

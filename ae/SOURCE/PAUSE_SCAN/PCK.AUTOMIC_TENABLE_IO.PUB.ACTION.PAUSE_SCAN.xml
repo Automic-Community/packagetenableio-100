@@ -327,33 +327,13 @@
 </PostCon>
 </postconditions>
 </task>
-<task Alias="PAUSE_SCAN" BranchType="0" Col="3" Lnr="3" OType="JOBS" Object="PCK.AUTOMIC_TENABLE_IO.PRV.ACTION.PAUSE_SCAN" ParentAlias="" ParentObject="" Row="1" Text2="">
+<task Alias="PAUSE_SCAN" BranchType="0" Col="3" Lnr="3" OType="JOBS" Object="PCK.AUTOMIC_TENABLE_IO.PRV.JOBS.PAUSE_SCAN" ParentAlias="" ParentObject="" Row="1" Text2="">
 <checkpoint RollbackFlag="1" RunPerPatch="0" RunPerTarget="0" TcpADays="0" TcpATime="00:00" TcpATimeTZ="" TcpExecute="" TcpOn="0" promptatgen="0" showprompt="0"/>
 <after ActFlg="1" AtimOn="0" ErlstStDays="0" ErlstStTime="00:00" ErlstStTimeTZ="" HoldFlg="0"/>
-<when ChkWhenExec="0" LtstEnd="0" LtstEndDays="0" LtstEndTime="00:00" LtstSt="0" LtstStDays="0" LtstStTime="00:00" LtstTimeTZ="" WCTypeAND="1" WCTypeOR="0" WElseA="1" WElseH="0" WElseS="0" WElseX="0" WhenExecute="" WtimOn="0"/>
+<when ChkWhenExec="0" LtstEnd="0" LtstEndDays="0" LtstEndTime="00:00" LtstSt="0" LtstStDays="0" LtstStTime="00:00" LtstTimeTZ="" WCTypeAND="1" WCTypeOR="0" WElseA="0" WElseH="1" WElseS="0" WElseX="0" WhenExecute="" WtimOn="0"/>
 <preconditions>
 <PreCon>
-<conditions id="CONDITIONS">
-<condition active="1" id="USER DEFINED" once="0" type="C" uiinfo="">
-<params>
-<param altview="0" name="XC_P03" type="V" value="paused"/>
-<param altview="0" name="XC_P02" type="V" value="="/>
-<param altview="0" name="XC_P01" type="V" value="&amp;UC4RB_TIO_SN_STATUS#"/>
-</params>
-<when active="1" id="USER DEFINED" once="0" type="W" uiinfo="">
-<action active="1" id="SKIP TASK" once="1" type="A" uiinfo="">
-<params>
-<param altview="0" name="XC_P01" type="V" value="Skipped due to paused state of scan"/>
-</params>
-</action>
-</when>
-<else active="1" id="USER DEFINED" once="0" type="E" uiinfo="">
-<action active="1" id="RUN TASK" once="1" type="A" uiinfo="">
-<params/>
-</action>
-</else>
-</condition>
-</conditions>
+<conditions id="CONDITIONS"/>
 </PreCon>
 </preconditions>
 <predecessors>
@@ -366,7 +346,7 @@
 <node content="1" id="VALUE" name="Variables" parent="" type="TASKVALUE">
 <VALUE state="2">
 <Values/>
-<Mode>1</Mode>
+<Mode>0</Mode>
 </VALUE>
 </node>
 <node content="1" id="PVALUE" name="Parent Variables" parent="" type="TASKVALUE">
@@ -437,7 +417,72 @@
 </node>
 </dyntree>
 </dynvalues>
-<CIT/>
+<CIT src="OCV">
+<citcont agentname="&lt;CIT&gt;" jobtype="WEBSERVICEREST" text="Web Service Rest">
+<cit cittype="2" icon="" id="" subtype="REST" text="REST Web Service">
+<component con="0" enc="0" type="2" value="WebServiceRest" xmlName="componentName"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_auth_aws_accesskey"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_auth_aws_secret_accesskey"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_auth_aws_sign_version"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_auth_basic_host"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_auth_basic_password"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_auth_basic_port"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_auth_basic_preemptive"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_auth_basic_realm"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_auth_basic_username"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_auth_method"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_auth_oauth_clientkey"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_auth_oauth_clientsecret"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_auth_oauth_refresh_token"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_auth_oauth_refresh_uri"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_auth_oauth_signature_type"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_auth_oauth_token"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_auth_oauth_token_secret"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_auth_oauth_verifier"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_auth_oauth_version_method"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_connection_timeout"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_endpoint_url"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_follow_redirects"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_from_prompts"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_proxy_auth_method"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_proxy_host"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_proxy_password"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_proxy_port"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_proxy_realm"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_proxy_type"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_proxy_username"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_read_timeout"/>
+<component con="0" enc="0" type="2" value="30" xmlName="connectTimeout"/>
+<component con="0" enc="0" type="2" value="" xmlName="curl"/>
+<component con="0" enc="0" type="2" value="" xmlName="file"/>
+<component con="0" enc="0" type="2" value="X-ApiKeys" xmlName="header_0_0"/>
+<component con="0" enc="0" type="2" value="&amp;UC4RB_KEYS#" xmlName="header_0_1"/>
+<component con="0" enc="0" type="2" value="false" xmlName="isCurl"/>
+<component con="0" enc="0" type="2" value="false" xmlName="jobHeaders"/>
+<component con="0" enc="0" type="2" value="false" xmlName="jobQuery"/>
+<component con="0" enc="0" type="2" value="application/json" xmlName="mediaType"/>
+<component con="0" enc="0" type="2" value="POST" xmlName="method"/>
+<component con="0" enc="0" type="2" value="false" xmlName="multiPart"/>
+<component con="0" enc="0" type="2" value="false" xmlName="multiPartResp"/>
+<component con="0" enc="0" type="2" value="Part 1" xmlName="partName"/>
+<component con="0" enc="0" type="2" value="text" xmlName="requestDataSource"/>
+<component con="0" enc="0" type="2" value="false" xmlName="requestReports"/>
+<component con="0" enc="0" type="2" value="application/json" xmlName="request_part_0_mediaType"/>
+<component con="0" enc="0" type="2" value="Part 1" xmlName="request_part_0_partName"/>
+<component con="0" enc="0" type="2" value="text" xmlName="request_part_0_requestDataSource"/>
+<component con="0" enc="0" type="2" value="scans/&amp;UC4RB_TIO_SCAN_ID#/pause" xmlName="resource"/>
+<component con="0" enc="0" type="2" value="false" xmlName="responseReport"/>
+<component con="0" enc="0" type="2" value="60" xmlName="responseTimeout"/>
+<component con="0" enc="0" type="2" value="true" xmlName="responseToJobLog"/>
+<component con="0" enc="0" type="2" value="" xmlName="response_part_0_file"/>
+<component con="1" enc="0" type="2" value="" xmlName="restConnection"/>
+<component con="0" enc="0" type="2" value="REST" xmlName="runType"/>
+<component con="0" enc="0" type="2" value="false" xmlName="tracePerformance"/>
+<component con="0" enc="0" type="2" value="" xmlName="uriOverride"/>
+</cit>
+<cit cittype="3" icon="" id="" subtype="GENERALJOBPANELDEF" text="General Job Panel"/>
+</citcont>
+</CIT>
 <calendars CCTypeAll="0" CCTypeExt="0" CCTypeNone="0" CCTypeOne="1" CaleOn="0"/>
 <postconditions>
 <PostCon>

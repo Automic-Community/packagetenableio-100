@@ -1,0 +1,51 @@
+*** Settings ***
+Suite Setup       Startup
+Suite Teardown    Teardown
+Force Tags        get_scan_details
+Test Template     Get Scan Details Template
+Library           com.automic.robot.itpa.ItpaLibrary
+Library           String
+Library           DateTime
+Resource          ../../Resources/messages.txt
+Resource          ../../Resources/keywords.txt
+Resource          ../../Resources/variables.txt
+Resource          ../../Resources/actions.txt
+
+*** Test Cases ***    OK_NOK    ScanID
+Get Scan Details with valid Scan ID
+                      [Tags]    main_scenarios
+                      OK        ${Scan_ID}
+
+Get Scan Details with valid Scan UUID
+                      OK        ${Scan_UUID}
+
+Get Scan Details with invalid Scan ID
+                      NOK       Invalid
+
+Get Scan Details with Empty Scan ID
+                      NOK       ${EMPTY}
+
+*** Keywords ***
+Startup
+    Log    *******Start Test "GET SCAN DETAILS"*******
+    Log    *******Connect to AE*******
+    Connect AE
+
+Get Scan Details Template
+    [Arguments]    ${OK_NOK}    ${ScanID}
+    [Documentation]    This test will fetch scan details from Tenable.
+    ...    -${OK_NOK}: Boolean value indicate if the action is ENDED_OK or ENDED_NOT_OK. Value of this variable should be OK or NOK.
+    ...    -${ScanID}: This field Specifies scan id or scan uuid to fetch scan details.
+    Generate String
+    Init Action    ${_GET_SCAN_DETAILS_ACTION}
+    Nessus Authentication
+    Run Keyword If    '${ScanID}' == 'Invalid'    Action Set    &UC4RB_TIO_SCAN_ID#    ${Generated_Name}_${Time}    ELSE    Action Set
+    ...    &UC4RB_TIO_SCAN_ID#    ${ScanID}
+    Action Execute
+    Run Keyword If    '${OK_NOK}' == 'OK'    Assert Success    ELSE    Assert Failure
+    Run Keyword If    '${OK_NOK}' == 'OK'    Action Object Variable Should Be Found    &UC4RB_TIO_SN_SCHDL_ID#    ELSE    Action Object Variable Should Not Be Found    &UC4RB_TIO_SN_SCHDL_ID#
+    Run Keyword If    '${OK_NOK}' == 'OK'    Action Object Variable Should Be Found    &UC4RB_TIO_SN_UUID#    ELSE    Action Object Variable Should Not Be Found    &UC4RB_TIO_SN_UUID#
+    Run Keyword If    '${OK_NOK}' == 'OK'    Action Object Variable Should Be Found    &UC4RB_TIO_SN_DETAILS#    ELSE    Action Object Variable Should Not Be Found    &UC4RB_TIO_SN_DETAILS#
+
+Teardown
+    Log    *******End Test "GET SCAN DETAILS"*******

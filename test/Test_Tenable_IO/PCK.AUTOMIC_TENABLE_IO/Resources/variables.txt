@@ -6,6 +6,8 @@ Resource          ../../../Env/default.txt
 ${URL_Tenable}    https://cloud.tenable.com
 ${accessKey}      48e0792493d9454c52b2111c052e2108b7434bb59200386ef151a67cde118770
 ${secretKey}      348341086a2ffe21ffebbf1a3b7e0a10eeacf9bcaf632fdb495d888db689cdc3
+${Scan_ID}        42
+${Scan_UUID}      template-e4f8bd23-369a-66fb-f86e-64aa905504584428dbdd015d1a02
 #---- Create Scan --------------------------------------------------------------------------------------------
 ${Name}           Scan0016
 ${Description}    This scan is created by automation script.
@@ -14,14 +16,12 @@ ${Enabled}        Yes
 ${Targets}        http://www.alm.automic.com
 ${Policy_ID}      51
 ${Folder_ID}      52
-
-${Scan_ID}        188
+${InvalidState_Scan_ID}    224
 #---- Get Scan Template --------------------------------------------------------------------------------------
 ${Template_Title}    Web App Scan
 #---- Get Agent Groups --------------------------------------------------------------------------------------
 ${Group_Name}     Group1
 ${Scanner_ID}     110973
-
 #---- Update Scan --------------------------------------------------------------------------------------------
 ${Launch}         WEEKLY
 ${Start_Time}     20190701143001
@@ -32,5 +32,6 @@ ${Agent_Groups}    "e610d266-1d58-4a99-b859-0d67b9423079","e610d266-1d58-4a99-b8
 ${File_Targets}    target.txt
 ${Emails}         test@test.com
 ${ACLs}           {"permission":32,"type":"default"}
-
-
+#---- Download Scan result -----------------------------------------------------------------------------------
+${Asset_ID}       0f84a98d-b355-4ad0-ae34-ec5cc740819a
+${EXECDIR}        D:\\temp\\

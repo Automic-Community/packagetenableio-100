@@ -1,0 +1,59 @@
+*** Settings ***
+Suite Setup       Startup
+Suite Teardown    Teardown
+Force Tags        pause_scan
+Test Template     Pause Scan Template
+Library           com.automic.robot.itpa.ItpaLibrary
+Library           String
+Library           DateTime
+Resource          ../../Resources/messages.txt
+Resource          ../../Resources/keywords.txt
+Resource          ../../Resources/variables.txt
+Resource          ../../Resources/actions.txt
+
+*** Test Cases ***    OK_NOK    ScanID                     WaitForCompletion    InitialWaitingTime    RetryCount    RetryInterval
+Pause Scan with valid Scan ID under timeout conditions
+                      [Tags]    main_scenarios
+                      OK        ${Scan_ID}                 YES                  2                     5             10
+
+Pause Scan with valid Scan ID with WaitForCompletion as No
+                      OK        ${Scan_ID}                 NO                   1                     5             10
+
+Pause Scan with valid Scan ID without timeout conditions
+                      OK        ${Scan_ID}                 NO                   0                     0             0
+
+Pause Scan with invalid state Scan ID
+                      NOK       ${InvalidState_Scan_ID}    NO                   1                     5             10
+
+Pause Scan with invalid Scan ID
+                      NOK       Invalid                    YES                  5                     5             10
+
+*** Keywords ***
+Startup
+    Log    *******Start Test "PAUSE SCAN"*******
+    Log    *******Connect to AE*******
+    Connect AE
+
+Pause Scan Template
+    [Arguments]    ${OK_NOK}    ${ScanID}    ${WaitForCompletion}    ${InitialWaitingTime}    ${RetryCount}    ${RetryInterval}
+    [Documentation]    This test will pause a scan in Tenable.
+    ...    -${OK_NOK}: Boolean value indicate if the action is ENDED_OK or ENDED_NOT_OK. Value of this variable should be OK or NOK.
+    ...    -${ScanID}: This field Specifies scan id to pause.
+    ...    -${WaitForCompletion}: This field Specifies whether if action should wait for full pause of the scan..
+    ...    -${InitialWaitingTime}: This field Specifies the initial waiting time in seconds before checking for the status.
+    ...    -${RetryCount}: This field Specifies the number of repeated checks for the status.
+    ...    -${RetryInterval}: This field Specifies the interval in seconds between repeated checks.
+    Generate String
+    Init Action    ${_PAUSE_SCAN_ACTION}
+    Nessus Authentication
+    Run Keyword If    '${ScanID}' == 'Invalid'    Action Set    &UC4RB_TIO_SCAN_ID#    ${Generated_Name}_${Time}    ELSE    Action Set
+    ...    &UC4RB_TIO_SCAN_ID#    ${ScanID}
+    Action Set    &UC4RB_TIO_WAIT_FOR_COMPLETE#    ${WaitForCompletion}
+    Action Set    &UC4RB_TIO_INIT_WAIT_TIME#    ${InitialWaitingTime}
+    Action Set    &UC4RB_TIO_RETRY_CNT#    ${RetryCount}
+    Action Set    &UC4RB_TIO_RETRY_INTRVL#    ${RetryInterval}
+    Action Execute
+    Run Keyword If    '${OK_NOK}' == 'OK'    Assert Success    ELSE    Assert Failure
+
+Teardown
+    Log    *******End Test "PAUSE SCAN"*******

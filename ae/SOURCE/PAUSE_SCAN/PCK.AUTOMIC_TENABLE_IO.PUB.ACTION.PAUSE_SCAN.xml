@@ -1,0 +1,801 @@
+<?xml version="1.0" encoding="ISO-8859-15" standalone="no"?><uc-export clientvers="11.0.0">
+<JOBP AllowExternal="1" name="PCK.AUTOMIC_TENABLE_IO.PUB.ACTION.PAUSE_SCAN">
+<XHEADER state="1">
+<Title>Pause Scan</Title>
+<ArchiveKey1/>
+<ArchiveKey2/>
+<Active>1</Active>
+<OH_SubType/>
+<CustomAttributes KeyListID="0" dataRequestID="0"/>
+</XHEADER>
+<SYNCREF state="1">
+<Syncs/>
+</SYNCREF>
+<ATTR_JOBP state="1">
+<Queue>CLIENT_QUEUE</Queue>
+<ChildQueue/>
+<StartType/>
+<ExtRepDef>1</ExtRepDef>
+<ExtRepAll>0</ExtRepAll>
+<ExtRepNone>0</ExtRepNone>
+<IntAccount/>
+<AutoDeactNo>0</AutoDeactNo>
+<AutoDeact1ErrorFree>0</AutoDeact1ErrorFree>
+<AutoDeactErrorFree>1</AutoDeactErrorFree>
+<DeactWhen>ANY_OK</DeactWhen>
+<AutoDeactAlways>0</AutoDeactAlways>
+<DeactDelay>0</DeactDelay>
+<ActAtRun>1</ActAtRun>
+<UC4Priority>0</UC4Priority>
+<PassPriority>0</PassPriority>
+<MaxParallel2>0</MaxParallel2>
+<ReuseHG>1</ReuseHG>
+<MpElse1>1</MpElse1>
+<MpElse2>0</MpElse2>
+<TZ/>
+<RWhen/>
+<RExecute/>
+<JPA_SubType/>
+</ATTR_JOBP>
+<JOBP state="1">
+<JobpStruct mode="design">
+<task Alias="" BranchType="0" Col="1" Lnr="1" OType="&lt;START&gt;" Object="START" ParentAlias="" ParentObject="" Row="1" Text2="">
+<checkpoint RollbackFlag="0" RunPerPatch="0" RunPerTarget="0" TcpADays="0" TcpATime="00:00" TcpATimeTZ="" TcpExecute="" TcpOn="0" promptatgen="0" showprompt="0"/>
+<after ActFlg="1" AtimOn="0" ErlstStDays="0" ErlstStTime="00:00" ErlstStTimeTZ="" HoldFlg="0"/>
+<when ChkWhenExec="0" LtstEnd="0" LtstEndDays="0" LtstEndTime="00:00" LtstSt="0" LtstStDays="0" LtstStTime="00:00" LtstTimeTZ="" WCTypeAND="1" WCTypeOR="0" WElseA="0" WElseH="0" WElseS="1" WElseX="0" WhenExecute="" WtimOn="0"/>
+<preconditions>
+<PreCon>
+<conditions id="CONDITIONS"/>
+</PreCon>
+</preconditions>
+<predecessors/>
+<runtime MrtCancel="0" MrtDays="0" MrtErt="0" MrtExecute="0" MrtExecuteObj="" MrtFix="0" MrtMethodDate="0" MrtMethodErt="0" MrtMethodFix="0" MrtMethodNone="1" MrtOn="1" MrtTZ="" MrtTime="00:00" SrtErt="0" SrtFix="0" SrtMethodErt="0" SrtMethodFix="0" SrtMethodNone="1"/>
+<result ChkRExec="0" RElseHalt="0" RElseIgn="0" RElseJPAbend="0" RExecFlag="0" RExecute="" RRepMTimes="0" RRepOn="0" RRepWait="0" RWhen=""/>
+<dynvalues>
+<dyntree>
+<node content="1" id="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.CONNECTION_PARAMETERS" name="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.CONNECTION_PARAMETERS" parent="PPRPTS" type="PPROMPTSET">
+<PROMPTSET name="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.CONNECTION_PARAMETERS">
+<PRPTBOX promptset="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.CONNECTION_PARAMETERS">
+<UC4RB_TIO_ACCESS_KEYSs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_ACCESS_KEYS#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.CONNECTION_PARAMETERS">--10FBA41CCE80A626FF9F1A8BC87ECEB23E141388E66BC9D730</UC4RB_TIO_ACCESS_KEYSs.00>
+<UC4RB_TIO_BASE_URLs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_BASE_URL#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.CONNECTION_PARAMETERS"/>
+<UC4RB_TIO_SECRET_KEYSs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_SECRET_KEYS#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.CONNECTION_PARAMETERS">--10</UC4RB_TIO_SECRET_KEYSs.00>
+</PRPTBOX>
+</PROMPTSET>
+</node>
+<node content="1" id="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.PAUSE_SCAN" name="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.PAUSE_SCAN" parent="PPRPTS" type="PPROMPTSET">
+<PROMPTSET name="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.PAUSE_SCAN">
+<PRPTBOX promptset="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.PAUSE_SCAN">
+<UC4RB_TIO_SCAN_IDs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_SCAN_ID#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.PAUSE_SCAN"/>
+</PRPTBOX>
+</PROMPTSET>
+</node>
+<node content="1" id="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS" name="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS" parent="PPRPTS" type="PPROMPTSET">
+<PROMPTSET name="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS">
+<PRPTBOX promptset="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS">
+<UC4RB_TIO_INIT_WAIT_TIMEs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_INIT_WAIT_TIME#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS">1</UC4RB_TIO_INIT_WAIT_TIMEs.00>
+<UC4RB_TIO_RETRY_CNTs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_RETRY_CNT#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS">10</UC4RB_TIO_RETRY_CNTs.00>
+<UC4RB_TIO_RETRY_INTRVLs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_RETRY_INTRVL#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS">10</UC4RB_TIO_RETRY_INTRVLs.00>
+<UC4RB_TIO_WAIT_FOR_COMPLETEs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_WAIT_FOR_COMPLETE#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS">YES</UC4RB_TIO_WAIT_FOR_COMPLETEs.00>
+</PRPTBOX>
+</PROMPTSET>
+</node>
+<node content="1" id="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_PROXY" name="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_PROXY" parent="PPRPTS" type="PPROMPTSET">
+<PROMPTSET name="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_PROXY">
+<PRPTBOX promptset="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_PROXY">
+<CONN_PROXY_AUTH_METHODs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="CONN_PROXY_AUTH_METHOD#" promptsetname="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_PROXY">None</CONN_PROXY_AUTH_METHODs.00>
+<CONN_PROXY_HOSTs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="CONN_PROXY_HOST#" promptsetname="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_PROXY"/>
+<CONN_PROXY_PASSWORDs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="CONN_PROXY_PASSWORD#" promptsetname="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_PROXY">--10</CONN_PROXY_PASSWORDs.00>
+<CONN_PROXY_PORTs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="CONN_PROXY_PORT#" promptsetname="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_PROXY">0</CONN_PROXY_PORTs.00>
+<CONN_PROXY_REALMs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="CONN_PROXY_REALM#" promptsetname="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_PROXY"/>
+<CONN_PROXY_TYPEs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="CONN_PROXY_TYPE#" promptsetname="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_PROXY">None</CONN_PROXY_TYPEs.00>
+<CONN_PROXY_USERNAMEs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="CONN_PROXY_USERNAME#" promptsetname="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_PROXY"/>
+</PRPTBOX>
+</PROMPTSET>
+</node>
+<node content="1" id="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_ADVANCED" name="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_ADVANCED" parent="PPRPTS" type="PPROMPTSET">
+<PROMPTSET name="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_ADVANCED">
+<PRPTBOX promptset="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_ADVANCED">
+<CONN_CONNECTION_TIMEOUTs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="CONN_CONNECTION_TIMEOUT#" promptsetname="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_ADVANCED">30</CONN_CONNECTION_TIMEOUTs.00>
+<CONN_FOLLOW_REDIRECTSs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="CONN_FOLLOW_REDIRECTS#" promptsetname="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_ADVANCED">NO</CONN_FOLLOW_REDIRECTSs.00>
+<CONN_READ_TIMEOUTs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="CONN_READ_TIMEOUT#" promptsetname="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_ADVANCED">60</CONN_READ_TIMEOUTs.00>
+</PRPTBOX>
+</PROMPTSET>
+</node>
+<node content="1" id="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.OVERWRITE_RA_AGENT" name="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.OVERWRITE_RA_AGENT" parent="PPRPTS" type="PPROMPTSET">
+<PROMPTSET name="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.OVERWRITE_RA_AGENT">
+<PRPTBOX promptset="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.OVERWRITE_RA_AGENT">
+<OVERWRITE_RA_AGENT_PROMPTs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="OVERWRITE_RA_AGENT_PROMPT#" promptsetname="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.OVERWRITE_RA_AGENT"/>
+</PRPTBOX>
+</PROMPTSET>
+</node>
+</dyntree>
+</dynvalues>
+<CIT/>
+<calendars CCTypeAll="0" CCTypeExt="0" CCTypeNone="0" CCTypeOne="1" CaleOn="0"/>
+<postconditions>
+<PostCon>
+<conditions id="CONDITIONS"/>
+</PostCon>
+</postconditions>
+</task>
+<task Alias="GET_SCAN_STATUS" BranchType="0" Col="2" Lnr="2" OType="JOBS" Object="PCK.AUTOMIC_TENABLE_IO.PUB.ACTION.GET_SCAN_STATUS" ParentAlias="" ParentObject="" Row="1" Text2="">
+<checkpoint RollbackFlag="1" RunPerPatch="0" RunPerTarget="0" TcpADays="0" TcpATime="00:00" TcpATimeTZ="" TcpExecute="" TcpOn="0" promptatgen="0" showprompt="0"/>
+<after ActFlg="1" AtimOn="0" ErlstStDays="0" ErlstStTime="00:00" ErlstStTimeTZ="" HoldFlg="0"/>
+<when ChkWhenExec="0" LtstEnd="0" LtstEndDays="0" LtstEndTime="00:00" LtstSt="0" LtstStDays="0" LtstStTime="00:00" LtstTimeTZ="" WCTypeAND="1" WCTypeOR="0" WElseA="1" WElseH="0" WElseS="0" WElseX="0" WhenExecute="" WtimOn="0"/>
+<preconditions>
+<PreCon>
+<conditions id="CONDITIONS"/>
+</PreCon>
+</preconditions>
+<predecessors>
+<pre BranchType="0" Lnr="1" PreLnr="1" When="ANY_OK" type="container"/>
+</predecessors>
+<runtime MrtCancel="0" MrtDays="0" MrtErt="0" MrtExecute="0" MrtExecuteObj="" MrtFix="0" MrtMethodDate="0" MrtMethodErt="0" MrtMethodFix="0" MrtMethodNone="1" MrtOn="1" MrtTZ="" MrtTime="00:00" SrtErt="0" SrtFix="0" SrtMethodErt="0" SrtMethodFix="0" SrtMethodNone="1"/>
+<result ChkRExec="0" RElseHalt="0" RElseIgn="0" RElseJPAbend="0" RExecFlag="0" RExecute="" RRepMTimes="0" RRepOn="0" RRepWait="0" RWhen=""/>
+<dynvalues>
+<dyntree>
+<node content="1" id="VALUE" name="Variables" parent="" type="TASKVALUE">
+<VALUE state="2">
+<Values>
+<row ERTUsage="0" Mod="0" Name="&amp;UC4RB_TIO_SN_STATUS#" Value=""/>
+</Values>
+<Mode>0</Mode>
+</VALUE>
+</node>
+<node content="1" id="PVALUE" name="Parent Variables" parent="" type="TASKVALUE">
+<VALUE state="2">
+<Values>
+<row ERTUsage="0" Mod="0" Name="&amp;UC4RB_TIO_FAIL_STATUS#" Value=""/>
+<row ERTUsage="0" Mod="0" Name="&amp;UC4RB_TIO_SUCCESS_STATUS#" Value="paused"/>
+</Values>
+<Mode>1</Mode>
+</VALUE>
+</node>
+<node content="1" id="PRPTS" name="PromptSets" parent="" pref="1" type="PROMPTSET"/>
+<node content="0" id="PPRPTS" name="Parent PromptSets" parent="" type="PPROMPTSET"/>
+<node content="1" id="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.CONNECTION_PARAMETERS" name="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.CONNECTION_PARAMETERS" parent="PRPTS" type="PROMPTSET">
+<PROMPTSET name="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.CONNECTION_PARAMETERS">
+<PRPTBOX promptset="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.CONNECTION_PARAMETERS">
+<UC4RB_TIO_ACCESS_KEYSs.00 ReadFromTable="JPPV" altview="1" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_ACCESS_KEYS#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.CONNECTION_PARAMETERS">&amp;UC4RB_TIO_ACCESS_KEYS#</UC4RB_TIO_ACCESS_KEYSs.00>
+<UC4RB_TIO_BASE_URLs.00 ReadFromTable="JPPV" altview="1" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_BASE_URL#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.CONNECTION_PARAMETERS">&amp;UC4RB_TIO_BASE_URL#</UC4RB_TIO_BASE_URLs.00>
+<UC4RB_TIO_SECRET_KEYSs.00 ReadFromTable="JPPV" altview="1" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_SECRET_KEYS#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.CONNECTION_PARAMETERS">&amp;UC4RB_TIO_SECRET_KEYS#</UC4RB_TIO_SECRET_KEYSs.00>
+</PRPTBOX>
+</PROMPTSET>
+</node>
+<node content="1" id="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.GET_SCAN_STATUS" name="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.GET_SCAN_STATUS" parent="PRPTS" type="PROMPTSET">
+<PROMPTSET name="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.GET_SCAN_STATUS">
+<PRPTBOX promptset="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.GET_SCAN_STATUS">
+<UC4RB_TIO_SCAN_IDs.00 ReadFromTable="JPPV" altview="1" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_SCAN_ID#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.GET_SCAN_STATUS">&amp;UC4RB_TIO_SCAN_ID#</UC4RB_TIO_SCAN_IDs.00>
+</PRPTBOX>
+</PROMPTSET>
+</node>
+<node content="1" id="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_PROXY" name="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_PROXY" parent="PRPTS" type="PROMPTSET">
+<PROMPTSET name="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_PROXY">
+<PRPTBOX promptset="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_PROXY">
+<CONN_PROXY_AUTH_METHODs.00 ReadFromTable="JPPV" altview="1" haslist="0" msginsert="" msgnr="" promptname="CONN_PROXY_AUTH_METHOD#" promptsetname="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_PROXY">&amp;CONN_PROXY_AUTH_METHOD#</CONN_PROXY_AUTH_METHODs.00>
+<CONN_PROXY_HOSTs.00 ReadFromTable="JPPV" altview="1" haslist="0" msginsert="" msgnr="" promptname="CONN_PROXY_HOST#" promptsetname="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_PROXY">&amp;CONN_PROXY_HOST#</CONN_PROXY_HOSTs.00>
+<CONN_PROXY_PASSWORDs.00 ReadFromTable="JPPV" altview="1" haslist="0" msginsert="" msgnr="" promptname="CONN_PROXY_PASSWORD#" promptsetname="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_PROXY">&amp;CONN_PROXY_PASSWORD#</CONN_PROXY_PASSWORDs.00>
+<CONN_PROXY_PORTs.00 ReadFromTable="JPPV" altview="1" haslist="0" msginsert="" msgnr="" promptname="CONN_PROXY_PORT#" promptsetname="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_PROXY">&amp;CONN_PROXY_PORT#</CONN_PROXY_PORTs.00>
+<CONN_PROXY_REALMs.00 ReadFromTable="JPPV" altview="1" haslist="0" msginsert="" msgnr="" promptname="CONN_PROXY_REALM#" promptsetname="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_PROXY">&amp;CONN_PROXY_REALM#</CONN_PROXY_REALMs.00>
+<CONN_PROXY_TYPEs.00 ReadFromTable="JPPV" altview="1" haslist="0" msginsert="" msgnr="" promptname="CONN_PROXY_TYPE#" promptsetname="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_PROXY">&amp;CONN_PROXY_TYPE#</CONN_PROXY_TYPEs.00>
+<CONN_PROXY_USERNAMEs.00 ReadFromTable="JPPV" altview="1" haslist="0" msginsert="" msgnr="" promptname="CONN_PROXY_USERNAME#" promptsetname="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_PROXY">&amp;CONN_PROXY_USERNAME#</CONN_PROXY_USERNAMEs.00>
+</PRPTBOX>
+</PROMPTSET>
+</node>
+<node content="1" id="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_ADVANCED" name="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_ADVANCED" parent="PRPTS" type="PROMPTSET">
+<PROMPTSET name="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_ADVANCED">
+<PRPTBOX promptset="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_ADVANCED">
+<CONN_CONNECTION_TIMEOUTs.00 ReadFromTable="JPPV" altview="1" haslist="0" msginsert="" msgnr="" promptname="CONN_CONNECTION_TIMEOUT#" promptsetname="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_ADVANCED">&amp;CONN_CONNECTION_TIMEOUT#</CONN_CONNECTION_TIMEOUTs.00>
+<CONN_FOLLOW_REDIRECTSs.00 ReadFromTable="JPPV" altview="1" haslist="0" msginsert="" msgnr="" promptname="CONN_FOLLOW_REDIRECTS#" promptsetname="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_ADVANCED">&amp;CONN_FOLLOW_REDIRECTS#</CONN_FOLLOW_REDIRECTSs.00>
+<CONN_READ_TIMEOUTs.00 ReadFromTable="JPPV" altview="1" haslist="0" msginsert="" msgnr="" promptname="CONN_READ_TIMEOUT#" promptsetname="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_ADVANCED">&amp;CONN_READ_TIMEOUT#</CONN_READ_TIMEOUTs.00>
+</PRPTBOX>
+</PROMPTSET>
+</node>
+<node content="1" id="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.OVERWRITE_RA_AGENT" name="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.OVERWRITE_RA_AGENT" parent="PRPTS" type="PROMPTSET">
+<PROMPTSET name="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.OVERWRITE_RA_AGENT">
+<PRPTBOX promptset="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.OVERWRITE_RA_AGENT">
+<OVERWRITE_RA_AGENT_PROMPTs.00 ReadFromTable="JPPV" altview="1" haslist="0" msginsert="" msgnr="" promptname="OVERWRITE_RA_AGENT_PROMPT#" promptsetname="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.OVERWRITE_RA_AGENT">&amp;OVERWRITE_RA_AGENT_PROMPT#</OVERWRITE_RA_AGENT_PROMPTs.00>
+</PRPTBOX>
+</PROMPTSET>
+</node>
+<node content="1" id="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.CONNECTION_PARAMETERS" name="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.CONNECTION_PARAMETERS" parent="PPRPTS" type="PPROMPTSET">
+<PROMPTSET name="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.CONNECTION_PARAMETERS">
+<PRPTBOX promptset="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.CONNECTION_PARAMETERS">
+<UC4RB_TIO_ACCESS_KEYSs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_ACCESS_KEYS#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.CONNECTION_PARAMETERS">--10FBA41CCE80A626FF9F1A8BC87ECEB23E141388E66BC9D730</UC4RB_TIO_ACCESS_KEYSs.00>
+<UC4RB_TIO_BASE_URLs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_BASE_URL#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.CONNECTION_PARAMETERS"/>
+<UC4RB_TIO_SECRET_KEYSs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_SECRET_KEYS#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.CONNECTION_PARAMETERS">--10</UC4RB_TIO_SECRET_KEYSs.00>
+</PRPTBOX>
+</PROMPTSET>
+</node>
+<node content="1" id="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.PAUSE_SCAN" name="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.PAUSE_SCAN" parent="PPRPTS" type="PPROMPTSET">
+<PROMPTSET name="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.PAUSE_SCAN">
+<PRPTBOX promptset="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.PAUSE_SCAN">
+<UC4RB_TIO_SCAN_IDs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_SCAN_ID#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.PAUSE_SCAN"/>
+</PRPTBOX>
+</PROMPTSET>
+</node>
+<node content="1" id="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS" name="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS" parent="PPRPTS" type="PPROMPTSET">
+<PROMPTSET name="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS">
+<PRPTBOX promptset="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS">
+<UC4RB_TIO_INIT_WAIT_TIMEs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_INIT_WAIT_TIME#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS">1</UC4RB_TIO_INIT_WAIT_TIMEs.00>
+<UC4RB_TIO_RETRY_CNTs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_RETRY_CNT#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS">10</UC4RB_TIO_RETRY_CNTs.00>
+<UC4RB_TIO_RETRY_INTRVLs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_RETRY_INTRVL#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS">10</UC4RB_TIO_RETRY_INTRVLs.00>
+<UC4RB_TIO_WAIT_FOR_COMPLETEs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_WAIT_FOR_COMPLETE#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS">YES</UC4RB_TIO_WAIT_FOR_COMPLETEs.00>
+</PRPTBOX>
+</PROMPTSET>
+</node>
+<node content="1" id="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_PROXY" name="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_PROXY" parent="PPRPTS" type="PPROMPTSET">
+<PROMPTSET name="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_PROXY">
+<PRPTBOX promptset="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_PROXY">
+<CONN_PROXY_AUTH_METHODs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="CONN_PROXY_AUTH_METHOD#" promptsetname="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_PROXY">None</CONN_PROXY_AUTH_METHODs.00>
+<CONN_PROXY_HOSTs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="CONN_PROXY_HOST#" promptsetname="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_PROXY"/>
+<CONN_PROXY_PASSWORDs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="CONN_PROXY_PASSWORD#" promptsetname="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_PROXY">--10</CONN_PROXY_PASSWORDs.00>
+<CONN_PROXY_PORTs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="CONN_PROXY_PORT#" promptsetname="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_PROXY">0</CONN_PROXY_PORTs.00>
+<CONN_PROXY_REALMs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="CONN_PROXY_REALM#" promptsetname="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_PROXY"/>
+<CONN_PROXY_TYPEs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="CONN_PROXY_TYPE#" promptsetname="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_PROXY">None</CONN_PROXY_TYPEs.00>
+<CONN_PROXY_USERNAMEs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="CONN_PROXY_USERNAME#" promptsetname="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_PROXY"/>
+</PRPTBOX>
+</PROMPTSET>
+</node>
+<node content="1" id="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_ADVANCED" name="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_ADVANCED" parent="PPRPTS" type="PPROMPTSET">
+<PROMPTSET name="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_ADVANCED">
+<PRPTBOX promptset="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_ADVANCED">
+<CONN_CONNECTION_TIMEOUTs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="CONN_CONNECTION_TIMEOUT#" promptsetname="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_ADVANCED">30</CONN_CONNECTION_TIMEOUTs.00>
+<CONN_FOLLOW_REDIRECTSs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="CONN_FOLLOW_REDIRECTS#" promptsetname="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_ADVANCED">NO</CONN_FOLLOW_REDIRECTSs.00>
+<CONN_READ_TIMEOUTs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="CONN_READ_TIMEOUT#" promptsetname="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_ADVANCED">60</CONN_READ_TIMEOUTs.00>
+</PRPTBOX>
+</PROMPTSET>
+</node>
+<node content="1" id="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.OVERWRITE_RA_AGENT" name="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.OVERWRITE_RA_AGENT" parent="PPRPTS" type="PPROMPTSET">
+<PROMPTSET name="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.OVERWRITE_RA_AGENT">
+<PRPTBOX promptset="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.OVERWRITE_RA_AGENT">
+<OVERWRITE_RA_AGENT_PROMPTs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="OVERWRITE_RA_AGENT_PROMPT#" promptsetname="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.OVERWRITE_RA_AGENT"/>
+</PRPTBOX>
+</PROMPTSET>
+</node>
+</dyntree>
+</dynvalues>
+<CIT src="OCV">
+<citcont agentname="&lt;CIT&gt;" jobtype="WEBSERVICEREST" text="Web Service Rest">
+<cit cittype="2" icon="" id="" subtype="REST" text="REST Web Service">
+<component con="0" enc="0" type="2" value="WebServiceRest" xmlName="componentName"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_auth_aws_accesskey"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_auth_aws_secret_accesskey"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_auth_aws_sign_version"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_auth_basic_host"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_auth_basic_password"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_auth_basic_port"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_auth_basic_preemptive"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_auth_basic_realm"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_auth_basic_username"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_auth_method"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_auth_oauth_clientkey"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_auth_oauth_clientsecret"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_auth_oauth_refresh_token"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_auth_oauth_refresh_uri"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_auth_oauth_signature_type"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_auth_oauth_token"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_auth_oauth_token_secret"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_auth_oauth_verifier"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_auth_oauth_version_method"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_connection_timeout"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_endpoint_url"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_follow_redirects"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_from_prompts"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_proxy_auth_method"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_proxy_host"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_proxy_password"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_proxy_port"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_proxy_realm"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_proxy_type"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_proxy_username"/>
+<component con="0" enc="0" type="2" value="" xmlName="conn_read_timeout"/>
+<component con="0" enc="0" type="2" value="30" xmlName="connectTimeout"/>
+<component con="0" enc="0" type="2" value="" xmlName="curl"/>
+<component con="0" enc="0" type="2" value="" xmlName="file"/>
+<component con="0" enc="0" type="2" value="X-ApiKeys" xmlName="header_0_0"/>
+<component con="0" enc="0" type="2" value="&amp;UC4RB_KEYS#" xmlName="header_0_1"/>
+<component con="0" enc="0" type="2" value="false" xmlName="isCurl"/>
+<component con="0" enc="0" type="2" value="false" xmlName="jobHeaders"/>
+<component con="0" enc="0" type="2" value="false" xmlName="jobQuery"/>
+<component con="0" enc="0" type="2" value="GET" xmlName="method"/>
+<component con="0" enc="0" type="2" value="false" xmlName="multiPart"/>
+<component con="0" enc="0" type="2" value="false" xmlName="multiPartResp"/>
+<component con="0" enc="0" type="2" value="false" xmlName="requestReports"/>
+<component con="0" enc="0" type="2" value="scans/&amp;UC4RB_TIO_SCAN_ID#/latest-status" xmlName="resource"/>
+<component con="0" enc="0" type="2" value="false" xmlName="responseReport"/>
+<component con="0" enc="0" type="2" value="60" xmlName="responseTimeout"/>
+<component con="0" enc="0" type="2" value="true" xmlName="responseToJobLog"/>
+<component con="0" enc="0" type="2" value="" xmlName="response_part_0_file"/>
+<component con="0" enc="0" type="2" value="$.status" xmlName="response_part_0_script_0_code_0"/>
+<component con="0" enc="0" type="2" value="JSONPath" xmlName="response_part_0_script_0_queryType"/>
+<component con="0" enc="0" type="2" value="UC4RB_TIO_SN_STATUS#" xmlName="response_part_0_script_0_resourceName"/>
+<component con="0" enc="0" type="2" value="variable" xmlName="response_part_0_script_0_saveTo"/>
+<component con="0" enc="0" type="2" value="false" xmlName="response_part_0_script_0_useArray"/>
+<component con="1" enc="0" type="2" value="" xmlName="restConnection"/>
+<component con="0" enc="0" type="2" value="REST" xmlName="runType"/>
+<component con="0" enc="0" type="2" value="false" xmlName="tracePerformance"/>
+<component con="0" enc="0" type="2" value="" xmlName="uriOverride"/>
+</cit>
+<cit cittype="3" icon="" id="" subtype="GENERALJOBPANELDEF" text="General Job Panel"/>
+</citcont>
+</CIT>
+<calendars CCTypeAll="0" CCTypeExt="0" CCTypeNone="0" CCTypeOne="1" CaleOn="0"/>
+<postconditions>
+<PostCon>
+<conditions id="CONDITIONS"/>
+</PostCon>
+</postconditions>
+</task>
+<task Alias="PAUSE_SCAN" BranchType="0" Col="3" Lnr="3" OType="JOBS" Object="PCK.AUTOMIC_TENABLE_IO.PRV.ACTION.PAUSE_SCAN" ParentAlias="" ParentObject="" Row="1" Text2="">
+<checkpoint RollbackFlag="1" RunPerPatch="0" RunPerTarget="0" TcpADays="0" TcpATime="00:00" TcpATimeTZ="" TcpExecute="" TcpOn="0" promptatgen="0" showprompt="0"/>
+<after ActFlg="1" AtimOn="0" ErlstStDays="0" ErlstStTime="00:00" ErlstStTimeTZ="" HoldFlg="0"/>
+<when ChkWhenExec="0" LtstEnd="0" LtstEndDays="0" LtstEndTime="00:00" LtstSt="0" LtstStDays="0" LtstStTime="00:00" LtstTimeTZ="" WCTypeAND="1" WCTypeOR="0" WElseA="1" WElseH="0" WElseS="0" WElseX="0" WhenExecute="" WtimOn="0"/>
+<preconditions>
+<PreCon>
+<conditions id="CONDITIONS">
+<condition active="1" id="USER DEFINED" once="0" type="C" uiinfo="">
+<params>
+<param altview="0" name="XC_P03" type="V" value="paused"/>
+<param altview="0" name="XC_P02" type="V" value="="/>
+<param altview="0" name="XC_P01" type="V" value="&amp;UC4RB_TIO_SN_STATUS#"/>
+</params>
+<when active="1" id="USER DEFINED" once="0" type="W" uiinfo="">
+<action active="1" id="SKIP TASK" once="1" type="A" uiinfo="">
+<params>
+<param altview="0" name="XC_P01" type="V" value="Skipped due to paused state of scan"/>
+</params>
+</action>
+</when>
+<else active="1" id="USER DEFINED" once="0" type="E" uiinfo="">
+<action active="1" id="RUN TASK" once="1" type="A" uiinfo="">
+<params/>
+</action>
+</else>
+</condition>
+</conditions>
+</PreCon>
+</preconditions>
+<predecessors>
+<pre BranchType="0" Lnr="1" PreLnr="2" When="ANY_OK" type="container"/>
+</predecessors>
+<runtime MrtCancel="0" MrtDays="0" MrtErt="0" MrtExecute="0" MrtExecuteObj="" MrtFix="0" MrtMethodDate="0" MrtMethodErt="0" MrtMethodFix="0" MrtMethodNone="1" MrtOn="1" MrtTZ="" MrtTime="00:00" SrtErt="0" SrtFix="0" SrtMethodErt="0" SrtMethodFix="0" SrtMethodNone="1"/>
+<result ChkRExec="0" RElseHalt="0" RElseIgn="0" RElseJPAbend="0" RExecFlag="0" RExecute="" RRepMTimes="0" RRepOn="0" RRepWait="0" RWhen=""/>
+<dynvalues>
+<dyntree>
+<node content="1" id="VALUE" name="Variables" parent="" type="TASKVALUE">
+<VALUE state="2">
+<Values/>
+<Mode>1</Mode>
+</VALUE>
+</node>
+<node content="1" id="PVALUE" name="Parent Variables" parent="" type="TASKVALUE">
+<VALUE state="2">
+<Values>
+<row ERTUsage="0" Mod="0" Name="&amp;UC4RB_TIO_FAIL_STATUS#" Value=""/>
+<row ERTUsage="0" Mod="0" Name="&amp;UC4RB_TIO_SUCCESS_STATUS#" Value="paused"/>
+</Values>
+<Mode>1</Mode>
+</VALUE>
+</node>
+<node content="1" id="PRPTS" name="PromptSets" parent="" pref="1" type="PROMPTSET"/>
+<node content="0" id="PPRPTS" name="Parent PromptSets" parent="" type="PPROMPTSET"/>
+<node content="1" id="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.CONNECTION_PARAMETERS" name="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.CONNECTION_PARAMETERS" parent="PPRPTS" type="PPROMPTSET">
+<PROMPTSET name="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.CONNECTION_PARAMETERS">
+<PRPTBOX promptset="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.CONNECTION_PARAMETERS">
+<UC4RB_TIO_ACCESS_KEYSs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_ACCESS_KEYS#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.CONNECTION_PARAMETERS">--10FBA41CCE80A626FF9F1A8BC87ECEB23E141388E66BC9D730</UC4RB_TIO_ACCESS_KEYSs.00>
+<UC4RB_TIO_BASE_URLs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_BASE_URL#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.CONNECTION_PARAMETERS"/>
+<UC4RB_TIO_SECRET_KEYSs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_SECRET_KEYS#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.CONNECTION_PARAMETERS">--10</UC4RB_TIO_SECRET_KEYSs.00>
+</PRPTBOX>
+</PROMPTSET>
+</node>
+<node content="1" id="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.PAUSE_SCAN" name="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.PAUSE_SCAN" parent="PPRPTS" type="PPROMPTSET">
+<PROMPTSET name="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.PAUSE_SCAN">
+<PRPTBOX promptset="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.PAUSE_SCAN">
+<UC4RB_TIO_SCAN_IDs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_SCAN_ID#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.PAUSE_SCAN"/>
+</PRPTBOX>
+</PROMPTSET>
+</node>
+<node content="1" id="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS" name="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS" parent="PPRPTS" type="PPROMPTSET">
+<PROMPTSET name="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS">
+<PRPTBOX promptset="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS">
+<UC4RB_TIO_INIT_WAIT_TIMEs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_INIT_WAIT_TIME#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS">1</UC4RB_TIO_INIT_WAIT_TIMEs.00>
+<UC4RB_TIO_RETRY_CNTs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_RETRY_CNT#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS">10</UC4RB_TIO_RETRY_CNTs.00>
+<UC4RB_TIO_RETRY_INTRVLs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_RETRY_INTRVL#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS">10</UC4RB_TIO_RETRY_INTRVLs.00>
+<UC4RB_TIO_WAIT_FOR_COMPLETEs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_WAIT_FOR_COMPLETE#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS">YES</UC4RB_TIO_WAIT_FOR_COMPLETEs.00>
+</PRPTBOX>
+</PROMPTSET>
+</node>
+<node content="1" id="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_PROXY" name="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_PROXY" parent="PPRPTS" type="PPROMPTSET">
+<PROMPTSET name="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_PROXY">
+<PRPTBOX promptset="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_PROXY">
+<CONN_PROXY_AUTH_METHODs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="CONN_PROXY_AUTH_METHOD#" promptsetname="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_PROXY">None</CONN_PROXY_AUTH_METHODs.00>
+<CONN_PROXY_HOSTs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="CONN_PROXY_HOST#" promptsetname="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_PROXY"/>
+<CONN_PROXY_PASSWORDs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="CONN_PROXY_PASSWORD#" promptsetname="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_PROXY">--10</CONN_PROXY_PASSWORDs.00>
+<CONN_PROXY_PORTs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="CONN_PROXY_PORT#" promptsetname="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_PROXY">0</CONN_PROXY_PORTs.00>
+<CONN_PROXY_REALMs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="CONN_PROXY_REALM#" promptsetname="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_PROXY"/>
+<CONN_PROXY_TYPEs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="CONN_PROXY_TYPE#" promptsetname="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_PROXY">None</CONN_PROXY_TYPEs.00>
+<CONN_PROXY_USERNAMEs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="CONN_PROXY_USERNAME#" promptsetname="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_PROXY"/>
+</PRPTBOX>
+</PROMPTSET>
+</node>
+<node content="1" id="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_ADVANCED" name="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_ADVANCED" parent="PPRPTS" type="PPROMPTSET">
+<PROMPTSET name="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_ADVANCED">
+<PRPTBOX promptset="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_ADVANCED">
+<CONN_CONNECTION_TIMEOUTs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="CONN_CONNECTION_TIMEOUT#" promptsetname="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_ADVANCED">30</CONN_CONNECTION_TIMEOUTs.00>
+<CONN_FOLLOW_REDIRECTSs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="CONN_FOLLOW_REDIRECTS#" promptsetname="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_ADVANCED">NO</CONN_FOLLOW_REDIRECTSs.00>
+<CONN_READ_TIMEOUTs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="CONN_READ_TIMEOUT#" promptsetname="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_ADVANCED">60</CONN_READ_TIMEOUTs.00>
+</PRPTBOX>
+</PROMPTSET>
+</node>
+<node content="1" id="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.OVERWRITE_RA_AGENT" name="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.OVERWRITE_RA_AGENT" parent="PPRPTS" type="PPROMPTSET">
+<PROMPTSET name="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.OVERWRITE_RA_AGENT">
+<PRPTBOX promptset="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.OVERWRITE_RA_AGENT">
+<OVERWRITE_RA_AGENT_PROMPTs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="OVERWRITE_RA_AGENT_PROMPT#" promptsetname="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.OVERWRITE_RA_AGENT"/>
+</PRPTBOX>
+</PROMPTSET>
+</node>
+</dyntree>
+</dynvalues>
+<CIT/>
+<calendars CCTypeAll="0" CCTypeExt="0" CCTypeNone="0" CCTypeOne="1" CaleOn="0"/>
+<postconditions>
+<PostCon>
+<conditions id="CONDITIONS"/>
+</PostCon>
+</postconditions>
+</task>
+<task Alias="CHECK_STATUS" BranchType="0" Col="4" Lnr="4" OType="SCRI" Object="PCK.AUTOMIC_TENABLE_IO.PUB.SCRI.CHECK_SCAN_STATUS" ParentAlias="" ParentObject="" Row="1" Text2="">
+<checkpoint RollbackFlag="1" RunPerPatch="0" RunPerTarget="0" TcpADays="0" TcpATime="00:00" TcpATimeTZ="" TcpExecute="" TcpOn="0" promptatgen="0" showprompt="0"/>
+<after ActFlg="1" AtimOn="0" ErlstStDays="0" ErlstStTime="00:00" ErlstStTimeTZ="" HoldFlg="0"/>
+<when ChkWhenExec="0" LtstEnd="0" LtstEndDays="0" LtstEndTime="00:00" LtstSt="0" LtstStDays="0" LtstStTime="00:00" LtstTimeTZ="" WCTypeAND="1" WCTypeOR="0" WElseA="1" WElseH="0" WElseS="0" WElseX="0" WhenExecute="" WtimOn="0"/>
+<preconditions>
+<PreCon>
+<conditions id="CONDITIONS">
+<condition active="1" id="USER DEFINED" once="0" type="C" uiinfo="">
+<params>
+<param altview="0" name="XC_P03" type="V" value="paused"/>
+<param altview="0" name="XC_P02" type="V" value="="/>
+<param altview="0" name="XC_P01" type="V" value="&amp;UC4RB_TIO_SN_STATUS#"/>
+</params>
+<when active="1" id="USER DEFINED" once="0" type="W" uiinfo="">
+<action active="1" id="SKIP TASK" once="1" type="A" uiinfo="">
+<params>
+<param altview="0" name="XC_P01" type="V" value="Skipped due to paused state of scan"/>
+</params>
+</action>
+</when>
+<else active="1" id="USER DEFINED" once="0" type="E" uiinfo="">
+<action active="1" id="RUN TASK" once="1" type="A" uiinfo="">
+<params/>
+</action>
+</else>
+</condition>
+</conditions>
+</PreCon>
+</preconditions>
+<predecessors>
+<pre BranchType="0" Lnr="1" PreLnr="3" When="ANY_OK" type="container"/>
+</predecessors>
+<runtime MrtCancel="0" MrtDays="0" MrtErt="0" MrtExecute="0" MrtExecuteObj="" MrtFix="0" MrtMethodDate="0" MrtMethodErt="0" MrtMethodFix="0" MrtMethodNone="1" MrtOn="1" MrtTZ="" MrtTime="00:00" SrtErt="0" SrtFix="0" SrtMethodErt="0" SrtMethodFix="0" SrtMethodNone="1"/>
+<result ChkRExec="0" RElseHalt="0" RElseIgn="0" RElseJPAbend="0" RExecFlag="0" RExecute="" RRepMTimes="0" RRepOn="0" RRepWait="0" RWhen=""/>
+<dynvalues>
+<dyntree>
+<node content="1" id="VALUE" name="Variables" parent="" type="TASKVALUE">
+<VALUE state="2">
+<Values>
+<row ERTUsage="0" Mod="0" Name="&amp;UC4RB_TIO_SN_STATUS#" Value=""/>
+</Values>
+<Mode>0</Mode>
+</VALUE>
+</node>
+<node content="1" id="PVALUE" name="Parent Variables" parent="" type="TASKVALUE">
+<VALUE state="2">
+<Values>
+<row ERTUsage="0" Mod="0" Name="&amp;UC4RB_TIO_FAIL_STATUS#" Value=""/>
+<row ERTUsage="0" Mod="0" Name="&amp;UC4RB_TIO_SUCCESS_STATUS#" Value="paused"/>
+</Values>
+<Mode>1</Mode>
+</VALUE>
+</node>
+<node content="1" id="PRPTS" name="PromptSets" parent="" pref="1" type="PROMPTSET"/>
+<node content="0" id="PPRPTS" name="Parent PromptSets" parent="" type="PPROMPTSET"/>
+<node content="1" id="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.CONNECTION_PARAMETERS" name="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.CONNECTION_PARAMETERS" parent="PPRPTS" type="PPROMPTSET">
+<PROMPTSET name="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.CONNECTION_PARAMETERS">
+<PRPTBOX promptset="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.CONNECTION_PARAMETERS">
+<UC4RB_TIO_ACCESS_KEYSs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_ACCESS_KEYS#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.CONNECTION_PARAMETERS">--10FBA41CCE80A626FF9F1A8BC87ECEB23E141388E66BC9D730</UC4RB_TIO_ACCESS_KEYSs.00>
+<UC4RB_TIO_BASE_URLs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_BASE_URL#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.CONNECTION_PARAMETERS"/>
+<UC4RB_TIO_SECRET_KEYSs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_SECRET_KEYS#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.CONNECTION_PARAMETERS">--10</UC4RB_TIO_SECRET_KEYSs.00>
+</PRPTBOX>
+</PROMPTSET>
+</node>
+<node content="1" id="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.PAUSE_SCAN" name="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.PAUSE_SCAN" parent="PPRPTS" type="PPROMPTSET">
+<PROMPTSET name="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.PAUSE_SCAN">
+<PRPTBOX promptset="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.PAUSE_SCAN">
+<UC4RB_TIO_SCAN_IDs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_SCAN_ID#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.PAUSE_SCAN"/>
+</PRPTBOX>
+</PROMPTSET>
+</node>
+<node content="1" id="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS" name="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS" parent="PPRPTS" type="PPROMPTSET">
+<PROMPTSET name="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS">
+<PRPTBOX promptset="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS">
+<UC4RB_TIO_INIT_WAIT_TIMEs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_INIT_WAIT_TIME#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS">1</UC4RB_TIO_INIT_WAIT_TIMEs.00>
+<UC4RB_TIO_RETRY_CNTs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_RETRY_CNT#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS">10</UC4RB_TIO_RETRY_CNTs.00>
+<UC4RB_TIO_RETRY_INTRVLs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_RETRY_INTRVL#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS">10</UC4RB_TIO_RETRY_INTRVLs.00>
+<UC4RB_TIO_WAIT_FOR_COMPLETEs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_WAIT_FOR_COMPLETE#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS">YES</UC4RB_TIO_WAIT_FOR_COMPLETEs.00>
+</PRPTBOX>
+</PROMPTSET>
+</node>
+<node content="1" id="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_PROXY" name="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_PROXY" parent="PPRPTS" type="PPROMPTSET">
+<PROMPTSET name="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_PROXY">
+<PRPTBOX promptset="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_PROXY">
+<CONN_PROXY_AUTH_METHODs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="CONN_PROXY_AUTH_METHOD#" promptsetname="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_PROXY">None</CONN_PROXY_AUTH_METHODs.00>
+<CONN_PROXY_HOSTs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="CONN_PROXY_HOST#" promptsetname="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_PROXY"/>
+<CONN_PROXY_PASSWORDs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="CONN_PROXY_PASSWORD#" promptsetname="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_PROXY">--10</CONN_PROXY_PASSWORDs.00>
+<CONN_PROXY_PORTs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="CONN_PROXY_PORT#" promptsetname="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_PROXY">0</CONN_PROXY_PORTs.00>
+<CONN_PROXY_REALMs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="CONN_PROXY_REALM#" promptsetname="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_PROXY"/>
+<CONN_PROXY_TYPEs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="CONN_PROXY_TYPE#" promptsetname="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_PROXY">None</CONN_PROXY_TYPEs.00>
+<CONN_PROXY_USERNAMEs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="CONN_PROXY_USERNAME#" promptsetname="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_PROXY"/>
+</PRPTBOX>
+</PROMPTSET>
+</node>
+<node content="1" id="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_ADVANCED" name="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_ADVANCED" parent="PPRPTS" type="PPROMPTSET">
+<PROMPTSET name="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_ADVANCED">
+<PRPTBOX promptset="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_ADVANCED">
+<CONN_CONNECTION_TIMEOUTs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="CONN_CONNECTION_TIMEOUT#" promptsetname="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_ADVANCED">30</CONN_CONNECTION_TIMEOUTs.00>
+<CONN_FOLLOW_REDIRECTSs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="CONN_FOLLOW_REDIRECTS#" promptsetname="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_ADVANCED">NO</CONN_FOLLOW_REDIRECTSs.00>
+<CONN_READ_TIMEOUTs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="CONN_READ_TIMEOUT#" promptsetname="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_ADVANCED">60</CONN_READ_TIMEOUTs.00>
+</PRPTBOX>
+</PROMPTSET>
+</node>
+<node content="1" id="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.OVERWRITE_RA_AGENT" name="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.OVERWRITE_RA_AGENT" parent="PPRPTS" type="PPROMPTSET">
+<PROMPTSET name="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.OVERWRITE_RA_AGENT">
+<PRPTBOX promptset="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.OVERWRITE_RA_AGENT">
+<OVERWRITE_RA_AGENT_PROMPTs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="OVERWRITE_RA_AGENT_PROMPT#" promptsetname="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.OVERWRITE_RA_AGENT"/>
+</PRPTBOX>
+</PROMPTSET>
+</node>
+</dyntree>
+</dynvalues>
+<CIT/>
+<calendars CCTypeAll="0" CCTypeExt="0" CCTypeNone="0" CCTypeOne="1" CaleOn="0"/>
+<postconditions>
+<PostCon>
+<conditions id="CONDITIONS"/>
+</PostCon>
+</postconditions>
+</task>
+<task Alias="" BranchType="0" Col="5" Lnr="5" OType="&lt;END&gt;" Object="END" ParentAlias="" ParentObject="" Row="1" Text2="">
+<checkpoint RollbackFlag="0" RunPerPatch="0" RunPerTarget="0" TcpADays="0" TcpATime="00:00" TcpATimeTZ="" TcpExecute="" TcpOn="0" promptatgen="0" showprompt="0"/>
+<after ActFlg="1" AtimOn="0" ErlstStDays="0" ErlstStTime="00:00" ErlstStTimeTZ="" HoldFlg="0"/>
+<when ChkWhenExec="0" LtstEnd="0" LtstEndDays="0" LtstEndTime="00:00" LtstSt="0" LtstStDays="0" LtstStTime="00:00" LtstTimeTZ="" WCTypeAND="1" WCTypeOR="0" WElseA="1" WElseH="0" WElseS="0" WElseX="0" WhenExecute="" WtimOn="0"/>
+<preconditions>
+<PreCon>
+<conditions id="CONDITIONS"/>
+</PreCon>
+</preconditions>
+<predecessors>
+<pre BranchType="0" Lnr="1" PreLnr="4" When="ANY_OK" type="container"/>
+</predecessors>
+<runtime MrtCancel="0" MrtDays="0" MrtErt="0" MrtExecute="0" MrtExecuteObj="" MrtFix="0" MrtMethodDate="0" MrtMethodErt="0" MrtMethodFix="0" MrtMethodNone="1" MrtOn="1" MrtTZ="" MrtTime="00:00" SrtErt="0" SrtFix="0" SrtMethodErt="0" SrtMethodFix="0" SrtMethodNone="1"/>
+<result ChkRExec="0" RElseHalt="0" RElseIgn="0" RElseJPAbend="0" RExecFlag="0" RExecute="" RRepMTimes="0" RRepOn="0" RRepWait="0" RWhen=""/>
+<dynvalues>
+<dyntree>
+<node content="1" id="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.CONNECTION_PARAMETERS" name="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.CONNECTION_PARAMETERS" parent="PPRPTS" type="PPROMPTSET">
+<PROMPTSET name="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.CONNECTION_PARAMETERS">
+<PRPTBOX promptset="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.CONNECTION_PARAMETERS">
+<UC4RB_TIO_ACCESS_KEYSs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_ACCESS_KEYS#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.CONNECTION_PARAMETERS">--10FBA41CCE80A626FF9F1A8BC87ECEB23E141388E66BC9D730</UC4RB_TIO_ACCESS_KEYSs.00>
+<UC4RB_TIO_BASE_URLs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_BASE_URL#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.CONNECTION_PARAMETERS"/>
+<UC4RB_TIO_SECRET_KEYSs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_SECRET_KEYS#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.CONNECTION_PARAMETERS">--10</UC4RB_TIO_SECRET_KEYSs.00>
+</PRPTBOX>
+</PROMPTSET>
+</node>
+<node content="1" id="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.PAUSE_SCAN" name="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.PAUSE_SCAN" parent="PPRPTS" type="PPROMPTSET">
+<PROMPTSET name="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.PAUSE_SCAN">
+<PRPTBOX promptset="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.PAUSE_SCAN">
+<UC4RB_TIO_SCAN_IDs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_SCAN_ID#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.PAUSE_SCAN"/>
+</PRPTBOX>
+</PROMPTSET>
+</node>
+<node content="1" id="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS" name="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS" parent="PPRPTS" type="PPROMPTSET">
+<PROMPTSET name="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS">
+<PRPTBOX promptset="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS">
+<UC4RB_TIO_INIT_WAIT_TIMEs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_INIT_WAIT_TIME#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS">1</UC4RB_TIO_INIT_WAIT_TIMEs.00>
+<UC4RB_TIO_RETRY_CNTs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_RETRY_CNT#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS">10</UC4RB_TIO_RETRY_CNTs.00>
+<UC4RB_TIO_RETRY_INTRVLs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_RETRY_INTRVL#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS">10</UC4RB_TIO_RETRY_INTRVLs.00>
+<UC4RB_TIO_WAIT_FOR_COMPLETEs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_TIO_WAIT_FOR_COMPLETE#" promptsetname="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS">YES</UC4RB_TIO_WAIT_FOR_COMPLETEs.00>
+</PRPTBOX>
+</PROMPTSET>
+</node>
+<node content="1" id="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_PROXY" name="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_PROXY" parent="PPRPTS" type="PPROMPTSET">
+<PROMPTSET name="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_PROXY">
+<PRPTBOX promptset="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_PROXY">
+<CONN_PROXY_AUTH_METHODs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="CONN_PROXY_AUTH_METHOD#" promptsetname="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_PROXY">None</CONN_PROXY_AUTH_METHODs.00>
+<CONN_PROXY_HOSTs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="CONN_PROXY_HOST#" promptsetname="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_PROXY"/>
+<CONN_PROXY_PASSWORDs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="CONN_PROXY_PASSWORD#" promptsetname="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_PROXY">--10</CONN_PROXY_PASSWORDs.00>
+<CONN_PROXY_PORTs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="CONN_PROXY_PORT#" promptsetname="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_PROXY">0</CONN_PROXY_PORTs.00>
+<CONN_PROXY_REALMs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="CONN_PROXY_REALM#" promptsetname="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_PROXY"/>
+<CONN_PROXY_TYPEs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="CONN_PROXY_TYPE#" promptsetname="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_PROXY">None</CONN_PROXY_TYPEs.00>
+<CONN_PROXY_USERNAMEs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="CONN_PROXY_USERNAME#" promptsetname="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_PROXY"/>
+</PRPTBOX>
+</PROMPTSET>
+</node>
+<node content="1" id="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_ADVANCED" name="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_ADVANCED" parent="PPRPTS" type="PPROMPTSET">
+<PROMPTSET name="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_ADVANCED">
+<PRPTBOX promptset="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_ADVANCED">
+<CONN_CONNECTION_TIMEOUTs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="CONN_CONNECTION_TIMEOUT#" promptsetname="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_ADVANCED">30</CONN_CONNECTION_TIMEOUTs.00>
+<CONN_FOLLOW_REDIRECTSs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="CONN_FOLLOW_REDIRECTS#" promptsetname="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_ADVANCED">NO</CONN_FOLLOW_REDIRECTSs.00>
+<CONN_READ_TIMEOUTs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="CONN_READ_TIMEOUT#" promptsetname="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_ADVANCED">60</CONN_READ_TIMEOUTs.00>
+</PRPTBOX>
+</PROMPTSET>
+</node>
+<node content="1" id="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.OVERWRITE_RA_AGENT" name="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.OVERWRITE_RA_AGENT" parent="PPRPTS" type="PPROMPTSET">
+<PROMPTSET name="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.OVERWRITE_RA_AGENT">
+<PRPTBOX promptset="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.OVERWRITE_RA_AGENT">
+<OVERWRITE_RA_AGENT_PROMPTs.00 ReadFromTable="OPUD" altview="0" haslist="0" msginsert="" msgnr="" promptname="OVERWRITE_RA_AGENT_PROMPT#" promptsetname="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.OVERWRITE_RA_AGENT"/>
+</PRPTBOX>
+</PROMPTSET>
+</node>
+</dyntree>
+</dynvalues>
+<CIT/>
+<calendars CCTypeAll="0" CCTypeExt="0" CCTypeNone="0" CCTypeOne="1" CaleOn="0"/>
+<postconditions>
+<PostCon>
+<conditions id="CONDITIONS"/>
+</PostCon>
+</postconditions>
+</task>
+<OPTIONS/>
+</JobpStruct>
+</JOBP>
+<RUNTIME state="1">
+<MaxRetCode>0</MaxRetCode>
+<MrcExecute/>
+<MrcElseE>0</MrcElseE>
+<FcstStatus>0| |</FcstStatus>
+
+<ErtMethodDef>1</ErtMethodDef>
+<ErtMethodFix>0</ErtMethodFix>
+<ErtFix>0</ErtFix>
+<ErtDynMethod>2|Average</ErtDynMethod>
+<ErtMethodDyn>0</ErtMethodDyn>
+<ErtCnt>0</ErtCnt>
+<ErtCorr>0</ErtCorr>
+<ErtIgn>0</ErtIgn>
+<ErtIgnFlg>0</ErtIgnFlg>
+<ErtMinCnt>0</ErtMinCnt>
+<MrtMethodNone>1</MrtMethodNone>
+<MrtMethodFix>0</MrtMethodFix>
+<MrtFix>0</MrtFix>
+<MrtMethodErt>0</MrtMethodErt>
+<MrtErt>0</MrtErt>
+<MrtMethodDate>0</MrtMethodDate>
+<MrtDays>0</MrtDays>
+<MrtTime>00:00</MrtTime>
+<MrtTZ/>
+<SrtMethodNone>1</SrtMethodNone>
+<SrtMethodFix>0</SrtMethodFix>
+<SrtFix>0</SrtFix>
+<SrtMethodErt>0</SrtMethodErt>
+<SrtErt>0</SrtErt>
+<MrtCancel>0</MrtCancel>
+<MrtExecute>0</MrtExecute>
+<MrtExecuteObj/>
+</RUNTIME>
+<DYNVALUES state="1">
+<dyntree>
+<node content="1" id="VALUE" name="Variables" parent="" type="VALUE">
+<VALUE state="1">
+<Values>
+<row ERTUsage="0" Name="&amp;UC4RB_TIO_FAIL_STATUS#" Value=""/>
+<row ERTUsage="0" Name="&amp;UC4RB_TIO_SUCCESS_STATUS#" Value="paused"/>
+</Values>
+<Mode>1</Mode>
+</VALUE>
+</node>
+<node content="1" id="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.CONNECTION_PARAMETERS" name="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.CONNECTION_PARAMETERS" parent="PRPTS" type="PROMPTSET">
+<PROMPTSET name="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.CONNECTION_PARAMETERS" ontop="1">
+<PRPTBOX promptset="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.CONNECTION_PARAMETERS" prptmode="1">
+<UC4RB_TIO_BASE_URLs.00 altview="0" haslist="0"/>
+<UC4RB_TIO_ACCESS_KEYSs.00 altview="0" haslist="0">--10FBA41CCE80A626FF9F1A8BC87ECEB23E141388E66BC9D730</UC4RB_TIO_ACCESS_KEYSs.00>
+<UC4RB_TIO_SECRET_KEYSs.00 altview="0" haslist="0">--10</UC4RB_TIO_SECRET_KEYSs.00>
+</PRPTBOX>
+</PROMPTSET>
+</node>
+<node content="1" id="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.PAUSE_SCAN" name="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.PAUSE_SCAN" parent="PRPTS" type="PROMPTSET">
+<PROMPTSET name="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.PAUSE_SCAN" ontop="1">
+<PRPTBOX promptset="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.PAUSE_SCAN" prptmode="1">
+<UC4RB_TIO_SCAN_IDs.00 altview="0" haslist="0"/>
+</PRPTBOX>
+</PROMPTSET>
+</node>
+<node content="1" id="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS" name="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS" parent="PRPTS" type="PROMPTSET">
+<PROMPTSET name="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS" ontop="1">
+<PRPTBOX promptset="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.TIMEOUT_PARAMETERS" prptmode="1">
+<UC4RB_TIO_WAIT_FOR_COMPLETEs.00 altview="0" haslist="0">YES</UC4RB_TIO_WAIT_FOR_COMPLETEs.00>
+<UC4RB_TIO_INIT_WAIT_TIMEs.00 altview="0" haslist="0">1</UC4RB_TIO_INIT_WAIT_TIMEs.00>
+<UC4RB_TIO_RETRY_CNTs.00 altview="0" haslist="0">10</UC4RB_TIO_RETRY_CNTs.00>
+<UC4RB_TIO_RETRY_INTRVLs.00 altview="0" haslist="0">10</UC4RB_TIO_RETRY_INTRVLs.00>
+</PRPTBOX>
+</PROMPTSET>
+</node>
+<node content="1" id="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_PROXY" name="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_PROXY" parent="PRPTS" type="PROMPTSET">
+<PROMPTSET name="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_PROXY" ontop="1">
+<PRPTBOX promptset="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_PROXY" prptmode="1">
+<CONN_PROXY_TYPEs.00 altview="0" haslist="0">None</CONN_PROXY_TYPEs.00>
+<CONN_PROXY_HOSTs.00 altview="0" haslist="0"/>
+<CONN_PROXY_PORTs.00 altview="0" haslist="0">0</CONN_PROXY_PORTs.00>
+<CONN_PROXY_USERNAMEs.00 altview="0" haslist="0"/>
+<CONN_PROXY_PASSWORDs.00 altview="0" haslist="0">--10</CONN_PROXY_PASSWORDs.00>
+<CONN_PROXY_REALMs.00 altview="0" haslist="0"/>
+<CONN_PROXY_AUTH_METHODs.00 altview="0" haslist="0">None</CONN_PROXY_AUTH_METHODs.00>
+</PRPTBOX>
+</PROMPTSET>
+</node>
+<node content="1" id="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_ADVANCED" name="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_ADVANCED" parent="PRPTS" type="PROMPTSET">
+<PROMPTSET name="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_ADVANCED" ontop="1">
+<PRPTBOX promptset="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_ADVANCED" prptmode="1">
+<CONN_CONNECTION_TIMEOUTs.00 altview="0" haslist="0">30</CONN_CONNECTION_TIMEOUTs.00>
+<CONN_READ_TIMEOUTs.00 altview="0" haslist="0">60</CONN_READ_TIMEOUTs.00>
+<CONN_FOLLOW_REDIRECTSs.00 altview="0" haslist="0">NO</CONN_FOLLOW_REDIRECTSs.00>
+</PRPTBOX>
+</PROMPTSET>
+</node>
+<node content="1" id="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.OVERWRITE_RA_AGENT" name="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.OVERWRITE_RA_AGENT" parent="PRPTS" type="PROMPTSET">
+<PROMPTSET name="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.OVERWRITE_RA_AGENT" ontop="1">
+<PRPTBOX promptset="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.OVERWRITE_RA_AGENT" prptmode="1">
+<OVERWRITE_RA_AGENT_PROMPTs.00 altview="0" haslist="0"/>
+</PRPTBOX>
+</PROMPTSET>
+</node>
+</dyntree>
+</DYNVALUES>
+<DEPLOYMENT state="1">
+<DeploymentFlag>0</DeploymentFlag>
+<WFTypeA>1</WFTypeA>
+<WFTypeC>0</WFTypeC>
+<AppName/>
+<WFName/>
+<ComponentName/>
+</DEPLOYMENT>
+<ROLLBACK state="1">
+<RollbackFlag>0</RollbackFlag>
+<CBackupObj/>
+<CRollbackObj/>
+<FBackupPath/>
+<FDeleteBefore>0</FDeleteBefore>
+<FInclSubDirs>0</FInclSubDirs>
+</ROLLBACK>
+<SCRIPT mode="1" state="1">
+<MSCRI/>
+</SCRIPT>
+<DOCU_Docu state="1" type="text">
+<DOC><![CDATA[= Action name =
+PCK.AUTOMIC_TENABLE_IO.PUB.ACTION.PAUSE_SCAN
+
+
+= General Description =
+This action will pause a scan in Tenable.io.
+
+= Inputs =
+- Scan ID* : Provide either Scan ID to pause scan.
+- Wait For Completion : Select Yes, to run action synchronously and No to run asynchronously.
+- Initial Waiting Time (in min) : Provide initial waiting time. E.g. 5
+- Retry Count : Provide the number of retry attempts to get the status.E.g. 10
+- Retry Interval (in sec): Provide the interval in seconds between retry attempt.E.g. 120
+
+= Behaviour =
+This action will not work for web-app scan.
+If scan is already paused then this action will pass.
+
+= Example =
+- Scan ID* : 42
+- Wait For Completion : Yes
+- Initial Waiting Time (in min) : 5
+- Retry Count : 10
+- Retry Interval (in sec) : 120
+]]></DOC>
+</DOCU_Docu>
+</JOBP>
+</uc-export>

@@ -1,0 +1,89 @@
+*** Settings ***
+Suite Setup       Startup
+Suite Teardown    Teardown
+Force Tags        download_scan_results
+Test Template     Download Scan Results Template
+Library           com.automic.robot.itpa.ItpaLibrary
+Library           String
+Library           DateTime
+Resource          ../../Resources/messages.txt
+Resource          ../../Resources/keywords.txt
+Resource          ../../Resources/variables.txt
+Resource          ../../Resources/actions.txt
+
+*** Test Cases ***    OK_NOK                                                                              ScanID            Chapters                                             AssetID         Format         File                         Overwrite
+Download Scan Results with valid Scan ID to CSV format
+                      [Tags]                                                                              main_scenarios
+                      OK                                                                                  ${Scan_ID}        vuln_hosts_summary, vuln_by_host                     ${Asset_ID}     csv            ${EXECDIR}\\result.csv       Yes
+
+Download Scan Results and Validate File as Optional field
+                      OK                                                                                  ${Scan_ID}        vuln_by_plugin, compliance                           ${Asset_ID}     html           ${EMPTY}                     No
+
+Download Scan Results and Validate AssetID as Optional field
+                      OK                                                                                  ${Scan_ID}        vuln_by_plugin, compliance                           ${EMPTY}        pdf            ${EXECDIR}\\result.html      No
+
+Download Scan Results with valid Scan ID to Nessus format
+                      OK                                                                                  ${Scan_ID}        remediations                                         ${Asset_ID}     nessus         ${EXECDIR}\\result.nessus    Yes
+
+Download Scan Results with valid Scan ID to HTML format
+                      OK                                                                                  ${Scan_ID}        vuln_by_plugin, compliance                           ${Asset_ID}     html           ${EXECDIR}\\result.html      Yes
+
+Download Scan Results with valid Scan ID to PDF format
+                      OK                                                                                  ${Scan_ID}        vuln_hosts_summary, vuln_by_host, compliance_exec    ${Asset_ID}     pdf            D:\\temp\\result.pdf         Yes
+                      #Commenting this test case, as API is giving some error. Issue from Tenable side
+                      #Download Scan Results with valid Scan ID to DB format
+                      #                                                                                   OK                ${Scan_ID}                                           remediations    ${Asset_ID}    db                           D:\\temp\\result.db    Yes
+
+Download Scan Results with invalid Scan ID
+                      NOK                                                                                 Invalid           vuln_by_host, compliance_exec                        ${Asset_ID}     csv            ${EXECDIR}\\result1.csv      Yes
+
+Download Scan Results with invalid Chapters field
+                      OK                                                                                  ${Scan_ID}        Invalid                                              ${Asset_ID}     csv            ${EMPTY}                     No
+
+Download Scan Results with invalid Format field
+                      NOK                                                                                 ${Scan_ID}        remediations                                         ${Asset_ID}     Invalid        ${EMPTY}                     Yes
+
+Download Scan Results with invalid File Path
+                      NOK                                                                                 ${Scan_ID}        vuln_by_plugin, compliance                           ${Asset_ID}     html           Invalid                      No
+
+Download Scan Results with invalid AssetID
+                      OK                                                                                  ${Scan_ID}        vuln_by_plugin, compliance                           Invalid         pdf            D:\\temp\\result.pdf         Yes
+
+*** Keywords ***
+Startup
+    Log    *******Start Test "DOWNLOAD SCAN RESULTS"*******
+    Log    *******Connect to AE*******
+    Connect AE
+
+Download Scan Results Template
+    [Arguments]    ${OK_NOK}    ${ScanID}    ${Chapters}    ${assetID}    ${Format}    ${File}
+    ...    ${Overwrite}
+    [Documentation]    This test downloads scan results from tenable.
+    ...    -Precondition: FIle path should be on same server where agent is running.
+    ...    -${OK_NOK}: Boolean value indicate if the action is ENDED_OK or ENDED_NOT_OK. Value of this variable should be OK or NOK.
+    ...    -${ScanID}: This field specifies scan id to download results.
+    ...    -${Chapters}: This field specifies chapters to download in scan result.
+    ...    -${AssetID}: This field specifies ID of the asset scanned.
+    ...    -${Format}: This field specifies format to download scan result.
+    ...    -${File}: This field specifies where scan results will be download.
+    ...    -${Overwrite}: This field specifies whether to overwrite or not if the file is already existing.
+    Generate String
+    Init Action    ${_DOWNLOAD_SCAN_RESULTS_ACTION}
+    Nessus Authentication
+    Run Keyword If    '${ScanID}' == 'Invalid'    Action Set    &UC4RB_TIO_SCAN_ID#    ${Generated_Name}_${Time}    ELSE    Action Set
+    ...    &UC4RB_TIO_SCAN_ID#    ${ScanID}
+    Run Keyword If    '${Chapters}' == 'Invalid'    Action Set    &UC4RB_TIO_CHAPTER#    ${Generated_Name}_${Time}    ELSE    Action Set
+    ...    &UC4RB_TIO_CHAPTER#    ${Chapters}
+    Run Keyword If    '${AssetID}' == 'Invalid'    Action Set    &UC4RB_TIO_ASSET_ID#    ${Generated_Name}_${Time}    ELSE    Action Set
+    ...    &UC4RB_TIO_ASSET_ID#    ${AssetID}
+    Run Keyword If    '${Format}' == 'Invalid'    Action Set    &UC4RB_TIO_FORMAT#    ${Generated_Name}_${Time}    ELSE    Action Set
+    ...    &UC4RB_TIO_FORMAT#    ${Format}
+    Run Keyword If    '${File}' == 'Invalid'    Action Set    &UC4RB_TIO_FILE#    ${Generated_Name}_${Time}    ELSE    Action Set
+    ...    &UC4RB_TIO_FILE#    ${File}
+    Action Set    &UC4RB_TIO_OVERWRITE#    ${Overwrite}
+    Action Execute
+    Run Keyword If    '${OK_NOK}' == 'OK'    Assert Success    ELSE    Assert Failure
+    Run Keyword If    '${OK_NOK}' == 'OK'    Action Object Variable Should Be Found    &UC4RB_TIO_SAVED_LOG_FILE_PATH#    ELSE    Action Object Variable Should Not Be Found    &UC4RB_TIO_SAVED_LOG_FILE_PATH#
+
+Teardown
+    Log    *******End Test "DOWNLOAD SCAN RESULTS"*******

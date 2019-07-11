@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-15" standalone="no"?><uc-export clientvers="11.0.0">
-<JOBS_CIT AttrType="CIT" name="PCK.AUTOMIC_TENABLE_IO.PUB.ACTION.GET_AGENT_GROUP">
+<JOBS_CIT AttrType="CIT" name="PCK.AUTOMIC_TENABLE_IO.PRV.JOBS.STOP_SCAN">
 <XHEADER state="1">
-<Title>Get Agent Group</Title>
+<Title>Stop a Scan</Title>
 <ArchiveKey1/>
 <ArchiveKey2/>
 <Active>1</Active>
@@ -85,15 +85,21 @@
 <component con="0" enc="0" type="2" value="" xmlName="curl"/>
 <component con="0" enc="0" type="2" value="" xmlName="file"/>
 <component con="0" enc="0" type="2" value="X-ApiKeys" xmlName="header_0_0"/>
-<component con="0" enc="0" type="2" value=" &amp;UC4RB_KEYS#" xmlName="header_0_1"/>
+<component con="0" enc="0" type="2" value="&amp;UC4RB_KEYS#" xmlName="header_0_1"/>
 <component con="0" enc="0" type="2" value="false" xmlName="isCurl"/>
 <component con="0" enc="0" type="2" value="false" xmlName="jobHeaders"/>
 <component con="0" enc="0" type="2" value="false" xmlName="jobQuery"/>
-<component con="0" enc="0" type="2" value="GET" xmlName="method"/>
+<component con="0" enc="0" type="2" value="application/json" xmlName="mediaType"/>
+<component con="0" enc="0" type="2" value="POST" xmlName="method"/>
 <component con="0" enc="0" type="2" value="false" xmlName="multiPart"/>
 <component con="0" enc="0" type="2" value="false" xmlName="multiPartResp"/>
+<component con="0" enc="0" type="2" value="Part 1" xmlName="partName"/>
+<component con="0" enc="0" type="2" value="text" xmlName="requestDataSource"/>
 <component con="0" enc="0" type="2" value="false" xmlName="requestReports"/>
-<component con="0" enc="0" type="2" value="scanners/&amp;UC4RB_TIO_INPUT_SCANNER_ID#/agent-groups" xmlName="resource"/>
+<component con="0" enc="0" type="2" value="application/json" xmlName="request_part_0_mediaType"/>
+<component con="0" enc="0" type="2" value="Part 1" xmlName="request_part_0_partName"/>
+<component con="0" enc="0" type="2" value="text" xmlName="request_part_0_requestDataSource"/>
+<component con="0" enc="0" type="2" value="scans/&amp;UC4RB_TIO_SCAN_ID#/stop" xmlName="resource"/>
 <component con="0" enc="0" type="2" value="false" xmlName="responseReport"/>
 <component con="0" enc="0" type="2" value="60" xmlName="responseTimeout"/>
 <component con="0" enc="0" type="2" value="true" xmlName="responseToJobLog"/>
@@ -143,57 +149,9 @@
 <dyntree>
 <node content="1" id="VALUE" name="Variables" parent="" type="VALUE">
 <VALUE state="1">
-<Values>
-<row ERTUsage="0" Name="&amp;UC4RB_TIO_INPUT_NAME#" Value=""/>
-</Values>
+<Values/>
 <Mode>0</Mode>
 </VALUE>
-</node>
-<node content="1" id="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.CONNECTION_PARAMETERS" name="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.CONNECTION_PARAMETERS" parent="PRPTS" type="PROMPTSET">
-<PROMPTSET name="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.CONNECTION_PARAMETERS" ontop="1">
-<PRPTBOX promptset="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.CONNECTION_PARAMETERS" prptmode="1">
-<UC4RB_TIO_BASE_URLs.00 altview="0" haslist="0"/>
-<UC4RB_TIO_ACCESS_KEYSs.00 altview="0" haslist="0">--10</UC4RB_TIO_ACCESS_KEYSs.00>
-<UC4RB_TIO_SECRET_KEYSs.00 altview="0" haslist="0">--10</UC4RB_TIO_SECRET_KEYSs.00>
-</PRPTBOX>
-</PROMPTSET>
-</node>
-<node content="1" id="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.GET_AGENT_GROUP" name="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.GET_AGENT_GROUP" parent="PRPTS" type="PROMPTSET">
-<PROMPTSET name="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.GET_AGENT_GROUP" ontop="1">
-<PRPTBOX promptset="PCK.AUTOMIC_TENABLE_IO.PRV.PROMPTSET.GET_AGENT_GROUP" prptmode="1">
-<UC4RB_TIO_SCANNER_IDs.00 altview="0" haslist="0"/>
-<UC4RB_TIO_AGENT_GRP_NAMEs.00 altview="0" haslist="0"/>
-</PRPTBOX>
-</PROMPTSET>
-</node>
-<node content="1" id="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_PROXY" name="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_PROXY" parent="PRPTS" type="PROMPTSET">
-<PROMPTSET name="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_PROXY" ontop="1">
-<PRPTBOX promptset="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_PROXY" prptmode="1">
-<CONN_PROXY_TYPEs.00 altview="0" haslist="0">None</CONN_PROXY_TYPEs.00>
-<CONN_PROXY_HOSTs.00 altview="0" haslist="0"/>
-<CONN_PROXY_PORTs.00 altview="0" haslist="0">0</CONN_PROXY_PORTs.00>
-<CONN_PROXY_USERNAMEs.00 altview="0" haslist="0"/>
-<CONN_PROXY_PASSWORDs.00 altview="0" haslist="0">--10</CONN_PROXY_PASSWORDs.00>
-<CONN_PROXY_REALMs.00 altview="0" haslist="0"/>
-<CONN_PROXY_AUTH_METHODs.00 altview="0" haslist="0">None</CONN_PROXY_AUTH_METHODs.00>
-</PRPTBOX>
-</PROMPTSET>
-</node>
-<node content="1" id="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_ADVANCED" name="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_ADVANCED" parent="PRPTS" type="PROMPTSET">
-<PROMPTSET name="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_ADVANCED" ontop="1">
-<PRPTBOX promptset="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.CONNECTION_ADVANCED" prptmode="1">
-<CONN_CONNECTION_TIMEOUTs.00 altview="0" haslist="0">30</CONN_CONNECTION_TIMEOUTs.00>
-<CONN_READ_TIMEOUTs.00 altview="0" haslist="0">60</CONN_READ_TIMEOUTs.00>
-<CONN_FOLLOW_REDIRECTSs.00 altview="0" haslist="0">NO</CONN_FOLLOW_REDIRECTSs.00>
-</PRPTBOX>
-</PROMPTSET>
-</node>
-<node content="1" id="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.OVERWRITE_RA_AGENT" name="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.OVERWRITE_RA_AGENT" parent="PRPTS" type="PROMPTSET">
-<PROMPTSET name="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.OVERWRITE_RA_AGENT" ontop="1">
-<PRPTBOX promptset="PCK.AUTOMIC_RA_REST.PUB.PROMPTSET.OVERWRITE_RA_AGENT" prptmode="1">
-<OVERWRITE_RA_AGENT_PROMPTs.00 altview="0" haslist="0"/>
-</PRPTBOX>
-</PROMPTSET>
 </node>
 </dyntree>
 </DYNVALUES>
@@ -210,21 +168,14 @@
 :INC PCK.AUTOMIC_RA_REST.PUB.INCLUDE.PREPARE_RA_JOB
 :INC PCK.AUTOMIC_RA_REST.PUB.INCLUDE.SET_CONNECTION_AUTH_NONE
 
-!Escaping Inputs
-
-:SET &UC4RB_ESCAPED_STRING#=&UC4RB_TIO_SCANNER_ID#
-:INC PCK.AUTOMIC_TENABLE_IO.PUB.INCLUDE.ESCAPE_ARG_VALUE
-:SET &UC4RB_TIO_INPUT_SCANNER_ID#=&UC4RB_ESCAPED_STRING#
-
-:SET &UC4RB_ESCAPED_STRING#=&UC4RB_TIO_AGENT_GRP_NAME#
-:INC PCK.AUTOMIC_TENABLE_IO.PUB.INCLUDE.ESCAPE_ARG_VALUE
-:SET &UC4RB_TIO_INPUT_NAME#=&UC4RB_ESCAPED_STRING#]]></PSCRI>
-</PRE_SCRIPT>
-<SCRIPT mode="1" state="1">
-<MSCRI><![CDATA[!preparing X-APIKeys for authentication
+!preparing X-APIKeys for authentication
 :SET &UC4RB_KEYS#=""
 :INC PCK.AUTOMIC_TENABLE_IO.PUB.INCLUDE.PREPARE_X-APIKEYS
-]]></MSCRI>
+
+]]></PSCRI>
+</PRE_SCRIPT>
+<SCRIPT mode="1" state="1">
+<MSCRI/>
 </SCRIPT>
 <OUTPUTSCAN state="1">
 <Inherit>N</Inherit>
@@ -233,93 +184,10 @@
 <LoginFsc/>
 </OUTPUTSCAN>
 <POST_SCRIPT mode="1" replacementmode="1" state="1">
-<OSCRI><![CDATA[:SET &FLAG# = 0
-:SET &ID# =''
-:SET &UUID# = ''
-:SET &HND# = PREP_PROCESS_REPORT("JOBS",, "REP")
-:    PROCESS &HND#
-:         SET &VALUE# = GET_PROCESS_LINE(&HND#)
-:          IF &FLAG# EQ 0
-:           SET &ID_CHECK# = STR_FIND(&VALUE#,'"id":')
-:               IF &ID_CHECK# NE 0
-:                 DEFINE &ID_STRINGS#, string, 3
-:                 FILL &ID_STRINGS#[] = STR_SPLIT(&VALUE#,'"id":')
-:                 SET &ID# = STR_TRIM(&ID_STRINGS#[2])
-:               ELSE
-:                   SET &UUID_CHECK# = STR_FIND(&VALUE#,'"uuid":')
-:                   IF &UUID_CHECk# NE 0
-:                     DEFINE &UUID_STRINGS#, string, 3
-:                     FILL &UUID_STRINGS#[] = STR_SPLIT(&VALUE#,'"uuid":')
-:                     SET &UUID# = STR_TRIM(&UUID_STRINGS#[2])
-:                   ELSE
-:                       SET &NAME_CHECK# = STR_FIND(&VALUE#, '"name":')
-:                       IF &NAME_CHECK# NE 0
-:                         DEFINE &NAME_STRINGS#, string, 3
-:                         FILL &NAME_STRINGS#[] = STR_SPLIT(&VALUE#,'"name":')
-:                         SET &NAME# = STR_TRIM(&NAME_STRINGS#[2])
-:                         SET &PREP_OUTPUT# = &NAME#
-:                         INC PCK.AUTOMIC_TENABLE_IO.PUB.INCLUDE.PREPARE_OUTPUT
-:                         SET &NAME# = &PREP_OUTPUT#
-:                         IF &NAME# EQ &UC4RB_TIO_INPUT_NAME#
-:                             SET &FLAG# = 100   !indicate given name found sucessful
-:                         ENDIF
-:                       ENDIF
-:                   ENDIF
-:               ENDIF
-:          ENDIF
-:   ENDPROCESS
-:   CLOSE_PROCESS &HND#
-
-! if flag is 100 means name field found and appropriate value is save other wise fail action
-
-:SET &PREP_OUTPUT# = &ID#
-:INC PCK.AUTOMIC_TENABLE_IO.PUB.INCLUDE.PREPARE_OUTPUT
-:SET &ID# = &PREP_OUTPUT#
-
-:SET &PREP_OUTPUT# = &UUID#
-:INC PCK.AUTOMIC_TENABLE_IO.PUB.INCLUDE.PREPARE_OUTPUT
-:SET &UUID# = &PREP_OUTPUT#
-
-:if &FLAG# EQ 0
-:    MODIFY_STATE RETCODE = 50
-:    SET &ID# = ''
-:    SET &UUID# = ''
-:    SET &NAME# = ''
-:endif
-
-: SET &UC4RB_SAVED_ID# = &ID#
-: SET &UC4RB_SAVED_UUID# = &UUID#
-:PUBLISH &UC4RB_SAVED_ID#,,"WORKFLOW"
-:PUBLISH &UC4RB_SAVED_UUID#,,"WORKFLOW"
-]]></OSCRI>
+<OSCRI/>
 </POST_SCRIPT>
 <DOCU_Docu state="1" type="text">
-<DOC><![CDATA[= Action name =
-PCK.AUTOMIC_TENABLE_IO.PUB.ACTION.GET_AGENT_GROUP
-
-= General description =
-This action fetch details of all agent group and publishes UUID of provided Agent Group Name.
-
-= Inputs =
-* Scanner ID *  :   Provide the scanner id for which fetch agent group 
-* Name *        :   Provide a Name of the Agent Group to get its details. 
-
-
-= Behavior =
-* if Name doesn't exist, action will be fail.
-
-
-=Return Value=
-&UC4RB_SAVED_ID#    : Agent Group ID
-&UC4RB_SAVED_UUID#  : Agent Group UUID
-
-= Outputs =
-* Return code is 0 in case of success.
-* Return code is non-zero in case of failure.
-
-= Rollback =
-(none)
-]]></DOC>
+<DOC/>
 </DOCU_Docu>
 </JOBS_CIT>
 </uc-export>

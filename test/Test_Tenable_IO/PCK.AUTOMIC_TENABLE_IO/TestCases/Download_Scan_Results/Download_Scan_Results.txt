@@ -11,43 +11,40 @@ Resource          ../../Resources/keywords.txt
 Resource          ../../Resources/variables.txt
 Resource          ../../Resources/actions.txt
 
-*** Test Cases ***    OK_NOK                                                                              ScanID            Chapters                                             AssetID         Format         File                         Overwrite
+*** Test Cases ***    OK_NOK    ScanID            Chapters                                             AssetID        Format     File                                    InitialWaitingTime    RetryCount    RetryInterval
 Download Scan Results with valid Scan ID to CSV format
-                      [Tags]                                                                              main_scenarios
-                      OK                                                                                  ${Scan_ID}        vuln_hosts_summary, vuln_by_host                     ${Asset_ID}     csv            ${EXECDIR}\\result.csv       Yes
-
-Download Scan Results and Validate File as Optional field
-                      OK                                                                                  ${Scan_ID}        vuln_by_plugin, compliance                           ${Asset_ID}     html           ${EMPTY}                     No
-
-Download Scan Results and Validate AssetID as Optional field
-                      OK                                                                                  ${Scan_ID}        vuln_by_plugin, compliance                           ${EMPTY}        pdf            ${EXECDIR}\\result.html      No
+                      [Tags]    main_scenarios
+                      OK        ${Scan_ID}        vuln_hosts_summary, vuln_by_host                     ${Asset_ID}    csv        ${File_Path}\\result.csv                0                     5             10
 
 Download Scan Results with valid Scan ID to Nessus format
-                      OK                                                                                  ${Scan_ID}        remediations                                         ${Asset_ID}     nessus         ${EXECDIR}\\result.nessus    Yes
+                      OK        ${Scan_ID}        remediations                                         ${Asset_ID}    nessus     ${File_Path}\\result.nessus             0                     3             10
 
 Download Scan Results with valid Scan ID to HTML format
-                      OK                                                                                  ${Scan_ID}        vuln_by_plugin, compliance                           ${Asset_ID}     html           ${EXECDIR}\\result.html      Yes
+                      OK        ${Scan_ID}        vuln_by_plugin, compliance                           ${Asset_ID}    html       ${EXECDIR}\\result.html                 0                     4             10
 
 Download Scan Results with valid Scan ID to PDF format
-                      OK                                                                                  ${Scan_ID}        vuln_hosts_summary, vuln_by_host, compliance_exec    ${Asset_ID}     pdf            D:\\temp\\result.pdf         Yes
-                      #Commenting this test case, as API is giving some error. Issue from Tenable side
-                      #Download Scan Results with valid Scan ID to DB format
-                      #                                                                                   OK                ${Scan_ID}                                           remediations    ${Asset_ID}    db                           D:\\temp\\result.db    Yes
+                      OK        ${Scan_ID}        vuln_hosts_summary, vuln_by_host, compliance_exec    ${Asset_ID}    pdf        D:\\Tenable\\testresults\\result.pdf    0                     5             10
+
+Download Scan Results with valid Scan ID to DB format
+                      NOK       ${Scan_ID}        remediations                                         ${Asset_ID}    db         D:\\Tenable\\testresults\\result.db     0                     5             10
 
 Download Scan Results with invalid Scan ID
-                      NOK                                                                                 Invalid           vuln_by_host, compliance_exec                        ${Asset_ID}     csv            ${EXECDIR}\\result1.csv      Yes
+                      NOK       Invalid           vuln_by_host, compliance_exec                        ${Asset_ID}    csv        ${File_Path}\\result1.csv               0                     5             10
+
+Download Scan Results and Validate File as Empty
+                      OK        ${Scan_ID}        vuln_by_plugin, compliance                           ${Asset_ID}    html       ${EMPTY}                                0                     5             10
+
+Download Scan Results and Validate AssetID as Empty
+                      NOK       ${Scan_ID}        vuln_by_plugin, compliance                           ${EMPTY}       pdf        ${File_Path}\\result.pdf                0                     5             10
 
 Download Scan Results with invalid Chapters field
-                      OK                                                                                  ${Scan_ID}        Invalid                                              ${Asset_ID}     csv            ${EMPTY}                     No
+                      OK        ${Scan_ID}        Invalid                                              ${Asset_ID}    csv        ${EMPTY}                                0                     5             10
 
 Download Scan Results with invalid Format field
-                      NOK                                                                                 ${Scan_ID}        remediations                                         ${Asset_ID}     Invalid        ${EMPTY}                     Yes
-
-Download Scan Results with invalid File Path
-                      NOK                                                                                 ${Scan_ID}        vuln_by_plugin, compliance                           ${Asset_ID}     html           Invalid                      No
+                      NOK       ${Scan_ID}        remediations                                         ${Asset_ID}    Invalid    ${EMPTY}                                0                     5             10
 
 Download Scan Results with invalid AssetID
-                      OK                                                                                  ${Scan_ID}        vuln_by_plugin, compliance                           Invalid         pdf            D:\\temp\\result.pdf         Yes
+                      OK        ${Scan_ID}        vuln_by_plugin, compliance                           Invalid        pdf        ${File_Path}\\result.pdf                0                     5             10
 
 *** Keywords ***
 Startup
@@ -57,7 +54,7 @@ Startup
 
 Download Scan Results Template
     [Arguments]    ${OK_NOK}    ${ScanID}    ${Chapters}    ${assetID}    ${Format}    ${File}
-    ...    ${Overwrite}
+    ...    ${InitialWaitingTime}    ${RetryCount}    ${RetryInterval}
     [Documentation]    This test downloads scan results from tenable.
     ...    -Precondition: FIle path should be on same server where agent is running.
     ...    -${OK_NOK}: Boolean value indicate if the action is ENDED_OK or ENDED_NOT_OK. Value of this variable should be OK or NOK.
@@ -66,7 +63,9 @@ Download Scan Results Template
     ...    -${AssetID}: This field specifies ID of the asset scanned.
     ...    -${Format}: This field specifies format to download scan result.
     ...    -${File}: This field specifies where scan results will be download.
-    ...    -${Overwrite}: This field specifies whether to overwrite or not if the file is already existing.
+    ...    -${InitialWaitingTime}: This field specifies initial waiting time.
+    ...    -${RetryCount}: This field specifies the number of retry attempts to get the status.
+    ...    -${RetryInterval}: This field specifies the interval in seconds between retry attempt.
     Generate String
     Init Action    ${_DOWNLOAD_SCAN_RESULTS_ACTION}
     Nessus Authentication
@@ -80,7 +79,9 @@ Download Scan Results Template
     ...    &UC4RB_TIO_FORMAT#    ${Format}
     Run Keyword If    '${File}' == 'Invalid'    Action Set    &UC4RB_TIO_FILE#    ${Generated_Name}_${Time}    ELSE    Action Set
     ...    &UC4RB_TIO_FILE#    ${File}
-    Action Set    &UC4RB_TIO_OVERWRITE#    ${Overwrite}
+    Action Set    &UC4RB_TIO_INIT_WAIT_TIME#    ${InitialWaitingTime}
+    Action Set    &UC4RB_TIO_RETRY_CNT#    ${RetryCount}
+    Action Set    &UC4RB_TIO_RETRY_INTRVL#    ${RetryInterval}
     Action Execute
     Run Keyword If    '${OK_NOK}' == 'OK'    Assert Success    ELSE    Assert Failure
     Run Keyword If    '${OK_NOK}' == 'OK'    Action Object Variable Should Be Found    &UC4RB_TIO_SAVED_LOG_FILE_PATH#    ELSE    Action Object Variable Should Not Be Found    &UC4RB_TIO_SAVED_LOG_FILE_PATH#

@@ -11,55 +11,55 @@ Resource          ../../Resources/keywords.txt
 Resource          ../../Resources/variables.txt
 Resource          ../../Resources/actions.txt
 
-*** Test Cases ***    OK_NOK    ScanName          Desc              UUID                Enabled       Target        Policy          Folder
+*** Test Cases ***    OK_NOK    ScanName          Desc              UUID                Enabled       Target        Policy          Folder          AgentGroups
 Create scan while providing inputs in all fields
                       [Tags]    main_scenarios
-                      OK        ${Name}           ${Description}    ${Template_UUID}    ${Enabled}    ${Targets}    ${Policy_ID}    ${Folder_ID}
+                      OK        ${Name}           ${Description}    ${Template_UUID}    ${Enabled}    ${Targets}    ${Policy_ID}    ${Folder_ID}    ${Agent_Groups}
 
-Create scan while providing mandatory values in all fields
-                      OK        ${Name}           ${EMPTY}          ${Template_UUID}    ${Enabled}    ${Targets}    ${EMPTY}        ${EMPTY}
+Create scan while providing mandatory values only
+                      OK        ${Name}           ${EMPTY}          ${Template_UUID}    ${Enabled}    ${Targets}    ${EMPTY}        ${EMPTY}        ${EMPTY}
 
 Create scan while providing Empty name
-                      NOK       ${EMPTY}          ${Description}    ${Template_UUID}    ${Enabled}    ${Targets}    ${Policy_ID}    ${Folder_ID}
+                      NOK       ${EMPTY}          ${Description}    ${Template_UUID}    ${Enabled}    ${Targets}    ${Policy_ID}    ${Folder_ID}    ${Agent_Groups}
 
 Create scan while providing Empty Description
-                      OK        ${Name}           ${EMPTY}          ${Template_UUID}    ${Enabled}    ${Targets}    ${Policy_ID}    ${Folder_ID}
+                      OK        ${Name}           ${EMPTY}          ${Template_UUID}    ${Enabled}    ${Targets}    ${Policy_ID}    ${Folder_ID}    ${Agent_Groups}
 
 Create scan while providing Empty Template UUID
-                      NOK       ${Name}           ${Description}    ${EMPTY}            ${Enabled}    ${Targets}    ${Policy_ID}    ${Folder_ID}
-
-Create scan while providing Empty enabled
-                      NOK       ${Name}           ${Description}    ${Template_UUID}    ${EMPTY}      ${Targets}    ${Policy_ID}    ${Folder_ID}
+                      NOK       ${Name}           ${Description}    ${EMPTY}            ${Enabled}    ${Targets}    ${Policy_ID}    ${Folder_ID}    ${Agent_Groups}
 
 Create scan while providing Empty targets
-                      NOK       ${Name}           ${Description}    ${Template_UUID}    ${Enabled}    ${EMPTY}      ${Policy_ID}    ${Folder_ID}
+                      NOK       ${Name}           ${Description}    ${Template_UUID}    ${Enabled}    ${EMPTY}      ${Policy_ID}    ${Folder_ID}    ${Agent_Groups}
 
 Create scan while providing Empty policy ID
-                      OK        ${Name}           ${Description}    ${Template_UUID}    ${Enabled}    ${Targets}    ${EMPTY}        ${Folder_ID}
+                      OK        ${Name}           ${Description}    ${Template_UUID}    ${Enabled}    ${Targets}    ${EMPTY}        ${Folder_ID}    ${Agent_Groups}
 
 Create scan while providing Empty folder ID
-                      OK        ${Name}           ${Description}    ${Template_UUID}    ${Enabled}    ${Targets}    ${Policy_ID}    ${EMPTY}
+                      OK        ${Name}           ${Description}    ${Template_UUID}    ${Enabled}    ${Targets}    ${Policy_ID}    ${EMPTY}        ${Agent_Groups}
+
+Create scan while providing Empty Agent Groups
+                      OK        ${Name}           ${Description}    ${Template_UUID}    ${Enabled}    ${Targets}    ${Policy_ID}    ${Folder_ID}    ${EMPTY}
 
 Create scan while providing Invalid name
-                      OK        Invalid           ${Description}    ${Template_UUID}    ${Enabled}    ${Targets}    ${Policy_ID}    ${Folder_ID}
+                      OK        Invalid           ${Description}    ${Template_UUID}    ${Enabled}    ${Targets}    ${Policy_ID}    ${Folder_ID}    ${Agent_Groups}
 
 Create scan while providing Invalid Description
-                      OK        ${Name}           Invalid           ${Template_UUID}    ${Enabled}    ${Targets}    ${Policy_ID}    ${Folder_ID}
+                      OK        ${Name}           Invalid           ${Template_UUID}    ${Enabled}    ${Targets}    ${Policy_ID}    ${Folder_ID}    ${Agent_Groups}
 
 Create scan while providing Invalid Template UUID
-                      NOK       ${Name}           ${Description}    Invalid             ${Enabled}    ${Targets}    ${Policy_ID}    ${Folder_ID}
-
-Create scan while providing Invalid Enabled
-                      NOK       ${Name}           ${Description}    ${Template_UUID}    Invalid       ${Targets}    ${Policy_ID}    ${Folder_ID}
+                      NOK       ${Name}           ${Description}    Invalid             ${Enabled}    ${Targets}    ${Policy_ID}    ${Folder_ID}    ${Agent_Groups}
 
 Create scan while providing Invalid targets
-                      OK        ${Name}           ${Description}    ${Template_UUID}    ${Enabled}    Invalid       ${Policy_ID}    ${Folder_ID}
+                      OK        ${Name}           ${Description}    ${Template_UUID}    ${Enabled}    Invalid       ${Policy_ID}    ${Folder_ID}    ${Agent_Groups}
 
 Create scan while providing Invalid policy ID
-                      NOK       ${Name}           ${Description}    ${Template_UUID}    ${Enabled}    ${Targets}    Invalid         ${Folder_ID}
+                      NOK       ${Name}           ${Description}    ${Template_UUID}    ${Enabled}    ${Targets}    Invalid         ${Folder_ID}    ${Agent_Groups}
 
 Create scan while providing Invalid folder ID
-                      NOK       ${Name}           ${Description}    ${Template_UUID}    ${Enabled}    ${Targets}    ${Policy_ID}    Invalid
+                      NOK       ${Name}           ${Description}    ${Template_UUID}    ${Enabled}    ${Targets}    ${Policy_ID}    Invalid         ${Agent_Groups}
+
+Create scan while providing Invalid Agent Groups
+                      OK        ${Name}           ${Description}    ${Template_UUID}    ${Enabled}    ${Targets}    ${Policy_ID}    ${Folder_ID}    Invalid
 
 *** Keywords ***
 Startup
@@ -69,7 +69,7 @@ Startup
 
 Create Scan Template
     [Arguments]    ${OK_NOK}    ${ScanName}    ${Desc}    ${UUID}    ${Enabled}    ${Target}
-    ...    ${Policy}    ${Folder}
+    ...    ${Policy}    ${Folder}    ${AgentGroups}
     [Documentation]    This test creates a new scan in Tenable.
     ...    -${OK_NOK}: Boolean value indicate if the action is ENDED_OK or ENDED_NOT_OK. Value of this variable should be OK or NOK.
     ...    -${ScanName}: This fields specifies name for the scan to be created.
@@ -79,6 +79,7 @@ Create Scan Template
     ...    -${Target}: This field specifies list of Targets separated by comma to scan.
     ...    -${Policy}: This field specifies the unique ID of the policy to use.
     ...    -${Folder}: This field specifies the unique ID of the destination folder for the scan.
+    ...    -${AgentGroups}: This field specifies list of Agent Group UUIDs separated by comma to scan.
     Generate String
     Init Action    ${_CREATE_SCAN}
     Nessus Authentication
@@ -96,6 +97,8 @@ Create Scan Template
     ...    &UC4RB_TIO_POLICY_ID#    ${Policy}
     Run Keyword If    '${Folder}' == 'Invalid'    Action Set    &UC4RB_TIO_FOLDER_ID#    ${Generated_Name}_${Time}    ELSE    Action Set
     ...    &UC4RB_TIO_FOLDER_ID#    ${Folder}
+    Run Keyword If    '${AgentGroups}' == 'Invalid'    Action Set    &UC4RB_TIO_AGENT_GROUPS#    ${Generated_Name}_${Time}    ELSE    Action Set
+    ...    &UC4RB_TIO_AGENT_GROUPS#    ${AgentGroups}
     Action Execute
     Run Keyword If    '${OK_NOK}' == 'OK'    Assert Success    ELSE    Assert Failure
     Run Keyword If    '${OK_NOK}' == 'OK'    Action Object Variable Should Be Found    &UC4RB_TENABLE_IO_SCAN_ID#    ELSE    Action Object Variable Should Not Be Found    &UC4RB_TENABLE_IO_SCAN_ID#

@@ -9,13 +9,14 @@ ${secretKey}      348341086a2ffe21ffebbf1a3b7e0a10eeacf9bcaf632fdb495d888db689cd
 ${Scan_ID}        42
 ${Scan_UUID}      template-e4f8bd23-369a-66fb-f86e-64aa905504584428dbdd015d1a02
 #---- Create Scan --------------------------------------------------------------------------------------------
-${Name}           Scan0016
+${Name}           AutomatedScan
 ${Description}    This scan is created by automation script.
 ${Template_UUID}    09805055-a034-4088-8986-aac5e1c57d5f0d44f09d736969bf
 ${Enabled}        Yes
 ${Targets}        http://www.alm.automic.com
 ${Policy_ID}      51
 ${Folder_ID}      52
+${Agent_Groups}    8b05bd55-9105-48ec-9da1-2e10a2c9a4e0, 6b05bd55-7568-36kd-9da1-2h10a2c5f4e1
 ${InvalidState_Scan_ID}    224
 #---- Get Scan Template --------------------------------------------------------------------------------------
 ${Template_Title}    Web App Scan
@@ -34,4 +35,4 @@ ${Emails}         test@test.com
 ${ACLs}           {"permission":32,"type":"default"}
 #---- Download Scan result -----------------------------------------------------------------------------------
 ${Asset_ID}       0f84a98d-b355-4ad0-ae34-ec5cc740819a
-${EXECDIR}        D:\\temp\\
+${File_Path}      D:\\Tenable\\testresults\\

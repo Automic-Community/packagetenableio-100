@@ -45,14 +45,14 @@ Following actions are supported
 * Action name : PCK.AUTOMIC_TENABLE_IO.PUB.ACTION.GET_SCAN_DETAILS
 * General Description : This action fetches a scan details from Tenable.io.
 
-*Action name : PCK.AUTOMIC_TENABLE_IO.PUB.ACTION.CHECK_SCAN_STATUS
-*General Description : This action will check for a given status for a scan in a specific time interval.
+* Action name : PCK.AUTOMIC_TENABLE_IO.PUB.ACTION.CHECK_SCAN_STATUS
+* General Description : This action will check for a given status for a scan in a specific time interval.
 
-*Action name : PCK.AUTOMIC_TENABLE_IO.PUB.ACTION.PAUSE_SCAN
-*General Description : This action will pause a scan in Tenable.io.
+* Action name : PCK.AUTOMIC_TENABLE_IO.PUB.ACTION.PAUSE_SCAN
+* General Description : This action will pause a scan in Tenable.io.
 
-*Action name : PCK.AUTOMIC_TENABLE_IO.PUB.ACTION.STOP_SCAN
-*General Description : This action will stop a scan in Tenable.io.
+* Action name : PCK.AUTOMIC_TENABLE_IO.PUB.ACTION.STOP_SCAN
+* General Description : This action will stop a scan in Tenable.io.
 
 * Action name: PCK.AUTOMIC_TENABLE_IO.PUB.ACTION.DOWNLOAD_SCAN_RESULTS
 * Action Description: This action exports the scan result for provided scan id.]]></DOC>

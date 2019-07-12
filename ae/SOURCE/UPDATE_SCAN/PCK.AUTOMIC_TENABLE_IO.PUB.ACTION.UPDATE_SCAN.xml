@@ -158,8 +158,8 @@
 <PROMPTSET name="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.CONNECTION_PARAMETERS" ontop="1">
 <PRPTBOX promptset="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.CONNECTION_PARAMETERS" prptmode="1">
 <UC4RB_TIO_BASE_URLs.00 altview="0" haslist="0"/>
-<UC4RB_TIO_ACCESS_KEYSs.00 altview="0" haslist="0"/>
-<UC4RB_TIO_SECRET_KEYSs.00 altview="0" haslist="0"/>
+<UC4RB_TIO_ACCESS_KEYSs.00 altview="0" haslist="0">--10</UC4RB_TIO_ACCESS_KEYSs.00>
+<UC4RB_TIO_SECRET_KEYSs.00 altview="0" haslist="0">--10</UC4RB_TIO_SECRET_KEYSs.00>
 </PRPTBOX>
 </PROMPTSET>
 </node>
@@ -179,7 +179,6 @@
 <UC4RB_TIO_TRGT_GRPSs.00 altview="0" haslist="0"/>
 <UC4RB_TIO_AGNT_GRPSs.00 altview="0" haslist="0"/>
 <UC4RB_TIO_TARGETSs.00 altview="0" haslist="0"/>
-<UC4RB_TIO_FILE_TRGTSs.00 altview="0" haslist="0"/>
 <UC4RB_TIO_EMAILSs.00 altview="0" haslist="0"/>
 <UC4RB_TIO_ACLSs.00 altview="0" haslist="0"/>
 </PRPTBOX>
@@ -349,15 +348,15 @@
 :   SET &UC4RB_TIO_TRGTS#=STR_CAT(&UC4RB_TIO_TRGTS#,'",')
 :ENDIF
 
-!adding file_targets to json
-:SET &UC4RB_TIO_FILE_TGTS#=""
-:IF &UC4RB_TIO_FILE_TRGTS# <> ""
-:   SET &UC4RB_ESCAPED_STRING#=&UC4RB_TIO_FILE_TRGTS#
-:   INC PCK.AUTOMIC_TENABLE_IO.PUB.INCLUDE.ESCAPE_ARG_VALUE
-:   SET &UC4RB_TIO_FILE_TGTS#=&UC4RB_ESCAPED_STRING#
-:   SET &UC4RB_TIO_FILE_TGTS#=STR_CAT('"file_targets":"',&UC4RB_TIO_FILE_TGTS#)
-:   SET &UC4RB_TIO_FILE_TGTS#=STR_CAT(&UC4RB_TIO_FILE_TGTS#,'",')
-:ENDIF
+!!adding file_targets to json
+!:SET &UC4RB_TIO_FILE_TGTS#=""
+!:IF &UC4RB_TIO_FILE_TRGTS# <> ""
+!:   SET &UC4RB_ESCAPED_STRING#=&UC4RB_TIO_FILE_TRGTS#
+!:   INC PCK.AUTOMIC_TENABLE_IO.PUB.INCLUDE.ESCAPE_ARG_VALUE
+!:   SET &UC4RB_TIO_FILE_TGTS#=&UC4RB_ESCAPED_STRING#
+!:   SET &UC4RB_TIO_FILE_TGTS#=STR_CAT('"file_targets":"',&UC4RB_TIO_FILE_TGTS#)
+!:   SET &UC4RB_TIO_FILE_TGTS#=STR_CAT(&UC4RB_TIO_FILE_TGTS#,'",')
+!:ENDIF
 
 !adding emails to json
 :SET &UC4RB_TIO_EMLS#=""
@@ -377,7 +376,7 @@
 :   SET &UC4RB_TIO_ACL#=STR_CAT(&UC4RB_TIO_ACL#,'],')
 :ENDIF
 
-:SET &UC4RB_TIO_REQ_JSON#='{ "settings" : {&UC4RB_TIO_SCN_NAME# &UC4RB_TIO_DES# &UC4RB_TIO_FOLDR_ID# &UC4RB_TIO_SCR_ID# &UC4RB_TIO_LNCH# &UC4RB_TIO_STRT_TM# &UC4RB_TIO_RULS# &UC4RB_TIO_TM_ZON# &UC4RB_TIO_TRGTS# &UC4RB_TIO_FILE_TGTS# &UC4RB_TIO_EMLS# &UC4RB_TIO_ACL# &UC4RB_TIO_TRG_GRPS# &UC4RB_ENABLED# }&UC4RB_TIO_AGT_GRPS#}'
+:SET &UC4RB_TIO_REQ_JSON#='{ "settings" : {&UC4RB_TIO_SCN_NAME# &UC4RB_TIO_DES# &UC4RB_TIO_FOLDR_ID# &UC4RB_TIO_SCR_ID# &UC4RB_TIO_LNCH# &UC4RB_TIO_STRT_TM# &UC4RB_TIO_RULS# &UC4RB_TIO_TM_ZON# &UC4RB_TIO_TRGTS# &UC4RB_TIO_EMLS# &UC4RB_TIO_ACL# &UC4RB_TIO_TRG_GRPS# &UC4RB_ENABLED# }&UC4RB_TIO_AGT_GRPS#}'
 
 
 
@@ -419,7 +418,6 @@ This action updates a scan in Tenable.io.
 - Target Groups : Provide list of Target Groups separated by comma to scan. E.g. "143","145"
 - Agent Groups : Provide list of Agent Groups separated by comma to scan. E.g. "e610d266-1d58-4a99-b859-0d67b9423079","e610d266-1d58-4a99-b859-0d67b9423079"
 - Targets : Provide list of Targets separated by comma to scan. E.g. 10.243.12.23(for basic network scan)
-- File Targets : The name of a file containing the list of targets to scan. This file must be uploaded at tenable.io. E.g. uploadedTargets.txt
 - Emails : Provide comma-separated list of accounts that receive the email summary report.
 - ACLs : Provide a list of json of permissions to apply to the scan. E.g. {"permissions": 128, "type": "default"}, {"permissions": 64, "type": "user"} 
 
@@ -440,7 +438,6 @@ This action updates a scan in Tenable.io.
 - Target Groups : "143","145"
 - Agent Groups : "e610d266-1d58-4a99-b859-0d67b9423079"
 - Targets : 10.243.12.23
-- File Targets : uploadedTargets.txt
 - Emails : ABC@broadcom.com
 - ACLs : {"permissions": 128, "type": "default"}, {"permissions": 64, "type": "user"}
 ]]></DOC>

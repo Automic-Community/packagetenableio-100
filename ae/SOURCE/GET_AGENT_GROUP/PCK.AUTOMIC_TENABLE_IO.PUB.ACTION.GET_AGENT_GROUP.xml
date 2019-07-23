@@ -94,10 +94,10 @@
 <component con="0" enc="0" type="2" value="false" xmlName="multiPartResp"/>
 <component con="0" enc="0" type="2" value="false" xmlName="requestReports"/>
 <component con="0" enc="0" type="2" value="scanners/&amp;UC4RB_TIO_INPUT_SCANNER_ID#/agent-groups" xmlName="resource"/>
+<component con="0" enc="0" type="2" value="" xmlName="response_part_0_file"/>
 <component con="0" enc="0" type="2" value="false" xmlName="responseReport"/>
 <component con="0" enc="0" type="2" value="60" xmlName="responseTimeout"/>
 <component con="0" enc="0" type="2" value="true" xmlName="responseToJobLog"/>
-<component con="0" enc="0" type="2" value="" xmlName="response_part_0_file"/>
 <component con="1" enc="0" type="2" value="" xmlName="restConnection"/>
 <component con="0" enc="0" type="2" value="false" xmlName="tracePerformance"/>
 <component con="0" enc="0" type="2" value="" xmlName="uriOverride"/>
@@ -153,8 +153,8 @@
 <PROMPTSET name="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.CONNECTION_PARAMETERS" ontop="1">
 <PRPTBOX promptset="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.CONNECTION_PARAMETERS" prptmode="1">
 <UC4RB_TIO_BASE_URLs.00 altview="0" haslist="0"/>
-<UC4RB_TIO_ACCESS_KEYSs.00 altview="0" haslist="0">--10</UC4RB_TIO_ACCESS_KEYSs.00>
-<UC4RB_TIO_SECRET_KEYSs.00 altview="0" haslist="0">--10</UC4RB_TIO_SECRET_KEYSs.00>
+<UC4RB_TIO_ACCESS_KEYSs.00 altview="0" haslist="0">--10FBA41CCE80A626FF9F1A8BC87ECEB23E141388E66BC9D730</UC4RB_TIO_ACCESS_KEYSs.00>
+<UC4RB_TIO_SECRET_KEYSs.00 altview="0" haslist="0">--10FBA41CCE80A626FF9F1A8BC87ECEB23E141388E66BC9D730</UC4RB_TIO_SECRET_KEYSs.00>
 </PRPTBOX>
 </PROMPTSET>
 </node>
@@ -173,7 +173,7 @@
 <CONN_PROXY_HOSTs.00 altview="0" haslist="0"/>
 <CONN_PROXY_PORTs.00 altview="0" haslist="0">0</CONN_PROXY_PORTs.00>
 <CONN_PROXY_USERNAMEs.00 altview="0" haslist="0"/>
-<CONN_PROXY_PASSWORDs.00 altview="0" haslist="0">--10</CONN_PROXY_PASSWORDs.00>
+<CONN_PROXY_PASSWORDs.00 altview="0" haslist="0">--10FBA41CCE80A626FF9F1A8BC87ECEB23E141388E66BC9D730</CONN_PROXY_PASSWORDs.00>
 <CONN_PROXY_REALMs.00 altview="0" haslist="0"/>
 <CONN_PROXY_AUTH_METHODs.00 altview="0" haslist="0">None</CONN_PROXY_AUTH_METHODs.00>
 </PRPTBOX>
@@ -287,10 +287,10 @@
 :    SET &NAME# = ''
 :endif
 
-: SET &UC4RB_SAVED_ID# = &ID#
-: SET &UC4RB_SAVED_UUID# = &UUID#
-:PUBLISH &UC4RB_SAVED_ID#,,"WORKFLOW"
-:PUBLISH &UC4RB_SAVED_UUID#,,"WORKFLOW"
+: SET &UC4RB_TIO_AGT_GRP_ID# = &ID#
+: SET &UC4RB_TIO_AGT_GRP_UUID# = &UUID#
+:PUBLISH &UC4RB_TIO_AGT_GRP_ID#,,"WORKFLOW"
+:PUBLISH &UC4RB_TIO_AGT_GRP_UUID#,,"WORKFLOW"
 ]]></OSCRI>
 </POST_SCRIPT>
 <DOCU_Docu state="1" type="text">
@@ -310,8 +310,8 @@ This action fetch details of all agent group and publishes UUID of provided Agen
 
 
 =Return Value=
-&UC4RB_SAVED_ID#    : Agent Group ID
-&UC4RB_SAVED_UUID#  : Agent Group UUID
+&UC4RB_TIO_AGT_GRP_ID#    : Agent Group ID
+&UC4RB_TIO_AGT_GRP_UUID#  : Agent Group UUID
 
 = Outputs =
 * Return code is 0 in case of success.

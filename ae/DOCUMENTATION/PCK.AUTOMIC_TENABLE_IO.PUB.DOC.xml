@@ -23,7 +23,7 @@ Rest-API version : v1
 * Internet Connection should be available on Agent OS.
 
 =Common Inputs=
-- Tenable.io Base URL*: Provide Base URL of the Tenable.io.E.g. https://cloud.tenable.com
+- Tenable.io Base URL*: Provide Base URL of the Tenable.io. E.g. https://cloud.tenable.com
 - Access Key*: Provide a access key. E.g. f4b981XXX
 - Secret Key*: Provide a secret key. E.g. b90194XXX
 
@@ -31,16 +31,19 @@ Rest-API version : v1
 Following actions are supported
 
 * Action name: PCK.AUTOMIC_TENABLE_IO.PUB.ACTION.CREATE_SCAN
-* Action Description: This action creates a scan in Tenable.io.
+* General Description: This action creates a scan in Tenable.io.
 
 * Action name : PCK.AUTOMIC_TENABLE_IO.PUB.ACTION.UPDATE_SCAN
-* Action Description : This action updates a scan in Tenable.io.
+* General Description : This action updates a scan in Tenable.io.
 
 * Action name: PCK.AUTOMIC_TENABLE_IO.PUB.ACTION.GET_AGENT_GROUP
-* Action Description: This action retrives given agent name from Tenable.io.
+* General Description: This action retrives details for given agent group name from Tenable.io.
+
+* Action name : PCK.AUTOMIC_TENABLE_IO.PUB.ACTION.LAUNCH_SCAN
+* General Description : This action will launch a scan in Tenable.io.
 
 * Action name : PCK.AUTOMIC_TENABLE_IO.PUB.ACTION.RESUME_SCAN
-* Action Description : This action will resume a scan in Tenable.io.
+* General Description : This action will resume a scan in Tenable.io.
 
 * Action name : PCK.AUTOMIC_TENABLE_IO.PUB.ACTION.GET_SCAN_DETAILS
 * General Description : This action fetches a scan details from Tenable.io.
@@ -55,7 +58,17 @@ Following actions are supported
 * General Description : This action will stop a scan in Tenable.io.
 
 * Action name: PCK.AUTOMIC_TENABLE_IO.PUB.ACTION.DOWNLOAD_SCAN_RESULTS
-* Action Description: This action exports the scan result for provided scan id.]]></DOC>
+* General Description: This action exports the scan result for provided scan id.
+
+* Action name: PCK.AUTOMIC_TENABLE_IO.PUB.ACTION.DOWNLOAD_WEB_APP_SCAN_RESULT
+* General Description: This action exports the scan result for provided web scan id.
+
+* Action name: PCK.AUTOMIC_TENABLE_IO.PUB.ACTION.GET_SCAN_STATUS
+* General Description: This action will give current status of a scan from Tenable.io.
+
+* Action name: PCK.AUTOMIC_TENABLE_IO.PUB.ACTION.GET_SCAN_TEMPLATE
+* General Description: This action Lists available scan templates on Tenable io and publishes UUID for title provided by user.
+]]></DOC>
 </DOCU_Docu>
 </DOCU>
 </uc-export>

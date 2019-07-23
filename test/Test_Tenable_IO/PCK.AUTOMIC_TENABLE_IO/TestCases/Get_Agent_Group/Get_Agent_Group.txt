@@ -16,9 +16,6 @@ Get Agent Group details with valid name
                       [Tags]    main_scenarios
                       OK        ${Scanner_ID}     ${Group_Name}
 
-Get Agent Group details with invalid scanner id
-                      NOK       Invalid           ${Group_Name}
-
 Get Agent Group details with invalid name
                       NOK       ${Scanner_ID}     Invalid
 
@@ -43,7 +40,7 @@ Get Agent Group Template
     ...    &UC4RB_TIO_AGENT_GRP_NAME#    ${Name}
     Action Execute
     Run Keyword If    '${OK_NOK}' == 'OK'    Assert Success    ELSE    Assert Failure
-    Run Keyword If    '${OK_NOK}' == 'OK'    Action Object Variable Should Be Found    &UC4RB_TIO_AGENT_GRP_UUID#    ELSE    Action Object Variable Should Not Be Found    &UC4RB_TIO_AGENT_GRP_UUID#
+    Run Keyword If    '${OK_NOK}' == 'OK'    Action Object Variable Should Be Found    &UC4RB_TIO_AGT_GRP_UUID#    ELSE    Action Object Variable Should Not Be Found    &UC4RB_TIO_AGT_GRP_UUID#
 
 Teardown
     Log    *******End Test "GET AGENT GROUP"*******

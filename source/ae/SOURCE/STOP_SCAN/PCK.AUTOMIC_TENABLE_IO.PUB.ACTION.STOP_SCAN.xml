@@ -148,7 +148,7 @@
 <row ERTUsage="0" Mod="0" Name="&amp;UC4RB_TIO_FAIL_STATUS#" Value="running"/>
 <row ERTUsage="0" Mod="0" Name="&amp;UC4RB_TIO_SUCCESS_STATUS#" Value="canceled"/>
 </Values>
-<Mode>1</Mode>
+<Mode>0</Mode>
 </VALUE>
 </node>
 <node content="1" id="PRPTS" name="PromptSets" parent="" pref="1" type="PROMPTSET"/>
@@ -375,7 +375,7 @@
 <row ERTUsage="0" Mod="0" Name="&amp;UC4RB_TIO_FAIL_STATUS#" Value="running"/>
 <row ERTUsage="0" Mod="0" Name="&amp;UC4RB_TIO_SUCCESS_STATUS#" Value="canceled"/>
 </Values>
-<Mode>1</Mode>
+<Mode>0</Mode>
 </VALUE>
 </node>
 <node content="1" id="PRPTS" name="PromptSets" parent="" pref="1" type="PROMPTSET"/>
@@ -560,7 +560,7 @@
 <row ERTUsage="0" Mod="0" Name="&amp;UC4RB_TIO_FAIL_STATUS#" Value="running"/>
 <row ERTUsage="0" Mod="0" Name="&amp;UC4RB_TIO_SUCCESS_STATUS#" Value="canceled"/>
 </Values>
-<Mode>1</Mode>
+<Mode>0</Mode>
 </VALUE>
 </node>
 <node content="1" id="PRPTS" name="PromptSets" parent="" pref="1" type="PROMPTSET"/>
@@ -756,7 +756,7 @@
 <row ERTUsage="0" Name="&amp;UC4RB_TIO_FAIL_STATUS#" Value="running"/>
 <row ERTUsage="0" Name="&amp;UC4RB_TIO_SUCCESS_STATUS#" Value="canceled"/>
 </Values>
-<Mode>1</Mode>
+<Mode>0</Mode>
 </VALUE>
 </node>
 <node content="1" id="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.CONNECTION_PARAMETERS" name="PCK.AUTOMIC_TENABLE_IO.PUB.PROMPTSET.CONNECTION_PARAMETERS" parent="PRPTS" type="PROMPTSET">
